@@ -6,7 +6,7 @@ export const routes: Routes = [
   { path: '', component: Home, pathMatch: 'full' },
   {
     path: 'loan-application',
-    loadComponent: () => loadRemoteModule('loanApplication', './Component').then((m) => m.App),
+    loadComponent: () => loadRemoteModule('loan-application', './Component').then((m) => m.App),
   },
   {
     path: 'pricing',
@@ -14,7 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'borrower-lookup',
-    loadComponent: () => loadRemoteModule('borrowerLookup', './Component').then((m) => m.App),
+    loadComponent: () => loadRemoteModule('borrower-lookup', './Component').then((m) => m.App),
   },
   {
     path: 'statements',
