@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lending-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      # Local development / demo credentials only.
+      POSTGRES_DB: lending
+      POSTGRES_USER: lending
+      POSTGRES_PASSWORD: lending_pw_2014
+      # The checksum spec requires a UTF8 server encoding and a '.' decimal
+      # separator (database/checks/README.md in the legacy repo, §7).
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-numeric=C --lc-monetary=C"
+    volumes:
+      - lending-pgdata:/var/lib/postgresql/data
+      - ./database:/database:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lending -d lending"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  lending-pgdata:

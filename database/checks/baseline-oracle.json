@@ -1,0 +1,93 @@
+{
+  "spec_version": "1.0",
+  "source_database": "oracle",
+  "schema": "LENDING",
+  "hash_algorithm": "SHA-256",
+  "hash_output": "uppercase hex",
+  "null_token": "\\N",
+  "field_separator": "|",
+  "date_format": "YYYY-MM-DD HH24:MI:SS",
+  "chain_seed": "0000000000000000000000000000000000000000000000000000000000000000",
+  "tables": [
+    {
+      "table": "BORROWER",
+      "order_by": "BORROWER_ID",
+      "row_count": 8,
+      "numeric_sums": {
+        "BORROWER_ID": "36",
+        "CREDIT_SCORE": "5591",
+        "DEPOSIT_BALANCE": "1225000.00",
+        "YEARS_IN_BUSINESS": "74"
+      },
+      "delimiter_collisions": 0,
+      "row_hash_chain": "2FE1C705AFF59D04F8726A4B1BBCBE2D807B77321A009CF4F0FCEF205F9D82D7"
+    },
+    {
+      "table": "LOAN_APPLICATION",
+      "order_by": "APP_ID",
+      "row_count": 7,
+      "numeric_sums": {
+        "APP_ID": "28",
+        "BORROWER_ID": "30",
+        "AMOUNT": "2240000.00",
+        "TERM_MONTHS": "480",
+        "CREDIT_SCORE": "4960",
+        "DTI": "2.4140",
+        "LTV": "5.2200"
+      },
+      "delimiter_collisions": 0,
+      "row_hash_chain": "4D76F7AC3792F531D14B1CC30237FC4F23A7E45FE07533DFA431913C061FDCA3"
+    },
+    {
+      "table": "LOAN",
+      "order_by": "LOAN_ID",
+      "row_count": 5,
+      "numeric_sums": {
+        "LOAN_ID": "15",
+        "APP_ID": "15",
+        "BORROWER_ID": "18",
+        "PRINCIPAL": "2005000.00",
+        "ANNUAL_RATE": "37.050",
+        "TERM_MONTHS": "372",
+        "ORIG_FEE": "20637.50"
+      },
+      "delimiter_collisions": 0,
+      "row_hash_chain": "7183088F01A3DE941EEE16EFC955E3635EECA910917975FAC464190913D36276"
+    },
+    {
+      "table": "PAYMENT_SCHEDULE",
+      "order_by": "LOAN_ID,PERIOD_NO",
+      "row_count": 372,
+      "numeric_sums": {
+        "LOAN_ID": "1068",
+        "PERIOD_NO": "15954",
+        "PAYMENT_AMT": "2571120.98",
+        "INTEREST_AMT": "566120.98",
+        "PRINCIPAL_AMT": "2005000.00",
+        "BALANCE_AFTER": "96183113.62"
+      },
+      "delimiter_collisions": 0,
+      "row_hash_chain": "51453DBD8EB91C765B1D3FBD30C0A432B407CAC91EF782FA06F9121B7B59E6D9"
+    },
+    {
+      "table": "PAYMENT",
+      "order_by": "PAYMENT_ID",
+      "row_count": 5,
+      "numeric_sums": {
+        "PAYMENT_ID": "450015",
+        "LOAN_ID": "8",
+        "PERIOD_NO": "9",
+        "AMOUNT": "24393.97",
+        "DAYS_LATE": "18",
+        "LATE_FEE": "150.00"
+      },
+      "delimiter_collisions": 0,
+      "row_hash_chain": "0073702456B38BD3583B1AECB543DE110038E4FE2163661BCA0E17D808D7D43C"
+    }
+  ],
+  "sequences": [
+    {"name": "SEQ_LOAN", "last_number": 5000, "increment_by": 1},
+    {"name": "SEQ_LOAN_APPLICATION", "last_number": 1000, "increment_by": 1},
+    {"name": "SEQ_PAYMENT", "last_number": 90000, "increment_by": 1}
+  ]
+}
