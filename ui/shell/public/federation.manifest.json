@@ -1,0 +1,6 @@
+{
+  "loanApplication": "http://localhost:4201/remoteEntry.json",
+  "pricing": "http://localhost:4202/remoteEntry.json",
+  "borrowerLookup": "http://localhost:4203/remoteEntry.json",
+  "statements": "http://localhost:4204/remoteEntry.json"
+}

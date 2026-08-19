@@ -1,0 +1,82 @@
+.screen {
+  font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, sans-serif;
+  max-width: 720px;
+}
+
+.screen-title {
+  font-size: 12pt;
+  margin: 0 0 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 160px 200px;
+  gap: 8px 10px;
+  align-items: center;
+}
+
+.form-grid label {
+  font-size: 10pt;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 3px 5px;
+  border: 1px solid #7a7a7a;
+  font-size: 10pt;
+}
+
+.action-btn {
+  margin: 12px 0;
+  padding: 5px 14px;
+  font-size: 10pt;
+}
+
+.result-labels {
+  margin: 4px 0 10px;
+}
+
+/* BR-UI-001: the rate label is bold 10pt; fee/payment labels are plain. */
+.result-label {
+  font-size: 10pt;
+  font-weight: bold;
+  min-height: 16px;
+}
+
+.result-label.plain {
+  font-weight: normal;
+}
+
+.late-fee-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 6px 0 14px;
+}
+
+.late-fee-row label {
+  font-size: 10pt;
+}
+
+.late-fee-row input {
+  width: 90px;
+  padding: 3px 5px;
+  border: 1px solid #7a7a7a;
+}
+
+.grid {
+  border-collapse: collapse;
+  font-size: 9pt;
+  width: 100%;
+}
+
+.grid th,
+.grid td {
+  border: 1px solid #c0c0c0;
+  padding: 2px 8px;
+  text-align: right;
+}
+
+.grid th {
+  background: #e8e8e8;
+}
