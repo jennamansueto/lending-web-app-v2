@@ -1,0 +1,54 @@
+.main-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, sans-serif;
+  background: #f0f0f0;
+}
+
+.header {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 16px 16px 0;
+}
+
+.sub-header {
+  color: dimgray;
+  margin: 4px 16px 12px;
+  white-space: pre;
+}
+
+.launcher {
+  display: flex;
+  gap: 12px;
+  padding: 0 16px 12px;
+  border-bottom: 1px solid #c0c0c0;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #e1e1e1;
+  border: 1px solid #adadad;
+  color: #000;
+  text-decoration: none;
+  font-size: 10pt;
+}
+
+.nav-btn:hover {
+  background: #d3e3f5;
+  border-color: #0078d7;
+}
+
+.screen-host {
+  flex: 1;
+  padding: 16px;
+}
+
+.status-bar {
+  border-top: 1px solid #c0c0c0;
+  background: #e8e8e8;
+  padding: 4px 10px;
+  font-size: 9pt;
+  white-space: pre;
+}

@@ -1,0 +1,52 @@
+.screen {
+  font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, sans-serif;
+  max-width: 560px;
+}
+
+.screen-title {
+  font-size: 12pt;
+  margin: 0 0 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 170px 220px;
+  gap: 8px 10px;
+  align-items: center;
+}
+
+.form-grid label {
+  font-size: 10pt;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 3px 5px;
+  border: 1px solid #7a7a7a;
+  font-size: 10pt;
+}
+
+.submit-btn {
+  margin: 14px 0;
+  padding: 6px 14px;
+  font-size: 10pt;
+}
+
+/* BR-UI-006: single bordered label; DarkGreen on approval, Firebrick on decline. */
+.result-panel {
+  width: 460px;
+  min-height: 90px;
+  border: 1px solid #7a7a7a;
+  padding: 6px 8px;
+  white-space: pre-line;
+  font-size: 10pt;
+  background: #fff;
+}
+
+.result-panel.approved {
+  color: darkgreen;
+}
+
+.result-panel.declined {
+  color: firebrick;
+}

@@ -1,0 +1,69 @@
+<div class="screen">
+  <h2 class="screen-title">Pricing &amp; Amortization</h2>
+
+  <div class="form-grid">
+    <label for="product">Product</label>
+    <select id="product" name="product" [(ngModel)]="product">
+      @for (p of products; track p) {
+        <option [value]="p">{{ p }}</option>
+      }
+    </select>
+
+    <label for="amount">Loan Amount ($)</label>
+    <input id="amount" name="amount" [(ngModel)]="amount" />
+
+    <label for="termMonths">Term (months)</label>
+    <input id="termMonths" name="termMonths" [(ngModel)]="termMonths" />
+
+    <label for="creditScore">Credit Score</label>
+    <input id="creditScore" name="creditScore" [(ngModel)]="creditScore" />
+
+    <label for="ltv">LTV (0-1)</label>
+    <input id="ltv" name="ltv" [(ngModel)]="ltv" />
+
+    <label for="deposits">Deposit Balance ($)</label>
+    <input id="deposits" name="deposits" [(ngModel)]="deposits" />
+  </div>
+
+  <button type="button" class="action-btn" (click)="priceLoan()">Price Loan</button>
+
+  <div class="result-labels">
+    <div class="result-label">{{ rateText() }}</div>
+    <div class="result-label plain">{{ feeText() }}</div>
+    <div class="result-label plain">{{ paymentText() }}</div>
+  </div>
+
+  <div class="late-fee-row">
+    <label for="lateDays">Days late</label>
+    <input id="lateDays" name="lateDays" [(ngModel)]="lateDays" />
+    <button type="button" class="action-btn" (click)="lateFee()">Late Fee (DB)</button>
+    <span class="result-label plain">{{ lateFeeText() }}</span>
+  </div>
+
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Period</th>
+        <th>Payment</th>
+        <th>Interest</th>
+        <th>Principal</th>
+        <th>Balance</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (r of rows(); track r.period) {
+        <tr>
+          <td>{{ r.period }}</td>
+          <td>{{ cell(r.payment) }}</td>
+          <td>{{ cell(r.interest) }}</td>
+          <td>{{ cell(r.principal) }}</td>
+          <td>{{ cell(r.balance) }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  @if (msg(); as m) {
+    <app-message-box [caption]="m.caption" [text]="m.text" [icon]="m.icon" (closed)="msg.set(null)" />
+  }
+</div>

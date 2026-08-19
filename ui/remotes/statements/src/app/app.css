@@ -1,0 +1,56 @@
+.screen {
+  font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, sans-serif;
+  max-width: 880px;
+}
+
+.screen-title {
+  font-size: 12pt;
+  margin: 0 0 12px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.toolbar label {
+  font-size: 10pt;
+}
+
+.toolbar input {
+  width: 110px;
+  padding: 3px 5px;
+  border: 1px solid #7a7a7a;
+}
+
+.action-btn {
+  padding: 5px 14px;
+  font-size: 10pt;
+}
+
+.grid {
+  border-collapse: collapse;
+  font-size: 9pt;
+  width: 100%;
+}
+
+.grid th,
+.grid td {
+  border: 1px solid #c0c0c0;
+  padding: 2px 8px;
+  text-align: right;
+}
+
+.grid th {
+  background: #e8e8e8;
+}
+
+/* BR-UI-011: bold 10pt payoff label. */
+.payoff-label {
+  margin-top: 12px;
+  font-size: 10pt;
+  font-weight: bold;
+  min-height: 16px;
+}
