@@ -1,0 +1,182 @@
+[
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 300",
+    "input": {
+      "creditScore": 300
+    },
+    "expected": {
+      "prequalifiedProducts": "None — refer to special assets",
+      "labelText": "Pre-qualified products: None — refer to special assets"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 500",
+    "input": {
+      "creditScore": 500
+    },
+    "expected": {
+      "prequalifiedProducts": "None — refer to special assets",
+      "labelText": "Pre-qualified products: None — refer to special assets"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 600",
+    "input": {
+      "creditScore": 600
+    },
+    "expected": {
+      "prequalifiedProducts": "None — refer to special assets",
+      "labelText": "Pre-qualified products: None — refer to special assets"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 619",
+    "input": {
+      "creditScore": 619
+    },
+    "expected": {
+      "prequalifiedProducts": "None — refer to special assets",
+      "labelText": "Pre-qualified products: None — refer to special assets"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 620",
+    "input": {
+      "creditScore": 620
+    },
+    "expected": {
+      "prequalifiedProducts": "EQUIP only",
+      "labelText": "Pre-qualified products: EQUIP only"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 621",
+    "input": {
+      "creditScore": 621
+    },
+    "expected": {
+      "prequalifiedProducts": "EQUIP only",
+      "labelText": "Pre-qualified products: EQUIP only"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 639",
+    "input": {
+      "creditScore": 639
+    },
+    "expected": {
+      "prequalifiedProducts": "EQUIP only",
+      "labelText": "Pre-qualified products: EQUIP only"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 640",
+    "input": {
+      "creditScore": 640
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, EQUIP",
+      "labelText": "Pre-qualified products: TERM, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 641",
+    "input": {
+      "creditScore": 641
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, EQUIP",
+      "labelText": "Pre-qualified products: TERM, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 659",
+    "input": {
+      "creditScore": 659
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, EQUIP",
+      "labelText": "Pre-qualified products: TERM, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 660",
+    "input": {
+      "creditScore": 660
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, LOC, EQUIP",
+      "labelText": "Pre-qualified products: TERM, LOC, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 661",
+    "input": {
+      "creditScore": 661
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, LOC, EQUIP",
+      "labelText": "Pre-qualified products: TERM, LOC, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 700",
+    "input": {
+      "creditScore": 700
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, LOC, EQUIP",
+      "labelText": "Pre-qualified products: TERM, LOC, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 742",
+    "input": {
+      "creditScore": 742
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, LOC, EQUIP",
+      "labelText": "Pre-qualified products: TERM, LOC, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  },
+  {
+    "ruleId": "BR-PQL-001",
+    "description": "credit score 850",
+    "input": {
+      "creditScore": 850
+    },
+    "expected": {
+      "prequalifiedProducts": "TERM, LOC, EQUIP",
+      "labelText": "Pre-qualified products: TERM, LOC, EQUIP"
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:60-70"
+  }
+]

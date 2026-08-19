@@ -1,0 +1,338 @@
+[
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "TERM amount 4999999.99",
+    "input": {
+      "product": "TERM",
+      "amount": 4999999.99,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.059   LTV: 0.250\nEst. payment at base rate: $97,830.74",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.058698444,
+      "dtiDisplay": "0.059",
+      "ltv": 0.2499999995,
+      "ltvDisplay": "0.250",
+      "estPayment": 97830.74,
+      "estPaymentDisplay": "$97,830.74",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "TERM amount 5000000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 5000000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.059   LTV: 0.250\nEst. payment at base rate: $97,830.74",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.058698444,
+      "dtiDisplay": "0.059",
+      "ltv": 0.25,
+      "ltvDisplay": "0.250",
+      "estPayment": 97830.74,
+      "estPaymentDisplay": "$97,830.74",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "TERM amount 5000000.01",
+    "input": {
+      "product": "TERM",
+      "amount": 5000000.01,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "TERM amount 6000000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 6000000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "LOC amount 4999999.99",
+    "input": {
+      "product": "LOC",
+      "amount": 4999999.99,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.135   LTV: 0.250\nEst. payment at base rate: $224,430.00",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.134658,
+      "dtiDisplay": "0.135",
+      "ltv": 0.2499999995,
+      "ltvDisplay": "0.250",
+      "estPayment": 224430.00,
+      "estPaymentDisplay": "$224,430.00",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "LOC amount 5000000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 5000000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.135   LTV: 0.250\nEst. payment at base rate: $224,430.00",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.134658,
+      "dtiDisplay": "0.135",
+      "ltv": 0.25,
+      "ltvDisplay": "0.250",
+      "estPayment": 224430.00,
+      "estPaymentDisplay": "$224,430.00",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "LOC amount 5000000.01",
+    "input": {
+      "product": "LOC",
+      "amount": 5000000.01,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "LOC amount 6000000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 6000000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "EQUIP amount 4999999.99",
+    "input": {
+      "product": "EQUIP",
+      "amount": 4999999.99,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.059   LTV: 0.250\nEst. payment at base rate: $98,770.26",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.059262156,
+      "dtiDisplay": "0.059",
+      "ltv": 0.2499999995,
+      "ltvDisplay": "0.250",
+      "estPayment": 98770.26,
+      "estPaymentDisplay": "$98,770.26",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "EQUIP amount 5000000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 5000000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.059   LTV: 0.250\nEst. payment at base rate: $98,770.26",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.059262156,
+      "dtiDisplay": "0.059",
+      "ltv": 0.25,
+      "ltvDisplay": "0.250",
+      "estPayment": 98770.26,
+      "estPaymentDisplay": "$98,770.26",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "EQUIP amount 5000000.01",
+    "input": {
+      "product": "EQUIP",
+      "amount": 5000000.01,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "description": "EQUIP amount 6000000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 6000000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 20000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:88-92"
+  }
+]

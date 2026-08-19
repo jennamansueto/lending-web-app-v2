@@ -1,0 +1,434 @@
+[
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "approval persisted: TERM typical application",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 5
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "creditScore": 700,
+      "dti": 0.1391,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.1391322,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.1391,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "approval persisted: LOC typical application",
+    "input": {
+      "borrowerId": 1,
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 5
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "creditScore": 700,
+      "dti": 0.1898,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.189772,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.1898,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "approval persisted: EQUIP typical application",
+    "input": {
+      "borrowerId": 1,
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 5
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "creditScore": 700,
+      "dti": 0.1395,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.1395082,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.1395,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "approval persisted: TERM at four boundaries at once",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 25000.0,
+      "termMonths": 12,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 640,
+      "collateralValue": 27777.777777777777777777777778,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 25000.0,
+      "termMonths": 12,
+      "creditScore": 640,
+      "dti": 0.0216,
+      "ltv": 0.9,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.0215741,
+      "unroundedLtv": 0.9,
+      "dtiAwayFromZero": 0.0216,
+      "ltvAwayFromZero": 0.9,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "LTV exactly at the 4-dp midpoint (0.80005)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 80005.00000,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 80005.00000,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.0009,
+      "ltv": 0.8000,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.000939234,
+      "unroundedLtv": 0.80005,
+      "dtiAwayFromZero": 0.0009,
+      "ltvAwayFromZero": 0.8001,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": true
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "LTV exactly at the 4-dp midpoint (0.80015)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 80015.00000,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 80015.00000,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.0009,
+      "ltv": 0.8002,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.000939354,
+      "unroundedLtv": 0.80015,
+      "dtiAwayFromZero": 0.0009,
+      "ltvAwayFromZero": 0.8002,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "LTV exactly at the 4-dp midpoint (0.87505)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 87505.00000,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 87505.00000,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.0010,
+      "ltv": 0.8750,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.001027284,
+      "unroundedLtv": 0.87505,
+      "dtiAwayFromZero": 0.0010,
+      "ltvAwayFromZero": 0.8751,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": true
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "LTV exactly at the 4-dp midpoint (0.87515)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 87515.00000,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 87515.00000,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.0010,
+      "ltv": 0.8752,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.001027398,
+      "unroundedLtv": 0.87515,
+      "dtiAwayFromZero": 0.0010,
+      "ltvAwayFromZero": 0.8752,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "DTI exactly at the 4-dp midpoint (0.30005)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 28048.39000,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.3000,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.30005,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.3001,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": true,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "DTI exactly at the 4-dp midpoint (0.30015)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 28058.39000,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.3002,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.30015,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.3002,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "DTI exactly at the 4-dp midpoint (0.44445)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 42488.39000,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.4444,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.44445,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.4445,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": true,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  },
+  {
+    "ruleId": "BR-ELG-010",
+    "description": "DTI exactly at the 4-dp midpoint (0.44455)",
+    "input": {
+      "borrowerId": 1,
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 42498.39000,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "borrowerId": 1,
+      "productType": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "creditScore": 800,
+      "dti": 0.4446,
+      "ltv": 0.5,
+      "status": "SUBMITTED",
+      "appIdSource": "SEQ_LOAN_APPLICATION.NEXTVAL",
+      "createdAtSource": "database SYSDATE"
+    },
+    "roundingContrast": {
+      "unroundedDti": 0.44455,
+      "unroundedLtv": 0.5,
+      "dtiAwayFromZero": 0.4446,
+      "ltvAwayFromZero": 0.5,
+      "dtiRoundingDiffers": false,
+      "ltvRoundingDiffers": false
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:166-181"
+  }
+]
