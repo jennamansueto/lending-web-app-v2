@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Contoso.Lending.Workflow</RootNamespace>
+    <AssemblyName>Contoso.Lending.Workflow</AssemblyName>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!--
+    Layer 3 (workflow/orchestration) may reference only the Temporal SDK and the BCL.
+    Adding a domain, data-access or database reference here is a layer violation and is
+    rejected by tests/Contoso.Lending.WorkflowTests/WorkflowPurityTests.cs.
+  -->
+  <ItemGroup>
+    <Content Include="demo/scenarios.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageReference Include="Temporalio" Version="1.18.0" />
+    <PackageReference Include="Temporalio.Extensions.Hosting" Version="1.18.0" />
+  </ItemGroup>
+
+</Project>
