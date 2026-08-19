@@ -1,0 +1,506 @@
+[
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "TERM amount 0.00",
+    "input": {
+      "product": "TERM",
+      "amount": 0.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "TERM amount 1000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 1000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "TERM amount 24999.99",
+    "input": {
+      "product": "TERM",
+      "amount": 24999.99,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "TERM amount 25000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 25000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.000   LTV: 0.003\nEst. payment at base rate: $489.15",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00029349,
+      "dtiDisplay": "0.000",
+      "ltv": 0.0025,
+      "ltvDisplay": "0.003",
+      "estPayment": 489.15,
+      "estPaymentDisplay": "$489.15",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "TERM amount 25000.01",
+    "input": {
+      "product": "TERM",
+      "amount": 25000.01,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.000   LTV: 0.003\nEst. payment at base rate: $489.15",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00029349,
+      "dtiDisplay": "0.000",
+      "ltv": 0.002500001,
+      "ltvDisplay": "0.003",
+      "estPayment": 489.15,
+      "estPaymentDisplay": "$489.15",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "TERM amount 100000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "LOC amount 0.00",
+    "input": {
+      "product": "LOC",
+      "amount": 0.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "LOC amount 1000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 1000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "LOC amount 24999.99",
+    "input": {
+      "product": "LOC",
+      "amount": 24999.99,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "LOC amount 25000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.003\nEst. payment at base rate: $1,122.15",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00067329,
+      "dtiDisplay": "0.001",
+      "ltv": 0.0025,
+      "ltvDisplay": "0.003",
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "LOC amount 25000.01",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.01,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.003\nEst. payment at base rate: $1,122.15",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00067329,
+      "dtiDisplay": "0.001",
+      "ltv": 0.002500001,
+      "ltvDisplay": "0.003",
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "LOC amount 100000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.003   LTV: 0.010\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "EQUIP amount 0.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 0.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "EQUIP amount 1000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 1000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "EQUIP amount 24999.99",
+    "input": {
+      "product": "EQUIP",
+      "amount": 24999.99,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "EQUIP amount 25000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 25000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.000   LTV: 0.003\nEst. payment at base rate: $493.85",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00029631,
+      "dtiDisplay": "0.000",
+      "ltv": 0.0025,
+      "ltvDisplay": "0.003",
+      "estPayment": 493.85,
+      "estPaymentDisplay": "$493.85",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "EQUIP amount 25000.01",
+    "input": {
+      "product": "EQUIP",
+      "amount": 25000.01,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.000   LTV: 0.003\nEst. payment at base rate: $493.85",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00029631,
+      "dtiDisplay": "0.000",
+      "ltv": 0.002500001,
+      "ltvDisplay": "0.003",
+      "estPayment": 493.85,
+      "estPaymentDisplay": "$493.85",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  },
+  {
+    "ruleId": "BR-ELG-001",
+    "description": "EQUIP amount 100000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:83-87"
+  }
+]

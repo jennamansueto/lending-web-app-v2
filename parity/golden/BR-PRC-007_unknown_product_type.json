@@ -1,0 +1,218 @@
+[
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product 'XYZ'",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": "XYZ"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: XYZ"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product 'XYZ'",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": "XYZ"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: XYZ"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product ''",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": ""
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: "
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product ''",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": ""
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: "
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product ' '",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": " "
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type:  "
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product ' '",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": " "
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type:  "
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product 'term'",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": "term"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: term"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product 'term'",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": "term"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: term"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product 'Term'",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": "Term"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: Term"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product 'Term'",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": "Term"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: Term"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product 'TERM '",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": "TERM "
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: TERM "
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product 'TERM '",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": "TERM "
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: TERM "
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product 'LOC1'",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": "LOC1"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: LOC1"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product 'LOC1'",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": "LOC1"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: LOC1"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "GetBaseRate rejects product 'LINE_OF_CREDIT'",
+    "input": {
+      "entryPoint": "LoanCalculator.GetBaseRate",
+      "productType": "LINE_OF_CREDIT"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: LINE_OF_CREDIT"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:24"
+  },
+  {
+    "ruleId": "BR-PRC-007",
+    "description": "CalcOriginationFee rejects product 'LINE_OF_CREDIT'",
+    "input": {
+      "entryPoint": "LoanCalculator.CalcOriginationFee",
+      "amount": 100000.0,
+      "productType": "LINE_OF_CREDIT"
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "Unknown product type: LINE_OF_CREDIT"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:82"
+  }
+]

@@ -1,0 +1,1802 @@
+[
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 9.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 9.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 9.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.55
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 10.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 10.05
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.95
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.70
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 8.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 8.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 9.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.20
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.95
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 7.35
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 7.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 8.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 6.70
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.45
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 6.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 7.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 7.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 6.35
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 6.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 6.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.80
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 7.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.30
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "TERM",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 9.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 10.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 10.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 10.30
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 10.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 10.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 10.80
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 10.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 8.70
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.45
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 8.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 9.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 9.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.95
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.70
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 8.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 8.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 9.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.45
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.35
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.20
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 7.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.35
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 8.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 8.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 7.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 7.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.55
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 8.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.05
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "LOC",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 9.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 9.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.55
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 10.05
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.95
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.80
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 10.55
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 10.45
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 600,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 10.30
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 8.35
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 8.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 8.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.80
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 9.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 9.30
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 640,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 9.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.60
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.35
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 7.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 8.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.05
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 8.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.55
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 680,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 8.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 7.10
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.85
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 7.25
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.00
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 7.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.55
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.40
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 8.15
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 8.05
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 720,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 0.0
+    },
+    "expected": 6.75
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.50,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.50
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 0.0
+    },
+    "expected": 6.90
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 150000.0
+    },
+    "expected": 6.80
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.70,
+      "depositBalance": 300000.0
+    },
+    "expected": 6.65
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 0.0
+    },
+    "expected": 7.30
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.20
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.80,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.05
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 0.0
+    },
+    "expected": 7.80
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 150000.0
+    },
+    "expected": 7.70
+  },
+  {
+    "ruleId": "BR-PRC-005",
+    "input": {
+      "productType": "EQUIP",
+      "creditScore": 760,
+      "ltv": 0.90,
+      "depositBalance": 300000.0
+    },
+    "expected": 7.55
+  }
+]
