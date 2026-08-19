@@ -1,0 +1,48 @@
+{
+  "_source": "Copied verbatim from the legacy golden corpus parity/golden/BR-ELG-009_eligibility_decision.json (lending-desktop-app, branch devin/1787179431-parity-corpus): case 'approval: TERM typical application' and case 'precedence 4/9: term repaired -> credit score fires'.",
+  "_note": "expected.resultText is the legacy user-visible string and is compared byte-for-byte by the demo runner. The workflow layer never builds it; the service returns it.",
+  "scenarios": [
+    {
+      "name": "approved",
+      "description": "approval: TERM typical application",
+      "borrowerId": 1,
+      "input": {
+        "productType": "TERM",
+        "amount": 100000.0,
+        "termMonths": 60,
+        "annualIncome": 600000.0,
+        "monthlyDebt": 5000.0,
+        "creditScore": 700,
+        "collateralValue": 200000.0,
+        "yearsInBusiness": 5
+      },
+      "expected": {
+        "decision": "APPROVED",
+        "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.139   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+        "declineReason": null,
+        "firedRuleId": "BR-ELG-009"
+      }
+    },
+    {
+      "name": "declined",
+      "description": "precedence 4/9: term repaired -> credit score fires",
+      "borrowerId": 1,
+      "input": {
+        "productType": "LOC",
+        "amount": 25000.0,
+        "termMonths": 24,
+        "annualIncome": 12000.0,
+        "monthlyDebt": 5000.0,
+        "creditScore": 500,
+        "collateralValue": -100.0,
+        "yearsInBusiness": 0
+      },
+      "expected": {
+        "decision": "DECLINED",
+        "resultText": "DECLINED\nCredit score 500 below product minimum of 660.",
+        "declineReason": "Credit score 500 below product minimum of 660.",
+        "firedRuleId": "BR-ELG-004"
+      }
+    }
+  ]
+}
