@@ -1,0 +1,17 @@
+<div class="main-form">
+  <h1 class="header">Contoso Bank — Commercial Lending Desk</h1>
+  <p class="sub-header">Internal use only.  Direct issues to the Lending Systems team (x4471).</p>
+
+  <nav class="launcher">
+    <a routerLink="/loan-application" class="nav-btn">New Loan Application</a>
+    <a routerLink="/pricing" class="nav-btn">Pricing &amp; Amortization</a>
+    <a routerLink="/borrower-lookup" class="nav-btn">Borrower Lookup</a>
+    <a routerLink="/statements" class="nav-btn">Statements Export</a>
+  </nav>
+
+  <main class="screen-host">
+    <router-outlet />
+  </main>
+
+  <footer class="status-bar">{{ statusBarText }}</footer>
+</div>

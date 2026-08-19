@@ -1,0 +1,38 @@
+<div class="screen">
+  <h2 class="screen-title">Borrower Lookup</h2>
+
+  <div class="search-row">
+    <label for="searchText">Name or Tax ID:</label>
+    <input id="searchText" name="searchText" [(ngModel)]="searchText" (keyup.enter)="search()" />
+    <button type="button" class="action-btn" (click)="search()">Search</button>
+  </div>
+
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>BORROWER_ID</th>
+        <th>LEGAL_NAME</th>
+        <th>TAX_ID</th>
+        <th>CREDIT_SCORE</th>
+        <th>DEPOSIT_BALANCE</th>
+        <th>YEARS_IN_BUSINESS</th>
+        <th>ACTIVE_LOANS</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (r of rows(); track r.borrowerId) {
+        <tr [class.selected]="selectedId() === r.borrowerId" (click)="select(r)">
+          <td>{{ r.borrowerId }}</td>
+          <td class="name">{{ r.legalName }}</td>
+          <td>{{ r.taxId }}</td>
+          <td>{{ r.creditScore }}</td>
+          <td>{{ r.depositBalance }}</td>
+          <td>{{ r.yearsInBusiness }}</td>
+          <td>{{ r.activeLoans }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="hint-panel">{{ hintText() }}</div>
+</div>

@@ -1,0 +1,574 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "shell": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "shell",
+      "sourceRoot": "shell/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "shell/tsconfig.federation.json"
+          },
+          "configurations": {
+            "production": {
+              "target": "shell:esbuild:production"
+            },
+            "development": {
+              "target": "shell:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "shell:serve-original:development",
+            "tsConfig": "shell/tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "shell/src/main.ts",
+            "tsConfig": "shell/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "shell/public"
+              }
+            ],
+            "styles": [
+              "shell/src/styles.css"
+            ],
+            "polyfills": [
+              "es-module-shims"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "shell:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "shell:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4200
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "shell/**/*.ts",
+              "shell/**/*.html"
+            ],
+            "eslintConfig": "shell/eslint.config.js"
+          }
+        }
+      }
+    },
+    "loan-application": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "remotes/loan-application",
+      "sourceRoot": "remotes/loan-application/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "remotes/loan-application/tsconfig.federation.json"
+          },
+          "configurations": {
+            "production": {
+              "target": "loan-application:esbuild:production"
+            },
+            "development": {
+              "target": "loan-application:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "loan-application:serve-original:development",
+            "tsConfig": "remotes/loan-application/tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "remotes/loan-application/src/main.ts",
+            "tsConfig": "remotes/loan-application/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "remotes/loan-application/public"
+              }
+            ],
+            "styles": [
+              "remotes/loan-application/src/styles.css"
+            ],
+            "polyfills": [
+              "es-module-shims"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "remotes/loan-application/src/environments/environment.ts",
+                  "with": "remotes/loan-application/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "loan-application:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "loan-application:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4201
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "remotes/loan-application/**/*.ts",
+              "remotes/loan-application/**/*.html"
+            ],
+            "eslintConfig": "remotes/loan-application/eslint.config.js"
+          }
+        }
+      }
+    },
+    "pricing": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "remotes/pricing",
+      "sourceRoot": "remotes/pricing/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "remotes/pricing/tsconfig.federation.json"
+          },
+          "configurations": {
+            "production": {
+              "target": "pricing:esbuild:production"
+            },
+            "development": {
+              "target": "pricing:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "pricing:serve-original:development",
+            "tsConfig": "remotes/pricing/tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "remotes/pricing/src/main.ts",
+            "tsConfig": "remotes/pricing/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "remotes/pricing/public"
+              }
+            ],
+            "styles": [
+              "remotes/pricing/src/styles.css"
+            ],
+            "polyfills": [
+              "es-module-shims"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "remotes/pricing/src/environments/environment.ts",
+                  "with": "remotes/pricing/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "pricing:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "pricing:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4202
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "remotes/pricing/**/*.ts",
+              "remotes/pricing/**/*.html"
+            ],
+            "eslintConfig": "remotes/pricing/eslint.config.js"
+          }
+        }
+      }
+    },
+    "borrower-lookup": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "remotes/borrower-lookup",
+      "sourceRoot": "remotes/borrower-lookup/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "remotes/borrower-lookup/tsconfig.federation.json"
+          },
+          "configurations": {
+            "production": {
+              "target": "borrower-lookup:esbuild:production"
+            },
+            "development": {
+              "target": "borrower-lookup:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "borrower-lookup:serve-original:development",
+            "tsConfig": "remotes/borrower-lookup/tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "remotes/borrower-lookup/src/main.ts",
+            "tsConfig": "remotes/borrower-lookup/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "remotes/borrower-lookup/public"
+              }
+            ],
+            "styles": [
+              "remotes/borrower-lookup/src/styles.css"
+            ],
+            "polyfills": [
+              "es-module-shims"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "remotes/borrower-lookup/src/environments/environment.ts",
+                  "with": "remotes/borrower-lookup/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "borrower-lookup:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "borrower-lookup:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4203
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "remotes/borrower-lookup/**/*.ts",
+              "remotes/borrower-lookup/**/*.html"
+            ],
+            "eslintConfig": "remotes/borrower-lookup/eslint.config.js"
+          }
+        }
+      }
+    },
+    "statements": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "remotes/statements",
+      "sourceRoot": "remotes/statements/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "cacheExternalArtifacts": true,
+            "tsConfig": "remotes/statements/tsconfig.federation.json"
+          },
+          "configurations": {
+            "production": {
+              "target": "statements:esbuild:production"
+            },
+            "development": {
+              "target": "statements:esbuild:development",
+              "dev": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "statements:serve-original:development",
+            "tsConfig": "remotes/statements/tsconfig.federation.json",
+            "rebuildDelay": 500,
+            "cacheExternalArtifacts": true,
+            "dev": true,
+            "devServer": true,
+            "port": 0
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test"
+        },
+        "esbuild": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "remotes/statements/src/main.ts",
+            "tsConfig": "remotes/statements/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "remotes/statements/public"
+              }
+            ],
+            "styles": [
+              "remotes/statements/src/styles.css"
+            ],
+            "polyfills": [
+              "es-module-shims"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "remotes/statements/src/environments/environment.ts",
+                  "with": "remotes/statements/src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-original": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "statements:esbuild:production"
+            },
+            "development": {
+              "buildTarget": "statements:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4204
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "remotes/statements/**/*.ts",
+              "remotes/statements/**/*.html"
+            ],
+            "eslintConfig": "remotes/statements/eslint.config.js"
+          }
+        }
+      }
+    }
+  }
+}
