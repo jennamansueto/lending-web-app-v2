@@ -1,0 +1,107 @@
+[
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 300
+    },
+    "expected": 2.75
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 550
+    },
+    "expected": 2.75
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 639
+    },
+    "expected": 2.75
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 640
+    },
+    "expected": 1.60
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 641
+    },
+    "expected": 1.60
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 679
+    },
+    "expected": 1.60
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 680
+    },
+    "expected": 0.85
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 681
+    },
+    "expected": 0.85
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 719
+    },
+    "expected": 0.85
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 720
+    },
+    "expected": 0.35
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 721
+    },
+    "expected": 0.35
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 759
+    },
+    "expected": 0.35
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 760
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 761
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-002",
+    "input": {
+      "creditScore": 850
+    },
+    "expected": 0.00
+  }
+]

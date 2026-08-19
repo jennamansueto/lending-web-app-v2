@@ -1,0 +1,170 @@
+[
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths 0 at 0.00%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 0
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths 0 at 6.50%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 0
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths -1 at 0.00%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": -1
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths -1 at 6.50%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": -1
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths -12 at 0.00%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": -12
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths -12 at 6.50%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": -12
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths -2147483648 at 0.00%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": -2147483648
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "MonthlyPayment rejects termMonths -2147483648 at 6.50%",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": -2147483648
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "BuildSchedule propagates the rejection of termMonths 0",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 0
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "BuildSchedule propagates the rejection of termMonths -1",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": -1
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "BuildSchedule propagates the rejection of termMonths -12",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": -12
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  },
+  {
+    "ruleId": "BR-AMT-003",
+    "description": "BuildSchedule propagates the rejection of termMonths -2147483648",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": -2147483648
+    },
+    "expectedError": {
+      "type": "System.ArgumentException",
+      "message": "termMonths must be positive"
+    },
+    "sourceRef": "src/LendingDesk/Core/LoanCalculator.cs:89"
+  }
+]

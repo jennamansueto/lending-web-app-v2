@@ -1,0 +1,422 @@
+[
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "TERM: no other debt service",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.039   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0391322,
+      "dtiDisplay": "0.039",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "TERM: DTI a cent under the 0.45 cap",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 20543.38,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.450   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.4499998,
+      "dtiDisplay": "0.450",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "TERM: DTI at the 0.45 cap (cent granularity)",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 20543.39,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.450   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.45,
+      "dtiDisplay": "0.450",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "TERM: DTI a cent over the 0.45 cap",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 20543.40,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 0.450 exceeds maximum 0.45.",
+      "declineReason": "DTI 0.450 exceeds maximum 0.45.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 0.4500002,
+      "dtiDisplay": "0.450",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "TERM: DTI far over the cap",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 100000.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 2.039 exceeds maximum 0.45.",
+      "declineReason": "DTI 2.039 exceeds maximum 0.45.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 2.0391322,
+      "dtiDisplay": "2.039",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "LOC: no other debt service",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.090   LTV: 0.500\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.089772,
+      "dtiDisplay": "0.090",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "LOC: DTI a cent under the 0.40 cap",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 15511.39,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.400   LTV: 0.500\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.3999998,
+      "dtiDisplay": "0.400",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "LOC: DTI at the 0.40 cap (cent granularity)",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 15511.4,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.400   LTV: 0.500\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.40,
+      "dtiDisplay": "0.400",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "LOC: DTI a cent over the 0.40 cap",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 15511.41,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 0.400 exceeds maximum 0.40.",
+      "declineReason": "DTI 0.400 exceeds maximum 0.40.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 0.4000002,
+      "dtiDisplay": "0.400",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "LOC: DTI far over the cap",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 100000.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 2.090 exceeds maximum 0.40.",
+      "declineReason": "DTI 2.090 exceeds maximum 0.40.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 2.089772,
+      "dtiDisplay": "2.090",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "EQUIP: no other debt service",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.040   LTV: 0.500\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0395082,
+      "dtiDisplay": "0.040",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "EQUIP: DTI a cent under the 0.45 cap",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 20524.58,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.450   LTV: 0.500\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.4499998,
+      "dtiDisplay": "0.450",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "EQUIP: DTI at the 0.45 cap (cent granularity)",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 20524.59,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.450   LTV: 0.500\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.45,
+      "dtiDisplay": "0.450",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "EQUIP: DTI a cent over the 0.45 cap",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 20524.60,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 0.450 exceeds maximum 0.45.",
+      "declineReason": "DTI 0.450 exceeds maximum 0.45.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 0.4500002,
+      "dtiDisplay": "0.450",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  },
+  {
+    "ruleId": "BR-ELG-005",
+    "description": "EQUIP: DTI far over the cap",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 100000.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 2.040 exceeds maximum 0.45.",
+      "declineReason": "DTI 2.040 exceeds maximum 0.45.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 2.0395082,
+      "dtiDisplay": "2.040",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:113-120"
+  }
+]

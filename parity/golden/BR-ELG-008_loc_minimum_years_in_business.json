@@ -1,0 +1,422 @@
+[
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "TERM years in business 0 (rule applies to LOC only)",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "TERM years in business 1 (rule applies to LOC only)",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 1
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "TERM years in business 2 (rule applies to LOC only)",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 2
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "TERM years in business 3 (rule applies to LOC only)",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 3
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "TERM years in business 20 (rule applies to LOC only)",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "LOC years in business 0",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLines of credit require at least 2 years in business.",
+      "declineReason": "Lines of credit require at least 2 years in business.",
+      "firedRuleId": "BR-ELG-008",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "LOC years in business 1",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 1
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLines of credit require at least 2 years in business.",
+      "declineReason": "Lines of credit require at least 2 years in business.",
+      "firedRuleId": "BR-ELG-008",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "LOC years in business 2",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 2
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.003   LTV: 0.010\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "LOC years in business 3",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 3
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.003   LTV: 0.010\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "LOC years in business 20",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.003   LTV: 0.010\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "EQUIP years in business 0 (rule applies to LOC only)",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "EQUIP years in business 1 (rule applies to LOC only)",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 1
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "EQUIP years in business 2 (rule applies to LOC only)",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 2
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "EQUIP years in business 3 (rule applies to LOC only)",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 3
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  },
+  {
+    "ruleId": "BR-ELG-008",
+    "description": "EQUIP years in business 20 (rule applies to LOC only)",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:137-141"
+  }
+]

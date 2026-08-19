@@ -1,0 +1,327 @@
+[
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: -5 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": -5
+    },
+    "expected": {
+      "lateFee": 0.0,
+      "labelText": "Late fee: $0.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 0 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0,
+      "labelText": "Late fee: $0.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 1 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0,
+      "labelText": "Late fee: $0.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 5 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 5
+    },
+    "expected": {
+      "lateFee": 0.0,
+      "labelText": "Late fee: $0.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 9 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0,
+      "labelText": "Late fee: $0.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 10 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0,
+      "labelText": "Late fee: $0.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 11 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 12 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 30 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "grace boundary: 365 days late on a $3,000 payment",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 365
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "zero payment -> 5% is 0, floored to the $25 minimum",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 25.0,
+      "labelText": "Late fee: $25.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "negative payment -> 5% is negative, still floored to $25 (quirk preserved)",
+    "input": {
+      "paymentAmount": -1000.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 25.0,
+      "labelText": "Late fee: $25.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 5.00, below the $25 minimum",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 25.0,
+      "labelText": "Late fee: $25.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 25.00 after ROUND, just below the $500 minimum boundary",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 25.0,
+      "labelText": "Late fee: $25.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 25.00 exactly at the minimum boundary",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 25.0,
+      "labelText": "Late fee: $25.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 25.00 after ROUND, just above the $500 boundary",
+    "input": {
+      "paymentAmount": 500.01,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 25.0,
+      "labelText": "Late fee: $25.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 27.505 -> Oracle ROUND half-away-from-zero",
+    "input": {
+      "paymentAmount": 550.10,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 27.51,
+      "labelText": "Late fee: $27.51"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 50.00, inside the band",
+    "input": {
+      "paymentAmount": 1000.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 50.0,
+      "labelText": "Late fee: $50.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 50.005 -> Oracle ROUND half-away-from-zero",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 50.01,
+      "labelText": "Late fee: $50.01"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 150.00 after ROUND, just below the $3,000 cap boundary",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 150.00 exactly at the cap boundary",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 150.00 after ROUND, just above the $3,000 boundary",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 150.50, first amount clipped by the $150 cap",
+    "input": {
+      "paymentAmount": 3010.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 200.00, above the $150 cap",
+    "input": {
+      "paymentAmount": 4000.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "description": "5% = 5,000.00, far above the cap",
+    "input": {
+      "paymentAmount": 100000.0,
+      "daysLate": 15
+    },
+    "expected": {
+      "lateFee": 150.0,
+      "labelText": "Late fee: $150.00"
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:20-39"
+  }
+]
