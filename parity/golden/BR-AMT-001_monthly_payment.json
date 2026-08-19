@@ -1,0 +1,1127 @@
+[
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 12
+    },
+    "expected": 2083.33
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 36
+    },
+    "expected": 694.44
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 60
+    },
+    "expected": 416.67
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 84
+    },
+    "expected": 297.62
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 120
+    },
+    "expected": 208.33
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 12
+    },
+    "expected": 2128.75
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 36
+    },
+    "expected": 738.10
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 60
+    },
+    "expected": 460.41
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 84
+    },
+    "expected": 341.72
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 120
+    },
+    "expected": 253.11
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 12
+    },
+    "expected": 2157.41
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 36
+    },
+    "expected": 766.23
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 60
+    },
+    "expected": 489.15
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 84
+    },
+    "expected": 371.24
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 120
+    },
+    "expected": 283.87
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 12
+    },
+    "expected": 2172.05
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 36
+    },
+    "expected": 780.76
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 60
+    },
+    "expected": 504.16
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 84
+    },
+    "expected": 386.80
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 120
+    },
+    "expected": 300.29
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 12
+    },
+    "expected": 2227.07
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 36
+    },
+    "expected": 836.34
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 60
+    },
+    "expected": 562.45
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 84
+    },
+    "expected": 448.03
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 120
+    },
+    "expected": 365.94
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 12
+    },
+    "expected": 8333.33
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 36
+    },
+    "expected": 2777.78
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 60
+    },
+    "expected": 1666.67
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 84
+    },
+    "expected": 1190.48
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 120
+    },
+    "expected": 833.33
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 12
+    },
+    "expected": 8514.99
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 36
+    },
+    "expected": 2952.40
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 60
+    },
+    "expected": 1841.65
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 84
+    },
+    "expected": 1366.88
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 120
+    },
+    "expected": 1012.45
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 12
+    },
+    "expected": 8629.64
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 36
+    },
+    "expected": 3064.90
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 60
+    },
+    "expected": 1956.61
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 84
+    },
+    "expected": 1484.94
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 120
+    },
+    "expected": 1135.48
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 12
+    },
+    "expected": 8688.21
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 36
+    },
+    "expected": 3123.04
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 60
+    },
+    "expected": 2016.65
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 84
+    },
+    "expected": 1547.19
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 120
+    },
+    "expected": 1201.16
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 12
+    },
+    "expected": 8908.29
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 36
+    },
+    "expected": 3345.36
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 60
+    },
+    "expected": 2249.79
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 84
+    },
+    "expected": 1792.12
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 120
+    },
+    "expected": 1463.76
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 12
+    },
+    "expected": 37500.0
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 36
+    },
+    "expected": 12500.0
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 60
+    },
+    "expected": 7500.0
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 84
+    },
+    "expected": 5357.14
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 120
+    },
+    "expected": 3750.0
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 12
+    },
+    "expected": 38317.46
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 36
+    },
+    "expected": 13285.79
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 60
+    },
+    "expected": 8287.43
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 84
+    },
+    "expected": 6150.96
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 120
+    },
+    "expected": 4556.03
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 12
+    },
+    "expected": 38833.39
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 36
+    },
+    "expected": 13792.05
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 60
+    },
+    "expected": 8804.77
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 84
+    },
+    "expected": 6682.25
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 120
+    },
+    "expected": 5109.66
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 12
+    },
+    "expected": 39096.95
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 36
+    },
+    "expected": 14053.67
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 60
+    },
+    "expected": 9074.92
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 84
+    },
+    "expected": 6962.34
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 120
+    },
+    "expected": 5405.21
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 12
+    },
+    "expected": 40087.29
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 36
+    },
+    "expected": 15054.13
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 60
+    },
+    "expected": 10124.07
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 84
+    },
+    "expected": 8064.56
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 120
+    },
+    "expected": 6586.93
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 0.0,
+      "termMonths": 12
+    },
+    "expected": 102880.66
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 0.0,
+      "termMonths": 36
+    },
+    "expected": 34293.55
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 0.0,
+      "termMonths": 60
+    },
+    "expected": 20576.13
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 0.0,
+      "termMonths": 84
+    },
+    "expected": 14697.24
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 0.0,
+      "termMonths": 120
+    },
+    "expected": 10288.07
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 4.00,
+      "termMonths": 12
+    },
+    "expected": 105123.34
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 4.00,
+      "termMonths": 36
+    },
+    "expected": 36449.36
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 4.00,
+      "termMonths": 60
+    },
+    "expected": 22736.45
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 4.00,
+      "termMonths": 84
+    },
+    "expected": 16875.07
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 4.00,
+      "termMonths": 120
+    },
+    "expected": 12499.40
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 6.50,
+      "termMonths": 12
+    },
+    "expected": 106538.79
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 6.50,
+      "termMonths": 36
+    },
+    "expected": 37838.27
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 6.50,
+      "termMonths": 60
+    },
+    "expected": 24155.74
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 6.50,
+      "termMonths": 84
+    },
+    "expected": 18332.64
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 6.50,
+      "termMonths": 120
+    },
+    "expected": 14018.27
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 7.77,
+      "termMonths": 12
+    },
+    "expected": 107261.88
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 7.77,
+      "termMonths": 36
+    },
+    "expected": 38556.01
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 7.77,
+      "termMonths": 60
+    },
+    "expected": 24896.91
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 7.77,
+      "termMonths": 84
+    },
+    "expected": 19101.08
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 7.77,
+      "termMonths": 120
+    },
+    "expected": 14829.10
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 12.50,
+      "termMonths": 12
+    },
+    "expected": 109978.84
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 12.50,
+      "termMonths": 36
+    },
+    "expected": 41300.77
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 12.50,
+      "termMonths": 60
+    },
+    "expected": 27775.23
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 12.50,
+      "termMonths": 84
+    },
+    "expected": 22124.99
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 1234567.89,
+      "annualRatePct": 12.50,
+      "termMonths": 120
+    },
+    "expected": 18071.13
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 12
+    },
+    "expected": 416666.67
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 36
+    },
+    "expected": 138888.89
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 60
+    },
+    "expected": 83333.33
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 84
+    },
+    "expected": 59523.81
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 120
+    },
+    "expected": 41666.67
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 12
+    },
+    "expected": 425749.52
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 36
+    },
+    "expected": 147619.93
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 60
+    },
+    "expected": 92082.61
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 84
+    },
+    "expected": 68344.03
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 4.00,
+      "termMonths": 120
+    },
+    "expected": 50622.57
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 12
+    },
+    "expected": 431482.08
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 36
+    },
+    "expected": 153245.01
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 60
+    },
+    "expected": 97830.74
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 84
+    },
+    "expected": 74247.18
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 120
+    },
+    "expected": 56773.99
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 12
+    },
+    "expected": 434410.61
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 36
+    },
+    "expected": 156151.85
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 60
+    },
+    "expected": 100832.49
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 84
+    },
+    "expected": 77359.36
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 7.77,
+      "termMonths": 120
+    },
+    "expected": 60057.85
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 12
+    },
+    "expected": 445414.31
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 36
+    },
+    "expected": 167268.13
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 60
+    },
+    "expected": 112489.69
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 84
+    },
+    "expected": 89606.19
+  },
+  {
+    "ruleId": "BR-AMT-001",
+    "input": {
+      "principal": 5000000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 120
+    },
+    "expected": 73188.08
+  }
+]
