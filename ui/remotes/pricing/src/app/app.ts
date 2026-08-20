@@ -14,8 +14,8 @@ interface ScheduleRow {
 
 interface QuoteResponse {
   rate: number;
-  fee: number;
-  payment: number;
+  originationFee: number;
+  monthlyPayment: number;
   rows: ScheduleRow[];
 }
 
@@ -81,8 +81,8 @@ export class App {
     const quote = payload as QuoteResponse;
     // BR-UI-001: exact label strings — rate 0.00 with a space before %, fee/payment C2.
     this.rateText.set('Rate: ' + quote.rate.toFixed(2) + ' %');
-    this.feeText.set('Origination fee: ' + formatC2(quote.fee));
-    this.paymentText.set('Monthly payment: ' + formatC2(quote.payment));
+    this.feeText.set('Origination fee: ' + formatC2(quote.originationFee));
+    this.paymentText.set('Monthly payment: ' + formatC2(quote.monthlyPayment));
     this.rows.set(quote.rows);
   }
 

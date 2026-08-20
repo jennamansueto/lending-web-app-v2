@@ -50,6 +50,7 @@ public static class DemoRunner
             Console.WriteLine($"status           : {result.Status}");
             Console.WriteLine($"appId            : {result.AppId?.ToString() ?? "(not persisted)"}");
             Console.WriteLine($"decision         : {result.Decision}");
+            Console.WriteLine($"declineReason    : {Escape(result.DeclineReason)}");
             Console.WriteLine($"firedRuleId      : {result.FiredRuleId}");
             Console.WriteLine($"resultText (esc) : {Escape(result.ResultText)}");
             Console.WriteLine($"expected   (esc) : {Escape(scenario.Expected.ResultText)}");

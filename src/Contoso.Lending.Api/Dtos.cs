@@ -3,7 +3,7 @@ namespace Contoso.Lending.Api;
 // Request DTOs follow docs/api-contract.md field names exactly.
 
 public sealed record EligibilityRequest(
-    int BorrowerId,
+    int? BorrowerId,
     string ProductType,
     decimal Amount,
     int TermMonths,

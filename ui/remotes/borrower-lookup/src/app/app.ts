@@ -33,7 +33,8 @@ export class App {
         `${environment.apiBaseUrl}/api/borrowers?search=${encodeURIComponent(this.searchText.trim())}`,
       );
       if (!res.ok) throw new Error(res.statusText);
-      const rows = (await res.json()) as BorrowerRow[];
+      const payload = (await res.json()) as { rows: BorrowerRow[] };
+      const rows = payload.rows;
       this.rows.set(rows);
       // Legacy grid auto-selects the first row after a search, which fires the
       // pre-qualification hint (BR-UI-008).

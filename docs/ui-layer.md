@@ -14,7 +14,7 @@ UI parses input text, submits it, and renders returned values — nothing else.
 | `pricing` | `ui/remotes/pricing/` | 4202 | `PricingForm` |
 | `borrower-lookup` | `ui/remotes/borrower-lookup/` | 4203 | `BorrowerLookupForm` |
 | `statements` | `ui/remotes/statements/` | 4204 | `StatementsForm` |
-| mock API | `ui/mock-api/server.mjs` | 5080 | Dev-only mock of the service contract (not the service layer) |
+| service API | `src/Contoso.Lending.Api/` | 5080 | .NET 8 service layer backed by Postgres |
 
 Each remote exposes `./Component` (its root standalone component) through
 `federation.config.mjs`; the shell maps route paths to remotes via
@@ -38,14 +38,12 @@ values, or eligibility decisions. The only client-side formatting is presentatio
 numbers the API returned (e.g. two-decimal grid cells, `$#,##0.00` for the payoff label — the
 WinForms `ToString("C2")` equivalent).
 
-## API base URL / mock switching
+## API base URL
 
 Each remote reads `environment.apiBaseUrl` from `src/environments/environment.ts`
 (`http://localhost:5080` in dev, replaced by `environment.prod.ts` via Angular file replacement in
-production builds). `ui/mock-api/server.mjs` (`node ui/mock-api/server.mjs`) is development
-infrastructure only: it implements the exact contract shapes and legacy result strings so the UI
-could be built in parallel with the service layer. Pointing `apiBaseUrl` at the real service
-requires no UI change.
+production builds). Development and production verification use the real .NET service API; the
+API allows the local Angular development origins through its CORS policy.
 
 ## Reproduced legacy quirks
 
@@ -69,7 +67,7 @@ requires no UI change.
 ```bash
 cd ui
 npm ci
-node mock-api/server.mjs &        # contract mock on :5080
+dotnet run --project ../src/Contoso.Lending.Api &  # real service API on :5080
 npx ng serve loan-application &   # :4201
 npx ng serve pricing &            # :4202
 npx ng serve borrower-lookup &    # :4203

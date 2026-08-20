@@ -19,8 +19,21 @@ builder.Services.AddSingleton<BorrowerRepository>();
 builder.Services.AddSingleton<ApplicationRepository>();
 builder.Services.AddSingleton<LoanRepository>();
 builder.Services.Configure<JsonOptions>(o => o.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase);
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ui-development", policy =>
+        policy.WithOrigins(
+                "http://localhost:4200",
+                "http://localhost:4201",
+                "http://localhost:4202",
+                "http://localhost:4203",
+                "http://localhost:4204")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
 
 var app = builder.Build();
+app.UseCors("ui-development");
 
 // docs/api-contract.md: legacy message-box validation failures map to HTTP 400
 // with { "message": "<legacy text>" }. BR-ELG-011 / BR-UI-007
@@ -90,8 +103,12 @@ app.MapPost("/api/applications", async (EligibilityRequest req, ApplicationRepos
     {
         return Results.BadRequest(new { message = result.DeclineReason, ruleIds = result.RuleIds });
     }
+    if (req.BorrowerId is null)
+    {
+        return Results.BadRequest(new { message = "Borrower ID is required.", ruleIds = result.RuleIds });
+    }
     var persisted = ApplicationPersistence.Build(
-        req.BorrowerId, req.ProductType, req.Amount, req.TermMonths, req.CreditScore,
+        req.BorrowerId.Value, req.ProductType, req.Amount, req.TermMonths, req.CreditScore,
         result.Dti!.Value, result.Ltv!.Value);
     int appId = await applications.InsertAsync(persisted);
     return Results.Ok(new { appId, ruleIds = new[] { "BR-ELG-010" } });

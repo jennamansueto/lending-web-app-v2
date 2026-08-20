@@ -36,7 +36,8 @@ export class App {
       this.rows.set([]);
       return;
     }
-    this.rows.set((await res.json()) as ScheduleRow[]);
+    const payload = (await res.json()) as { rows: ScheduleRow[] };
+    this.rows.set(payload.rows);
   }
 
   protected async exportCsv(): Promise<void> {
