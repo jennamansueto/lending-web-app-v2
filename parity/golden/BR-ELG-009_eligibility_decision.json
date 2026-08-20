@@ -1,0 +1,506 @@
+[
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "approval: TERM typical application",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 5
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.139   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.1391322,
+      "dtiDisplay": "0.139",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "approval: LOC typical application",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 5
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.190   LTV: 0.500\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.189772,
+      "dtiDisplay": "0.190",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "approval: EQUIP typical application",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 600000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 5
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.140   LTV: 0.500\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.1395082,
+      "dtiDisplay": "0.140",
+      "ltv": 0.5,
+      "ltvDisplay": "0.500",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 1/9: every rule violated -> amount minimum wins",
+    "input": {
+      "product": "LOC",
+      "amount": 1000.0,
+      "termMonths": 5,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 500,
+      "collateralValue": -100.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount below $25,000 minimum.",
+      "declineReason": "Loan amount below $25,000 minimum.",
+      "firedRuleId": "BR-ELG-001",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 2/9: amount over desk limit outranks term/score/DTI/LTV/years",
+    "input": {
+      "product": "LOC",
+      "amount": 6000000.0,
+      "termMonths": 5,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 500,
+      "collateralValue": -100.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 3/9: amount repaired -> term limit fires",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 5,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 500,
+      "collateralValue": -100.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nTerm must be between 12 and 36 months for product LOC.",
+      "declineReason": "Term must be between 12 and 36 months for product LOC.",
+      "firedRuleId": "BR-ELG-003",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 4/9: term repaired -> credit score fires",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 500,
+      "collateralValue": -100.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCredit score 500 below product minimum of 660.",
+      "declineReason": "Credit score 500 below product minimum of 660.",
+      "firedRuleId": "BR-ELG-004",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 5/9: score repaired -> DTI fires",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 5000.0,
+      "creditScore": 700,
+      "collateralValue": -100.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 6.122 exceeds maximum 0.40.",
+      "declineReason": "DTI 6.122 exceeds maximum 0.40.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 6.12215,
+      "dtiDisplay": "6.122",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 6/9: DTI repaired -> collateral required fires",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 700,
+      "collateralValue": -100.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.00067329,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 7/9: collateral present but LTV over cap",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 700,
+      "collateralValue": 26000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLTV 0.962 exceeds maximum 0.80 for LOC.",
+      "declineReason": "LTV 0.962 exceeds maximum 0.80 for LOC.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.00067329,
+      "dtiDisplay": "0.001",
+      "ltv": 0.9615384615384615384615384615,
+      "ltvDisplay": "0.962",
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 8/9: LTV repaired -> LOC years in business fires",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 700,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLines of credit require at least 2 years in business.",
+      "declineReason": "Lines of credit require at least 2 years in business.",
+      "firedRuleId": "BR-ELG-008",
+      "dti": 0.00067329,
+      "dtiDisplay": "0.001",
+      "ltv": 0.25,
+      "ltvDisplay": "0.250",
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "precedence 9/9: all rules satisfied -> approved",
+    "input": {
+      "product": "LOC",
+      "amount": 25000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 700,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 2
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.250\nEst. payment at base rate: $1,122.15",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00067329,
+      "dtiDisplay": "0.001",
+      "ltv": 0.25,
+      "ltvDisplay": "0.250",
+      "estPayment": 1122.15,
+      "estPaymentDisplay": "$1,122.15",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "multi-failure: EQUIP term > 84 and score < 620 -> term wins",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 96,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 400,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nTerm must be between 12 and 84 months for product EQUIP.",
+      "declineReason": "Term must be between 12 and 84 months for product EQUIP.",
+      "firedRuleId": "BR-ELG-003",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "multi-failure: score and DTI both fail -> score wins",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 600,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCredit score 600 below product minimum of 640.",
+      "declineReason": "Credit score 600 below product minimum of 640.",
+      "firedRuleId": "BR-ELG-004",
+      "dti": null,
+      "dtiDisplay": null,
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": null,
+      "estPaymentDisplay": null,
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "multi-failure: DTI and collateral both fail -> DTI wins",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 12000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nDTI 1.957 exceeds maximum 0.45.",
+      "declineReason": "DTI 1.957 exceeds maximum 0.45.",
+      "firedRuleId": "BR-ELG-005",
+      "dti": 1.95661,
+      "dtiDisplay": "1.957",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "multi-failure: negative collateral short-circuits the LTV rule",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -5.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "multi-failure: LOC LTV and years in business both fail -> LTV wins",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 110000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLTV 0.909 exceeds maximum 0.80 for LOC.",
+      "declineReason": "LTV 0.909 exceeds maximum 0.80 for LOC.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.9090909090909090909090909091,
+      "ltvDisplay": "0.909",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  },
+  {
+    "ruleId": "BR-ELG-009",
+    "description": "approval at boundaries: TERM min amount, min term, min score, LTV at cap",
+    "input": {
+      "product": "TERM",
+      "amount": 25000.0,
+      "termMonths": 12,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 640,
+      "collateralValue": 27778.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.900\nEst. payment at base rate: $2,157.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001294446,
+      "dtiDisplay": "0.001",
+      "ltv": 0.8999928000575995392036863705,
+      "ltvDisplay": "0.900",
+      "estPayment": 2157.41,
+      "estPaymentDisplay": "$2,157.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:82-165"
+  }
+]

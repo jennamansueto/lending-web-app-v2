@@ -1,0 +1,48 @@
+<div class="screen">
+  <h2 class="screen-title">New Loan Application</h2>
+
+  <div class="form-grid">
+    <label for="borrowerId">Borrower ID</label>
+    <input id="borrowerId" name="borrowerId" [(ngModel)]="borrowerId" />
+
+    <label for="product">Product</label>
+    <select id="product" name="product" [(ngModel)]="product">
+      @for (p of products; track p) {
+        <option [value]="p">{{ p }}</option>
+      }
+    </select>
+
+    <label for="amount">Loan Amount ($)</label>
+    <input id="amount" name="amount" [(ngModel)]="amount" />
+
+    <label for="termMonths">Term (months)</label>
+    <input id="termMonths" name="termMonths" [(ngModel)]="termMonths" />
+
+    <label for="annualIncome">Annual Income ($)</label>
+    <input id="annualIncome" name="annualIncome" [(ngModel)]="annualIncome" />
+
+    <label for="monthlyDebt">Monthly Debt Svc ($)</label>
+    <input id="monthlyDebt" name="monthlyDebt" [(ngModel)]="monthlyDebt" />
+
+    <label for="creditScore">Credit Score</label>
+    <input id="creditScore" name="creditScore" [(ngModel)]="creditScore" />
+
+    <label for="collateralValue">Collateral Value ($)</label>
+    <input id="collateralValue" name="collateralValue" [(ngModel)]="collateralValue" />
+
+    <label for="yearsInBusiness">Years in Business</label>
+    <input id="yearsInBusiness" name="yearsInBusiness" [(ngModel)]="yearsInBusiness" />
+  </div>
+
+  <button type="button" class="submit-btn" (click)="submit()">Check Eligibility &amp; Submit</button>
+
+  <div
+    class="result-panel"
+    [class.approved]="resultColor() === 'approved'"
+    [class.declined]="resultColor() === 'declined'"
+  >{{ resultText() }}</div>
+
+  @if (msg(); as m) {
+    <app-message-box [caption]="m.caption" [text]="m.text" [icon]="m.icon" (closed)="msg.set(null)" />
+  }
+</div>

@@ -1,0 +1,23 @@
+[
+  {
+    "ruleId": "BR-PRC-001",
+    "input": {
+      "productType": "TERM"
+    },
+    "expected": 6.50
+  },
+  {
+    "ruleId": "BR-PRC-001",
+    "input": {
+      "productType": "LOC"
+    },
+    "expected": 7.25
+  },
+  {
+    "ruleId": "BR-PRC-001",
+    "input": {
+      "productType": "EQUIP"
+    },
+    "expected": 6.90
+  }
+]

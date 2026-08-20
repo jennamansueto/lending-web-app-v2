@@ -1,0 +1,1058 @@
+[
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "empty search term -> '%%' matches every borrower",
+    "input": {
+      "searchText": ""
+    },
+    "expected": {
+      "boundTerm": "%%",
+      "rowCount": 8,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 3,
+          "legalName": "CASCADE PRECISION MACHINING",
+          "taxId": "84-3456789",
+          "creditScore": 731,
+          "depositBalance": 82000.0,
+          "yearsInBusiness": 15,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 4,
+          "legalName": "DELTA LOGISTICS PARTNERS",
+          "taxId": "84-4567890",
+          "creditScore": 655,
+          "depositBalance": 21000.0,
+          "yearsInBusiness": 3,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 5,
+          "legalName": "EVERGREEN DENTAL GROUP",
+          "taxId": "84-5678901",
+          "creditScore": 778,
+          "depositBalance": 505000.0,
+          "yearsInBusiness": 9,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 6,
+          "legalName": "FOUNDRY COFFEE ROASTERS",
+          "taxId": "84-6789012",
+          "creditScore": 631,
+          "depositBalance": 12000.0,
+          "yearsInBusiness": 4,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 7,
+          "legalName": "GRANITE PEAK CONSTRUCTION",
+          "taxId": "84-7890123",
+          "creditScore": 702,
+          "depositBalance": 96000.0,
+          "yearsInBusiness": 18,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 8,
+          "legalName": "HARBORLIGHT MARINE SERVICES",
+          "taxId": "84-8901234",
+          "creditScore": 664,
+          "depositBalance": 54000.0,
+          "yearsInBusiness": 6,
+          "activeLoans": 0
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "whitespace-only term is trimmed to '%%' -> every borrower",
+    "input": {
+      "searchText": "   "
+    },
+    "expected": {
+      "boundTerm": "%%",
+      "rowCount": 8,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 3,
+          "legalName": "CASCADE PRECISION MACHINING",
+          "taxId": "84-3456789",
+          "creditScore": 731,
+          "depositBalance": 82000.0,
+          "yearsInBusiness": 15,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 4,
+          "legalName": "DELTA LOGISTICS PARTNERS",
+          "taxId": "84-4567890",
+          "creditScore": 655,
+          "depositBalance": 21000.0,
+          "yearsInBusiness": 3,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 5,
+          "legalName": "EVERGREEN DENTAL GROUP",
+          "taxId": "84-5678901",
+          "creditScore": 778,
+          "depositBalance": 505000.0,
+          "yearsInBusiness": 9,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 6,
+          "legalName": "FOUNDRY COFFEE ROASTERS",
+          "taxId": "84-6789012",
+          "creditScore": 631,
+          "depositBalance": 12000.0,
+          "yearsInBusiness": 4,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 7,
+          "legalName": "GRANITE PEAK CONSTRUCTION",
+          "taxId": "84-7890123",
+          "creditScore": 702,
+          "depositBalance": 96000.0,
+          "yearsInBusiness": 18,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 8,
+          "legalName": "HARBORLIGHT MARINE SERVICES",
+          "taxId": "84-8901234",
+          "creditScore": 664,
+          "depositBalance": 54000.0,
+          "yearsInBusiness": 6,
+          "activeLoans": 0
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "lower-case name term matches: the name side is UPPER(...) so it is case-insensitive",
+    "input": {
+      "searchText": "acme"
+    },
+    "expected": {
+      "boundTerm": "%ACME%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "same term already upper-case -> identical result",
+    "input": {
+      "searchText": "ACME"
+    },
+    "expected": {
+      "boundTerm": "%ACME%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "contains match hitting two borrowers, ordered by LEGAL_NAME",
+    "input": {
+      "searchText": "harbor"
+    },
+    "expected": {
+      "boundTerm": "%HARBOR%",
+      "rowCount": 2,
+      "rows": [
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 8,
+          "legalName": "HARBORLIGHT MARINE SERVICES",
+          "taxId": "84-8901234",
+          "creditScore": 664,
+          "depositBalance": 54000.0,
+          "yearsInBusiness": 6,
+          "activeLoans": 0
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "lower-case term upper-cased to %LLC%: matches a name, and could never match a tax id containing lower-case text (the tax-id side is case-SENSITIVE while the term is upper-cased)",
+    "input": {
+      "searchText": "llc"
+    },
+    "expected": {
+      "boundTerm": "%LLC%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "tax-id path: no LEGAL_NAME contains '84-', so every row here matched on TAX_ID",
+    "input": {
+      "searchText": "84-"
+    },
+    "expected": {
+      "boundTerm": "%84-%",
+      "rowCount": 8,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 3,
+          "legalName": "CASCADE PRECISION MACHINING",
+          "taxId": "84-3456789",
+          "creditScore": 731,
+          "depositBalance": 82000.0,
+          "yearsInBusiness": 15,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 4,
+          "legalName": "DELTA LOGISTICS PARTNERS",
+          "taxId": "84-4567890",
+          "creditScore": 655,
+          "depositBalance": 21000.0,
+          "yearsInBusiness": 3,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 5,
+          "legalName": "EVERGREEN DENTAL GROUP",
+          "taxId": "84-5678901",
+          "creditScore": 778,
+          "depositBalance": 505000.0,
+          "yearsInBusiness": 9,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 6,
+          "legalName": "FOUNDRY COFFEE ROASTERS",
+          "taxId": "84-6789012",
+          "creditScore": 631,
+          "depositBalance": 12000.0,
+          "yearsInBusiness": 4,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 7,
+          "legalName": "GRANITE PEAK CONSTRUCTION",
+          "taxId": "84-7890123",
+          "creditScore": 702,
+          "depositBalance": 96000.0,
+          "yearsInBusiness": 18,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 8,
+          "legalName": "HARBORLIGHT MARINE SERVICES",
+          "taxId": "84-8901234",
+          "creditScore": 664,
+          "depositBalance": 54000.0,
+          "yearsInBusiness": 6,
+          "activeLoans": 0
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "exact tax id",
+    "input": {
+      "searchText": "84-3456789"
+    },
+    "expected": {
+      "boundTerm": "%84-3456789%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 3,
+          "legalName": "CASCADE PRECISION MACHINING",
+          "taxId": "84-3456789",
+          "creditScore": 731,
+          "depositBalance": 82000.0,
+          "yearsInBusiness": 15,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "user-supplied % is not escaped -> acts as a wildcard, matching everything",
+    "input": {
+      "searchText": "%"
+    },
+    "expected": {
+      "boundTerm": "%%%",
+      "rowCount": 8,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 3,
+          "legalName": "CASCADE PRECISION MACHINING",
+          "taxId": "84-3456789",
+          "creditScore": 731,
+          "depositBalance": 82000.0,
+          "yearsInBusiness": 15,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 4,
+          "legalName": "DELTA LOGISTICS PARTNERS",
+          "taxId": "84-4567890",
+          "creditScore": 655,
+          "depositBalance": 21000.0,
+          "yearsInBusiness": 3,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 5,
+          "legalName": "EVERGREEN DENTAL GROUP",
+          "taxId": "84-5678901",
+          "creditScore": 778,
+          "depositBalance": 505000.0,
+          "yearsInBusiness": 9,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 6,
+          "legalName": "FOUNDRY COFFEE ROASTERS",
+          "taxId": "84-6789012",
+          "creditScore": 631,
+          "depositBalance": 12000.0,
+          "yearsInBusiness": 4,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 7,
+          "legalName": "GRANITE PEAK CONSTRUCTION",
+          "taxId": "84-7890123",
+          "creditScore": 702,
+          "depositBalance": 96000.0,
+          "yearsInBusiness": 18,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 8,
+          "legalName": "HARBORLIGHT MARINE SERVICES",
+          "taxId": "84-8901234",
+          "creditScore": 664,
+          "depositBalance": 54000.0,
+          "yearsInBusiness": 6,
+          "activeLoans": 0
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "user-supplied _ is not escaped -> matches any single character, so every borrower",
+    "input": {
+      "searchText": "_"
+    },
+    "expected": {
+      "boundTerm": "%_%",
+      "rowCount": 8,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 3,
+          "legalName": "CASCADE PRECISION MACHINING",
+          "taxId": "84-3456789",
+          "creditScore": 731,
+          "depositBalance": 82000.0,
+          "yearsInBusiness": 15,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 4,
+          "legalName": "DELTA LOGISTICS PARTNERS",
+          "taxId": "84-4567890",
+          "creditScore": 655,
+          "depositBalance": 21000.0,
+          "yearsInBusiness": 3,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 5,
+          "legalName": "EVERGREEN DENTAL GROUP",
+          "taxId": "84-5678901",
+          "creditScore": 778,
+          "depositBalance": 505000.0,
+          "yearsInBusiness": 9,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 6,
+          "legalName": "FOUNDRY COFFEE ROASTERS",
+          "taxId": "84-6789012",
+          "creditScore": 631,
+          "depositBalance": 12000.0,
+          "yearsInBusiness": 4,
+          "activeLoans": 0
+        },
+        {
+          "borrowerId": 7,
+          "legalName": "GRANITE PEAK CONSTRUCTION",
+          "taxId": "84-7890123",
+          "creditScore": 702,
+          "depositBalance": 96000.0,
+          "yearsInBusiness": 18,
+          "activeLoans": 1
+        },
+        {
+          "borrowerId": 8,
+          "legalName": "HARBORLIGHT MARINE SERVICES",
+          "taxId": "84-8901234",
+          "creditScore": 664,
+          "depositBalance": 54000.0,
+          "yearsInBusiness": 6,
+          "activeLoans": 0
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "user-supplied _ matches the space in 'ACME INDUSTRIAL SUPPLY LLC'",
+    "input": {
+      "searchText": "ACME_INDUSTRIAL"
+    },
+    "expected": {
+      "boundTerm": "%ACME_INDUSTRIAL%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 1,
+          "legalName": "ACME INDUSTRIAL SUPPLY LLC",
+          "taxId": "84-1234567",
+          "creditScore": 742,
+          "depositBalance": 310000.0,
+          "yearsInBusiness": 12,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "user-supplied % spans 'HARBOR ' inside the name",
+    "input": {
+      "searchText": "BLUE%SEAFOOD"
+    },
+    "expected": {
+      "boundTerm": "%BLUE%SEAFOOD%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 2,
+          "legalName": "BLUE HARBOR SEAFOOD CO",
+          "taxId": "84-2345678",
+          "creditScore": 688,
+          "depositBalance": 145000.0,
+          "yearsInBusiness": 7,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "multi-word lower-case term",
+    "input": {
+      "searchText": "evergreen dental"
+    },
+    "expected": {
+      "boundTerm": "%EVERGREEN DENTAL%",
+      "rowCount": 1,
+      "rows": [
+        {
+          "borrowerId": 5,
+          "legalName": "EVERGREEN DENTAL GROUP",
+          "taxId": "84-5678901",
+          "creditScore": 778,
+          "depositBalance": 505000.0,
+          "yearsInBusiness": 9,
+          "activeLoans": 1
+        }
+      ]
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  },
+  {
+    "ruleId": "BR-PQL-002",
+    "description": "no match -> empty result set",
+    "input": {
+      "searchText": "ZZZ NONEXISTENT"
+    },
+    "expected": {
+      "boundTerm": "%ZZZ NONEXISTENT%",
+      "rowCount": 0,
+      "rows": []
+    },
+    "dbContext": {
+      "activeLoansCountsAllStatuses": true,
+      "seededLoanStatusBreakdown": [
+        {
+          "borrowerId": 1,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 2,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 3,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 5,
+          "status": "ACTIVE",
+          "loans": 1
+        },
+        {
+          "borrowerId": 7,
+          "status": "ACTIVE",
+          "loans": 1
+        }
+      ]
+    },
+    "sourceRef": "src/LendingDesk/Forms/BorrowerLookupForm.cs:41-52"
+  }
+]

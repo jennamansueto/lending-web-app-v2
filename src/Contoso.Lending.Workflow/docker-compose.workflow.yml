@@ -1,0 +1,20 @@
+# Temporal dev server for the workflow layer (layer 3) — local development and demos only.
+#
+#   docker compose -f src/Contoso.Lending.Workflow/docker-compose.workflow.yml up -d
+#   gRPC   localhost:7233     Web UI  http://localhost:8233
+#
+# The worker itself runs on the host (`dotnet run --project src/Contoso.Lending.Workflow -- worker`)
+# so it can reach the service API on localhost:5080. See docs/workflow-layer.md.
+services:
+  temporal:
+    image: temporalio/temporal:1.8.2
+    container_name: lending-temporal-dev
+    command: ["server", "start-dev", "--ip", "0.0.0.0", "--log-level", "warn"]
+    ports:
+      - "7233:7233"
+      - "8233:8233"
+    healthcheck:
+      test: ["CMD", "temporal", "operator", "cluster", "health", "--address", "127.0.0.1:7233"]
+      interval: 5s
+      timeout: 5s
+      retries: 20

@@ -1,0 +1,949 @@
+{
+  "rows": [
+    {
+      "table": "borrower",
+      "metric": "row_count",
+      "oracle": "8",
+      "postgres": "8",
+      "status": "pass",
+      "baseline": "8"
+    },
+    {
+      "table": "borrower",
+      "metric": "SUM(BORROWER_ID)",
+      "oracle": "36",
+      "postgres": "36",
+      "status": "pass",
+      "baseline": "36"
+    },
+    {
+      "table": "borrower",
+      "metric": "MIN(BORROWER_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "MAX(BORROWER_ID)",
+      "oracle": "8",
+      "postgres": "8",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "SUM(CREDIT_SCORE)",
+      "oracle": "5591",
+      "postgres": "5591",
+      "status": "pass",
+      "baseline": "5591"
+    },
+    {
+      "table": "borrower",
+      "metric": "MIN(CREDIT_SCORE)",
+      "oracle": "631",
+      "postgres": "631",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "MAX(CREDIT_SCORE)",
+      "oracle": "778",
+      "postgres": "778",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "SUM(DEPOSIT_BALANCE)",
+      "oracle": "1225000.00",
+      "postgres": "1225000.00",
+      "status": "pass",
+      "baseline": "1225000.00"
+    },
+    {
+      "table": "borrower",
+      "metric": "MIN(DEPOSIT_BALANCE)",
+      "oracle": "12000.00",
+      "postgres": "12000.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "MAX(DEPOSIT_BALANCE)",
+      "oracle": "505000.00",
+      "postgres": "505000.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "SUM(YEARS_IN_BUSINESS)",
+      "oracle": "74",
+      "postgres": "74",
+      "status": "pass",
+      "baseline": "74"
+    },
+    {
+      "table": "borrower",
+      "metric": "MIN(YEARS_IN_BUSINESS)",
+      "oracle": "3",
+      "postgres": "3",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "MAX(YEARS_IN_BUSINESS)",
+      "oracle": "18",
+      "postgres": "18",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "MIN(CREATED_AT)",
+      "oracle": "2008-02-25 00:00:00",
+      "postgres": "2008-02-25 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "MAX(CREATED_AT)",
+      "oracle": "2020-09-17 00:00:00",
+      "postgres": "2020-09-17 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "borrower",
+      "metric": "row_hash_chain",
+      "oracle": "2FE1C705AFF59D04F8726A4B1BBCBE2D807B77321A009CF4F0FCEF205F9D82D7",
+      "postgres": "2FE1C705AFF59D04F8726A4B1BBCBE2D807B77321A009CF4F0FCEF205F9D82D7",
+      "status": "pass",
+      "baseline": "2FE1C705AFF59D04F8726A4B1BBCBE2D807B77321A009CF4F0FCEF205F9D82D7"
+    },
+    {
+      "table": "borrower",
+      "metric": "delimiter_collisions",
+      "oracle": "0",
+      "postgres": "0",
+      "status": "pass",
+      "baseline": "0"
+    },
+    {
+      "table": "loan_application",
+      "metric": "row_count",
+      "oracle": "7",
+      "postgres": "7",
+      "status": "pass",
+      "baseline": "7"
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(APP_ID)",
+      "oracle": "28",
+      "postgres": "28",
+      "status": "pass",
+      "baseline": "28"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(APP_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(APP_ID)",
+      "oracle": "7",
+      "postgres": "7",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(BORROWER_ID)",
+      "oracle": "30",
+      "postgres": "30",
+      "status": "pass",
+      "baseline": "30"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(BORROWER_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(BORROWER_ID)",
+      "oracle": "8",
+      "postgres": "8",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(AMOUNT)",
+      "oracle": "2240000.00",
+      "postgres": "2240000.00",
+      "status": "pass",
+      "baseline": "2240000.00"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(AMOUNT)",
+      "oracle": "95000.00",
+      "postgres": "95000.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(AMOUNT)",
+      "oracle": "820000.00",
+      "postgres": "820000.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(TERM_MONTHS)",
+      "oracle": "480",
+      "postgres": "480",
+      "status": "pass",
+      "baseline": "480"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(TERM_MONTHS)",
+      "oracle": "36",
+      "postgres": "36",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(TERM_MONTHS)",
+      "oracle": "120",
+      "postgres": "120",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(CREDIT_SCORE)",
+      "oracle": "4960",
+      "postgres": "4960",
+      "status": "pass",
+      "baseline": "4960"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(CREDIT_SCORE)",
+      "oracle": "655",
+      "postgres": "655",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(CREDIT_SCORE)",
+      "oracle": "778",
+      "postgres": "778",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(DTI)",
+      "oracle": "2.4140",
+      "postgres": "2.4140",
+      "status": "pass",
+      "baseline": "2.4140"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(DTI)",
+      "oracle": "0.2210",
+      "postgres": "0.2210",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(DTI)",
+      "oracle": "0.4380",
+      "postgres": "0.4380",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "SUM(LTV)",
+      "oracle": "5.2200",
+      "postgres": "5.2200",
+      "status": "pass",
+      "baseline": "5.2200"
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(LTV)",
+      "oracle": "0.5500",
+      "postgres": "0.5500",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(LTV)",
+      "oracle": "0.8800",
+      "postgres": "0.8800",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MIN(CREATED_AT)",
+      "oracle": "2020-08-03 00:00:00",
+      "postgres": "2020-08-03 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "MAX(CREATED_AT)",
+      "oracle": "2024-01-22 00:00:00",
+      "postgres": "2024-01-22 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan_application",
+      "metric": "row_hash_chain",
+      "oracle": "4D76F7AC3792F531D14B1CC30237FC4F23A7E45FE07533DFA431913C061FDCA3",
+      "postgres": "4D76F7AC3792F531D14B1CC30237FC4F23A7E45FE07533DFA431913C061FDCA3",
+      "status": "pass",
+      "baseline": "4D76F7AC3792F531D14B1CC30237FC4F23A7E45FE07533DFA431913C061FDCA3"
+    },
+    {
+      "table": "loan_application",
+      "metric": "delimiter_collisions",
+      "oracle": "0",
+      "postgres": "0",
+      "status": "pass",
+      "baseline": "0"
+    },
+    {
+      "table": "loan",
+      "metric": "row_count",
+      "oracle": "5",
+      "postgres": "5",
+      "status": "pass",
+      "baseline": "5"
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(LOAN_ID)",
+      "oracle": "15",
+      "postgres": "15",
+      "status": "pass",
+      "baseline": "15"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(LOAN_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(LOAN_ID)",
+      "oracle": "5",
+      "postgres": "5",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(APP_ID)",
+      "oracle": "15",
+      "postgres": "15",
+      "status": "pass",
+      "baseline": "15"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(APP_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(APP_ID)",
+      "oracle": "5",
+      "postgres": "5",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(BORROWER_ID)",
+      "oracle": "18",
+      "postgres": "18",
+      "status": "pass",
+      "baseline": "18"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(BORROWER_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(BORROWER_ID)",
+      "oracle": "7",
+      "postgres": "7",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(PRINCIPAL)",
+      "oracle": "2005000.00",
+      "postgres": "2005000.00",
+      "status": "pass",
+      "baseline": "2005000.00"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(PRINCIPAL)",
+      "oracle": "175000.00",
+      "postgres": "175000.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(PRINCIPAL)",
+      "oracle": "820000.00",
+      "postgres": "820000.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(ANNUAL_RATE)",
+      "oracle": "37.050",
+      "postgres": "37.050",
+      "status": "pass",
+      "baseline": "37.050"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(ANNUAL_RATE)",
+      "oracle": "6.350",
+      "postgres": "6.350",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(ANNUAL_RATE)",
+      "oracle": "8.300",
+      "postgres": "8.300",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(TERM_MONTHS)",
+      "oracle": "372",
+      "postgres": "372",
+      "status": "pass",
+      "baseline": "372"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(TERM_MONTHS)",
+      "oracle": "36",
+      "postgres": "36",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(TERM_MONTHS)",
+      "oracle": "120",
+      "postgres": "120",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "SUM(ORIG_FEE)",
+      "oracle": "20637.50",
+      "postgres": "20637.50",
+      "status": "pass",
+      "baseline": "20637.50"
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(ORIG_FEE)",
+      "oracle": "1875.00",
+      "postgres": "1875.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(ORIG_FEE)",
+      "oracle": "8200.00",
+      "postgres": "8200.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MIN(FUNDED_DATE)",
+      "oracle": "2020-08-20 00:00:00",
+      "postgres": "2020-08-20 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "MAX(FUNDED_DATE)",
+      "oracle": "2023-03-10 00:00:00",
+      "postgres": "2023-03-10 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "loan",
+      "metric": "row_hash_chain",
+      "oracle": "7183088F01A3DE941EEE16EFC955E3635EECA910917975FAC464190913D36276",
+      "postgres": "7183088F01A3DE941EEE16EFC955E3635EECA910917975FAC464190913D36276",
+      "status": "pass",
+      "baseline": "7183088F01A3DE941EEE16EFC955E3635EECA910917975FAC464190913D36276"
+    },
+    {
+      "table": "loan",
+      "metric": "delimiter_collisions",
+      "oracle": "0",
+      "postgres": "0",
+      "status": "pass",
+      "baseline": "0"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "row_count",
+      "oracle": "372",
+      "postgres": "372",
+      "status": "pass",
+      "baseline": "372"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "SUM(LOAN_ID)",
+      "oracle": "1068",
+      "postgres": "1068",
+      "status": "pass",
+      "baseline": "1068"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(LOAN_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(LOAN_ID)",
+      "oracle": "5",
+      "postgres": "5",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "SUM(PERIOD_NO)",
+      "oracle": "15954",
+      "postgres": "15954",
+      "status": "pass",
+      "baseline": "15954"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(PERIOD_NO)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(PERIOD_NO)",
+      "oracle": "120",
+      "postgres": "120",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "SUM(PAYMENT_AMT)",
+      "oracle": "2571120.98",
+      "postgres": "2571120.98",
+      "status": "pass",
+      "baseline": "2571120.98"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(PAYMENT_AMT)",
+      "oracle": "3560.62",
+      "postgres": "3560.62",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(PAYMENT_AMT)",
+      "oracle": "9248.90",
+      "postgres": "9248.90",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "SUM(INTEREST_AMT)",
+      "oracle": "566120.98",
+      "postgres": "566120.98",
+      "status": "pass",
+      "baseline": "566120.98"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(INTEREST_AMT)",
+      "oracle": "24.02",
+      "postgres": "24.02",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(INTEREST_AMT)",
+      "oracle": "4339.17",
+      "postgres": "4339.17",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "SUM(PRINCIPAL_AMT)",
+      "oracle": "2005000.00",
+      "postgres": "2005000.00",
+      "status": "pass",
+      "baseline": "2005000.00"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(PRINCIPAL_AMT)",
+      "oracle": "2372.41",
+      "postgres": "2372.41",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(PRINCIPAL_AMT)",
+      "oracle": "9200.22",
+      "postgres": "9200.22",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "SUM(BALANCE_AFTER)",
+      "oracle": "96183113.62",
+      "postgres": "96183113.62",
+      "status": "pass",
+      "baseline": "96183113.62"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(BALANCE_AFTER)",
+      "oracle": "0.00",
+      "postgres": "0.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(BALANCE_AFTER)",
+      "oracle": "815090.70",
+      "postgres": "815090.70",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MIN(DUE_DATE)",
+      "oracle": "2020-09-20 00:00:00",
+      "postgres": "2020-09-20 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "MAX(DUE_DATE)",
+      "oracle": "2030-08-20 00:00:00",
+      "postgres": "2030-08-20 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "row_hash_chain",
+      "oracle": "51453DBD8EB91C765B1D3FBD30C0A432B407CAC91EF782FA06F9121B7B59E6D9",
+      "postgres": "51453DBD8EB91C765B1D3FBD30C0A432B407CAC91EF782FA06F9121B7B59E6D9",
+      "status": "pass",
+      "baseline": "51453DBD8EB91C765B1D3FBD30C0A432B407CAC91EF782FA06F9121B7B59E6D9"
+    },
+    {
+      "table": "payment_schedule",
+      "metric": "delimiter_collisions",
+      "oracle": "0",
+      "postgres": "0",
+      "status": "pass",
+      "baseline": "0"
+    },
+    {
+      "table": "payment",
+      "metric": "row_count",
+      "oracle": "5",
+      "postgres": "5",
+      "status": "pass",
+      "baseline": "5"
+    },
+    {
+      "table": "payment",
+      "metric": "SUM(PAYMENT_ID)",
+      "oracle": "450015",
+      "postgres": "450015",
+      "status": "pass",
+      "baseline": "450015"
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(PAYMENT_ID)",
+      "oracle": "90001",
+      "postgres": "90001",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(PAYMENT_ID)",
+      "oracle": "90005",
+      "postgres": "90005",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "SUM(LOAN_ID)",
+      "oracle": "8",
+      "postgres": "8",
+      "status": "pass",
+      "baseline": "8"
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(LOAN_ID)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(LOAN_ID)",
+      "oracle": "2",
+      "postgres": "2",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "SUM(PERIOD_NO)",
+      "oracle": "9",
+      "postgres": "9",
+      "status": "pass",
+      "baseline": "9"
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(PERIOD_NO)",
+      "oracle": "1",
+      "postgres": "1",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(PERIOD_NO)",
+      "oracle": "3",
+      "postgres": "3",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "SUM(AMOUNT)",
+      "oracle": "24393.97",
+      "postgres": "24393.97",
+      "status": "pass",
+      "baseline": "24393.97"
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(AMOUNT)",
+      "oracle": "3563.79",
+      "postgres": "3563.79",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(AMOUNT)",
+      "oracle": "6851.30",
+      "postgres": "6851.30",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "SUM(DAYS_LATE)",
+      "oracle": "18",
+      "postgres": "18",
+      "status": "pass",
+      "baseline": "18"
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(DAYS_LATE)",
+      "oracle": "0",
+      "postgres": "0",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(DAYS_LATE)",
+      "oracle": "14",
+      "postgres": "14",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "SUM(LATE_FEE)",
+      "oracle": "150.00",
+      "postgres": "150.00",
+      "status": "pass",
+      "baseline": "150.00"
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(LATE_FEE)",
+      "oracle": "0.00",
+      "postgres": "0.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(LATE_FEE)",
+      "oracle": "150.00",
+      "postgres": "150.00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MIN(PAID_DATE)",
+      "oracle": "2021-06-01 00:00:00",
+      "postgres": "2021-06-01 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "MAX(PAID_DATE)",
+      "oracle": "2022-05-02 00:00:00",
+      "postgres": "2022-05-02 00:00:00",
+      "status": "pass",
+      "baseline": null
+    },
+    {
+      "table": "payment",
+      "metric": "row_hash_chain",
+      "oracle": "0073702456B38BD3583B1AECB543DE110038E4FE2163661BCA0E17D808D7D43C",
+      "postgres": "0073702456B38BD3583B1AECB543DE110038E4FE2163661BCA0E17D808D7D43C",
+      "status": "pass",
+      "baseline": "0073702456B38BD3583B1AECB543DE110038E4FE2163661BCA0E17D808D7D43C"
+    },
+    {
+      "table": "payment",
+      "metric": "delimiter_collisions",
+      "oracle": "0",
+      "postgres": "0",
+      "status": "pass",
+      "baseline": "0"
+    },
+    {
+      "table": "sequence",
+      "metric": "seq_loan_application",
+      "oracle": "1000",
+      "postgres": "1000",
+      "status": "pass",
+      "baseline": "1000"
+    },
+    {
+      "table": "sequence",
+      "metric": "seq_loan",
+      "oracle": "5000",
+      "postgres": "5000",
+      "status": "pass",
+      "baseline": "5000"
+    },
+    {
+      "table": "sequence",
+      "metric": "seq_payment",
+      "oracle": "90000",
+      "postgres": "90000",
+      "status": "pass",
+      "baseline": "90000"
+    }
+  ],
+  "specVersion": "1.0"
+}

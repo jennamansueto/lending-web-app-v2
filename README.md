@@ -15,4 +15,12 @@ The migration is behavior-preserving and machine-proven: see [`docs/architecture
 the service contract in [`docs/api-contract.md`](docs/api-contract.md), and the four parity levels
 (UI, service, data, end-to-end) verified by the parity harness and dashboard.
 
+Run the live parity dashboard with `dotnet run --project tools/parity-dashboard` from the repo root.
+It streams `parity/run-all.sh` progress and renders the structured `parity/parity-dashboard.json`
+snapshot. For a one-shot CLI run, use `PARITY_LEVELS=L2,L3,L4 ./parity/run-all.sh`.
+
+For local UI development, run `cd ui && npm start` to serve the shell and load the remotes. Local
+serving uses the production/AOT configuration, and the shell dev server proxies `/api` to the real
+service at `http://localhost:5080`.
+
 > Legacy quirks and known bugs are reproduced deliberately and documented — never "fixed".

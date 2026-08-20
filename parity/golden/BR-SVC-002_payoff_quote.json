@@ -1,0 +1,266 @@
+[
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of before the funded date: no due dates reached, funded-date fallback, accrued interest floored at zero",
+    "input": {
+      "loanId": 4,
+      "asOfDate": "2023-01-01"
+    },
+    "expected": {
+      "payoffAmount": 250000.0
+    },
+    "dbContext": {
+      "principal": 250000.0,
+      "annualRate": 7.0,
+      "termMonths": 36,
+      "fundedDate": "2023-03-10",
+      "usedFundedDateFallback": true,
+      "balanceBasis": 250000.0,
+      "accrualFromDate": "2023-03-10",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of equal to the funded date: fallback path, zero elapsed days",
+    "input": {
+      "loanId": 4,
+      "asOfDate": "2023-03-10"
+    },
+    "expected": {
+      "payoffAmount": 250000.0
+    },
+    "dbContext": {
+      "principal": 250000.0,
+      "annualRate": 7.0,
+      "termMonths": 36,
+      "fundedDate": "2023-03-10",
+      "usedFundedDateFallback": true,
+      "balanceBasis": 250000.0,
+      "accrualFromDate": "2023-03-10",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of after funding but before the first due date: funded-date fallback path",
+    "input": {
+      "loanId": 4,
+      "asOfDate": "2023-03-20"
+    },
+    "expected": {
+      "payoffAmount": 250479.45
+    },
+    "dbContext": {
+      "principal": 250000.0,
+      "annualRate": 7.0,
+      "termMonths": 36,
+      "fundedDate": "2023-03-10",
+      "usedFundedDateFallback": true,
+      "balanceBasis": 250000.0,
+      "accrualFromDate": "2023-03-10",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of equal to the first due date: accrued interest is zero",
+    "input": {
+      "loanId": 1,
+      "asOfDate": "2021-05-31"
+    },
+    "expected": {
+      "payoffAmount": 445871.92
+    },
+    "dbContext": {
+      "principal": 450000.0,
+      "annualRate": 7.25,
+      "termMonths": 84,
+      "fundedDate": "2021-04-30",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 445871.92,
+      "accrualFromDate": "2021-05-31",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of equal to a mid-schedule due date (period 12)",
+    "input": {
+      "loanId": 1,
+      "asOfDate": "2022-04-30"
+    },
+    "expected": {
+      "payoffAmount": 398783.37
+    },
+    "dbContext": {
+      "principal": 450000.0,
+      "annualRate": 7.25,
+      "termMonths": 84,
+      "fundedDate": "2021-04-30",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 398783.37,
+      "accrualFromDate": "2022-04-30",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "mid-schedule as-of date, 15 days after the 2023-05-31 due date",
+    "input": {
+      "loanId": 1,
+      "asOfDate": "2023-06-15"
+    },
+    "expected": {
+      "payoffAmount": 339967.4
+    },
+    "dbContext": {
+      "principal": 450000.0,
+      "annualRate": 7.25,
+      "termMonths": 84,
+      "fundedDate": "2021-04-30",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 338957.49,
+      "accrualFromDate": "2023-05-31",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of equal to the final due date: balance zero, interest zero",
+    "input": {
+      "loanId": 1,
+      "asOfDate": "2028-04-30"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    },
+    "dbContext": {
+      "principal": 450000.0,
+      "annualRate": 7.25,
+      "termMonths": 84,
+      "fundedDate": "2021-04-30",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 0.0,
+      "accrualFromDate": "2028-04-30",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "as-of after the final due date: paid-off schedule, no accrual on a zero balance",
+    "input": {
+      "loanId": 1,
+      "asOfDate": "2028-06-30"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    },
+    "dbContext": {
+      "principal": 450000.0,
+      "annualRate": 7.25,
+      "termMonths": 84,
+      "fundedDate": "2021-04-30",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 0.0,
+      "accrualFromDate": "2028-04-30",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "loan with $150.00 of unpaid late fees added to the quote",
+    "input": {
+      "loanId": 2,
+      "asOfDate": "2022-05-20"
+    },
+    "expected": {
+      "payoffAmount": 168696.36
+    },
+    "dbContext": {
+      "principal": 175000.0,
+      "annualRate": 8.15,
+      "termMonths": 60,
+      "fundedDate": "2022-02-01",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 167834.33,
+      "accrualFromDate": "2022-05-01",
+      "unpaidLateFees": 150.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "loan with unpaid late fees, as-of before the first due date (fallback path)",
+    "input": {
+      "loanId": 2,
+      "asOfDate": "2022-02-15"
+    },
+    "expected": {
+      "payoffAmount": 175697.05
+    },
+    "dbContext": {
+      "principal": 175000.0,
+      "annualRate": 8.15,
+      "termMonths": 60,
+      "fundedDate": "2022-02-01",
+      "usedFundedDateFallback": true,
+      "balanceBasis": 175000.0,
+      "accrualFromDate": "2022-02-01",
+      "unpaidLateFees": 150.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "long 120-month loan, mid-schedule as-of date",
+    "input": {
+      "loanId": 3,
+      "asOfDate": "2025-01-15"
+    },
+    "expected": {
+      "payoffAmount": 529407.29
+    },
+    "dbContext": {
+      "principal": 820000.0,
+      "annualRate": 6.35,
+      "termMonths": 120,
+      "fundedDate": "2020-08-20",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 527023.41,
+      "accrualFromDate": "2024-12-20",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "description": "leap-day as-of date on a 72-month loan (actual/365 accrual)",
+    "input": {
+      "loanId": 5,
+      "asOfDate": "2024-02-29"
+    },
+    "expected": {
+      "payoffAmount": 216685.11
+    },
+    "dbContext": {
+      "principal": 310000.0,
+      "annualRate": 8.3,
+      "termMonths": 72,
+      "fundedDate": "2021-12-01",
+      "usedFundedDateFallback": false,
+      "balanceBasis": 215314.18,
+      "accrualFromDate": "2024-02-01",
+      "unpaidLateFees": 0.0
+    },
+    "sourceRef": "database/plsql/pkg_lending.sql:43-77"
+  }
+]

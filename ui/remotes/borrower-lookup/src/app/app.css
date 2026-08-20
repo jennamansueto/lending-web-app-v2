@@ -1,0 +1,72 @@
+.screen {
+  font-family: 'Segoe UI', 'Microsoft Sans Serif', Arial, sans-serif;
+  max-width: 880px;
+}
+
+.screen-title {
+  font-size: 12pt;
+  margin: 0 0 12px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.search-row label {
+  font-size: 10pt;
+}
+
+.search-row input {
+  width: 260px;
+  padding: 3px 5px;
+  border: 1px solid #7a7a7a;
+}
+
+.action-btn {
+  padding: 5px 14px;
+  font-size: 10pt;
+}
+
+.grid {
+  border-collapse: collapse;
+  font-size: 9pt;
+  width: 100%;
+}
+
+.grid th,
+.grid td {
+  border: 1px solid #c0c0c0;
+  padding: 2px 8px;
+  text-align: right;
+}
+
+.grid td.name {
+  text-align: left;
+}
+
+.grid th {
+  background: #e8e8e8;
+}
+
+.grid tbody tr {
+  cursor: pointer;
+}
+
+.grid tbody tr.selected {
+  background: #0078d7;
+  color: #fff;
+}
+
+/* BR-UI-008: bordered hint label (blank on any failure). */
+.hint-panel {
+  margin-top: 12px;
+  width: 700px;
+  min-height: 50px;
+  border: 1px solid #7a7a7a;
+  background: #fff;
+  padding: 6px 8px;
+  font-size: 10pt;
+}

@@ -1,0 +1,590 @@
+[
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral -1000000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -1000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral -50000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -50000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral -0.01",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -0.01,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral 0.00",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral 0.01",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.01,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLTV 10000000.000 exceeds maximum 0.90 for TERM.",
+      "declineReason": "LTV 10000000.000 exceeds maximum 0.90 for TERM.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 10000000.0,
+      "ltvDisplay": "10000000.000",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral 125000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 125000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.800\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.8,
+      "ltvDisplay": "0.800",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "TERM collateral 10000000.00",
+    "input": {
+      "product": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,956.61",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001173966,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1956.61,
+      "estPaymentDisplay": "$1,956.61",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral -1000000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -1000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral -50000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -50000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral -0.01",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -0.01,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral 0.00",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral 0.01",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.01,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLTV 10000000.000 exceeds maximum 0.80 for LOC.",
+      "declineReason": "LTV 10000000.000 exceeds maximum 0.80 for LOC.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 10000000.0,
+      "ltvDisplay": "10000000.000",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral 125000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 125000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.003   LTV: 0.800\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.8,
+      "ltvDisplay": "0.800",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "LOC collateral 10000000.00",
+    "input": {
+      "product": "LOC",
+      "amount": 100000.0,
+      "termMonths": 24,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.003   LTV: 0.010\nEst. payment at base rate: $4,488.60",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.00269316,
+      "dtiDisplay": "0.003",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 4488.60,
+      "estPaymentDisplay": "$4,488.60",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral -1000000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -1000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral -50000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -50000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral -0.01",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": -0.01,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral 0.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nCollateral value required.",
+      "declineReason": "Collateral value required.",
+      "firedRuleId": "BR-ELG-006",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": null,
+      "ltvDisplay": null,
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral 0.01",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 0.01,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "resultText": "DECLINED\nLTV 10000000.000 exceeds maximum 0.85 for EQUIP.",
+      "declineReason": "LTV 10000000.000 exceeds maximum 0.85 for EQUIP.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 10000000.0,
+      "ltvDisplay": "10000000.000",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "Firebrick"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral 125000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 125000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.800\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.8,
+      "ltvDisplay": "0.800",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  },
+  {
+    "ruleId": "BR-ELG-006",
+    "description": "EQUIP collateral 10000000.00",
+    "input": {
+      "product": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 20000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 20
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.001   LTV: 0.010\nEst. payment at base rate: $1,975.41",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.001185246,
+      "dtiDisplay": "0.001",
+      "ltv": 0.01,
+      "ltvDisplay": "0.010",
+      "estPayment": 1975.41,
+      "estPaymentDisplay": "$1,975.41",
+      "resultLabelColor": "DarkGreen"
+    },
+    "sourceRef": "src/LendingDesk/Forms/LoanApplicationForm.cs:123-127"
+  }
+]

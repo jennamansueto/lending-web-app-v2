@@ -1,0 +1,42 @@
+<div class="screen">
+  <h2 class="screen-title">Statements Export</h2>
+
+  <div class="toolbar">
+    <label for="loanId">Loan ID:</label>
+    <input id="loanId" name="loanId" [(ngModel)]="loanId" />
+    <button type="button" class="action-btn" (click)="loadSchedule()">Load Schedule</button>
+    <button type="button" class="action-btn" (click)="exportCsv()">Export CSV</button>
+    <button type="button" class="action-btn" (click)="payoffQuote()">Payoff Quote (DB)</button>
+  </div>
+
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>PERIOD_NO</th>
+        <th>DUE_DATE</th>
+        <th>PAYMENT_AMT</th>
+        <th>INTEREST_AMT</th>
+        <th>PRINCIPAL_AMT</th>
+        <th>BALANCE_AFTER</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (r of rows() ?? []; track r.periodNo) {
+        <tr>
+          <td>{{ r.periodNo }}</td>
+          <td>{{ r.dueDate }}</td>
+          <td>{{ cell(r.paymentAmt) }}</td>
+          <td>{{ cell(r.interestAmt) }}</td>
+          <td>{{ cell(r.principalAmt) }}</td>
+          <td>{{ cell(r.balanceAfter) }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <div class="payoff-label">{{ payoffText() }}</div>
+
+  @if (msg(); as m) {
+    <app-message-box [caption]="m.caption" [text]="m.text" [icon]="m.icon" (closed)="msg.set(null)" />
+  }
+</div>
