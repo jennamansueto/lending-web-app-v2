@@ -64,6 +64,9 @@ API allows the local Angular development origins through its CORS policy.
 
 ## Running locally
 
+From `ui/`, `npm start` serves the shell in development mode, and `ng serve <project>`
+does the same for each remote. Build commands still default to production.
+
 ```bash
 cd ui
 npm ci

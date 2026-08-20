@@ -40,6 +40,15 @@
             "dev": true,
             "devServer": true,
             "port": 0
+          },
+          "defaultConfiguration": "development",
+          "configurations": {
+            "production": {
+              "target": "shell:serve-original:production"
+            },
+            "development": {
+              "target": "shell:serve-original:development"
+            }
           }
         },
         "test": {
@@ -148,6 +157,15 @@
             "dev": true,
             "devServer": true,
             "port": 0
+          },
+          "defaultConfiguration": "development",
+          "configurations": {
+            "production": {
+              "target": "loan-application:serve-original:production"
+            },
+            "development": {
+              "target": "loan-application:serve-original:development"
+            }
           }
         },
         "test": {
@@ -262,6 +280,15 @@
             "dev": true,
             "devServer": true,
             "port": 0
+          },
+          "defaultConfiguration": "development",
+          "configurations": {
+            "production": {
+              "target": "pricing:serve-original:production"
+            },
+            "development": {
+              "target": "pricing:serve-original:development"
+            }
           }
         },
         "test": {
@@ -376,6 +403,15 @@
             "dev": true,
             "devServer": true,
             "port": 0
+          },
+          "defaultConfiguration": "development",
+          "configurations": {
+            "production": {
+              "target": "borrower-lookup:serve-original:production"
+            },
+            "development": {
+              "target": "borrower-lookup:serve-original:development"
+            }
           }
         },
         "test": {
@@ -490,6 +526,15 @@
             "dev": true,
             "devServer": true,
             "port": 0
+          },
+          "defaultConfiguration": "development",
+          "configurations": {
+            "production": {
+              "target": "statements:serve-original:production"
+            },
+            "development": {
+              "target": "statements:serve-original:development"
+            }
           }
         },
         "test": {

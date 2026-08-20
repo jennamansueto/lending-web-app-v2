@@ -19,4 +19,7 @@ Run the live parity dashboard with `dotnet run --project tools/parity-dashboard`
 It streams `parity/run-all.sh` progress and renders the structured `parity/parity-dashboard.json`
 snapshot. For a one-shot CLI run, use `PARITY_LEVELS=L2,L3,L4 ./parity/run-all.sh`.
 
+For local UI development, run `cd ui && npm start` to serve the shell in development mode; the
+shell and remotes default to `http://localhost:5080` for the API when served locally.
+
 > Legacy quirks and known bugs are reproduced deliberately and documented — never "fixed".
