@@ -1,14 +1,14 @@
 {
   "specVersion": "1.0",
-  "startedAt": "2026-08-20T00:15:19Z",
-  "finishedAt": "2026-08-20T00:15:35Z",
+  "startedAt": "2026-08-20T00:19:26Z",
+  "finishedAt": "2026-08-20T00:19:42Z",
   "ok": true,
   "levels": [
     {
       "id": "L2",
       "name": "Service \u2014 golden corpus parity",
       "status": "pass",
-      "durationMs": 6614,
+      "durationMs": 6895,
       "summary": {
         "cases": 688,
         "passed": 688,
@@ -17,7 +17,7 @@
       "groups": [
         {
           "ruleId": "BR-AMT-001",
-          "title": "BR-AMT-001",
+          "title": "monthly payment",
           "goldenFile": "parity/golden/BR-AMT-001_monthly_payment.json",
           "cases": 125,
           "passed": 125,
@@ -27,7 +27,7 @@
         },
         {
           "ruleId": "BR-AMT-002",
-          "title": "BR-AMT-002",
+          "title": "amortization schedule",
           "goldenFile": "parity/golden/BR-AMT-002_amortization_schedule.json",
           "cases": 11,
           "passed": 11,
@@ -37,7 +37,7 @@
         },
         {
           "ruleId": "BR-AMT-003",
-          "title": "BR-AMT-003",
+          "title": "MonthlyPayment rejects termMonths 0 at 0.00%",
           "goldenFile": "parity/golden/BR-AMT-003_non_positive_term.json",
           "cases": 12,
           "passed": 12,
@@ -47,7 +47,7 @@
         },
         {
           "ruleId": "BR-ELG-001",
-          "title": "BR-ELG-001",
+          "title": "TERM amount 0.00",
           "goldenFile": "parity/golden/BR-ELG-001_amount_minimum.json",
           "cases": 18,
           "passed": 18,
@@ -57,7 +57,7 @@
         },
         {
           "ruleId": "BR-ELG-002",
-          "title": "BR-ELG-002",
+          "title": "TERM amount 4999999.99",
           "goldenFile": "parity/golden/BR-ELG-002_amount_desk_maximum.json",
           "cases": 12,
           "passed": 12,
@@ -67,7 +67,7 @@
         },
         {
           "ruleId": "BR-ELG-003",
-          "title": "BR-ELG-003",
+          "title": "TERM term 0",
           "goldenFile": "parity/golden/BR-ELG-003_term_limits_by_product.json",
           "cases": 45,
           "passed": 45,
@@ -77,7 +77,7 @@
         },
         {
           "ruleId": "BR-ELG-004",
-          "title": "BR-ELG-004",
+          "title": "TERM score 300",
           "goldenFile": "parity/golden/BR-ELG-004_minimum_credit_score_by_product.json",
           "cases": 39,
           "passed": 39,
@@ -87,7 +87,7 @@
         },
         {
           "ruleId": "BR-ELG-005",
-          "title": "BR-ELG-005",
+          "title": "TERM: no other debt service",
           "goldenFile": "parity/golden/BR-ELG-005_dti_cap.json",
           "cases": 15,
           "passed": 15,
@@ -97,7 +97,7 @@
         },
         {
           "ruleId": "BR-ELG-006",
-          "title": "BR-ELG-006",
+          "title": "TERM collateral -1000000.00",
           "goldenFile": "parity/golden/BR-ELG-006_collateral_value_required.json",
           "cases": 21,
           "passed": 21,
@@ -107,7 +107,7 @@
         },
         {
           "ruleId": "BR-ELG-007",
-          "title": "BR-ELG-007",
+          "title": "TERM: LTV far inside the 0.90 cap",
           "goldenFile": "parity/golden/BR-ELG-007_ltv_cap_by_product.json",
           "cases": 15,
           "passed": 15,
@@ -117,7 +117,7 @@
         },
         {
           "ruleId": "BR-ELG-008",
-          "title": "BR-ELG-008",
+          "title": "TERM years in business 0 (rule applies to LOC only)",
           "goldenFile": "parity/golden/BR-ELG-008_loc_minimum_years_in_business.json",
           "cases": 15,
           "passed": 15,
@@ -127,7 +127,7 @@
         },
         {
           "ruleId": "BR-ELG-009",
-          "title": "BR-ELG-009",
+          "title": "approval: TERM typical application",
           "goldenFile": "parity/golden/BR-ELG-009_eligibility_decision.json",
           "cases": 18,
           "passed": 18,
@@ -137,7 +137,7 @@
         },
         {
           "ruleId": "BR-ELG-010",
-          "title": "BR-ELG-010",
+          "title": "approval persisted: TERM typical application",
           "goldenFile": "parity/golden/BR-ELG-010_approved_application_persistence.json",
           "cases": 12,
           "passed": 12,
@@ -147,7 +147,7 @@
         },
         {
           "ruleId": "BR-PQL-001",
-          "title": "BR-PQL-001",
+          "title": "credit score 300",
           "goldenFile": "parity/golden/BR-PQL-001_prequalification_hint.json",
           "cases": 15,
           "passed": 15,
@@ -157,7 +157,7 @@
         },
         {
           "ruleId": "BR-PQL-002",
-          "title": "BR-PQL-002",
+          "title": "empty search term -> '%%' matches every borrower",
           "goldenFile": "parity/golden/BR-PQL-002_borrower_search.json",
           "cases": 14,
           "passed": 14,
@@ -167,7 +167,7 @@
         },
         {
           "ruleId": "BR-PRC-001",
-          "title": "BR-PRC-001",
+          "title": "base rate",
           "goldenFile": "parity/golden/BR-PRC-001_base_rate.json",
           "cases": 3,
           "passed": 3,
@@ -177,7 +177,7 @@
         },
         {
           "ruleId": "BR-PRC-002",
-          "title": "BR-PRC-002",
+          "title": "risk spread",
           "goldenFile": "parity/golden/BR-PRC-002_risk_spread.json",
           "cases": 15,
           "passed": 15,
@@ -187,7 +187,7 @@
         },
         {
           "ruleId": "BR-PRC-003",
-          "title": "BR-PRC-003",
+          "title": "ltv adjustment",
           "goldenFile": "parity/golden/BR-PRC-003_ltv_adjustment.json",
           "cases": 12,
           "passed": 12,
@@ -197,7 +197,7 @@
         },
         {
           "ruleId": "BR-PRC-004",
-          "title": "BR-PRC-004",
+          "title": "relationship discount",
           "goldenFile": "parity/golden/BR-PRC-004_relationship_discount.json",
           "cases": 8,
           "passed": 8,
@@ -207,7 +207,7 @@
         },
         {
           "ruleId": "BR-PRC-005",
-          "title": "BR-PRC-005",
+          "title": "priced rate",
           "goldenFile": "parity/golden/BR-PRC-005_priced_rate.json",
           "cases": 180,
           "passed": 180,
@@ -217,7 +217,7 @@
         },
         {
           "ruleId": "BR-PRC-006",
-          "title": "BR-PRC-006",
+          "title": "origination fee",
           "goldenFile": "parity/golden/BR-PRC-006_origination_fee.json",
           "cases": 30,
           "passed": 30,
@@ -227,7 +227,7 @@
         },
         {
           "ruleId": "BR-PRC-007",
-          "title": "BR-PRC-007",
+          "title": "GetBaseRate rejects product 'XYZ'",
           "goldenFile": "parity/golden/BR-PRC-007_unknown_product_type.json",
           "cases": 16,
           "passed": 16,
@@ -237,7 +237,7 @@
         },
         {
           "ruleId": "BR-SVC-001",
-          "title": "BR-SVC-001",
+          "title": "grace boundary: -5 days late on a $3,000 payment",
           "goldenFile": "parity/golden/BR-SVC-001_late_fee.json",
           "cases": 25,
           "passed": 25,
@@ -247,7 +247,7 @@
         },
         {
           "ruleId": "BR-SVC-002",
-          "title": "BR-SVC-002",
+          "title": "as-of before the funded date: no due dates reached, funded-date fallback, accrued interest floored at zero",
           "goldenFile": "parity/golden/BR-SVC-002_payoff_quote.json",
           "cases": 12,
           "passed": 12,
@@ -261,7 +261,7 @@
       "id": "L3",
       "name": "Data \u2014 Oracle\u2192Postgres verification",
       "status": "pass",
-      "durationMs": 3283,
+      "durationMs": 3358,
       "summary": {
         "rows": 118,
         "passed": 118,
@@ -1218,7 +1218,7 @@
       "id": "L4",
       "name": "End-to-end workflow scenarios",
       "status": "pass",
-      "durationMs": 5747,
+      "durationMs": 5765,
       "summary": {
         "scenarios": 2,
         "passed": 2,
@@ -1227,7 +1227,7 @@
       "scenarios": [
         {
           "name": "approved",
-          "workflowId": "demo-approved-3cadf3a460c64f0b86cf5eb6ed5279ce",
+          "workflowId": "demo-approved-7484de819a5a430e888b4c531b048fec",
           "status": "pass",
           "assertions": [
             {
@@ -1258,7 +1258,7 @@
         },
         {
           "name": "declined",
-          "workflowId": "demo-declined-068a0ecb5e724c728445bbb45c544374",
+          "workflowId": "demo-declined-40f60049498440498a348285a258575a",
           "status": "pass",
           "assertions": [
             {

@@ -58,7 +58,10 @@ public static class GoldenCorpus
             fileName,
             index,
             record.GetProperty("input"),
-            expected);
+            expected,
+            record.TryGetProperty("description", out var description)
+                ? description.GetString()
+                : null);
         return record;
     }
 

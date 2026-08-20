@@ -15,11 +15,17 @@ internal static class ParityArtifact
 
     public static void Reset() => Cases.Clear();
 
-    public static void Begin(string file, int index, JsonElement input, JsonElement expected)
+    public static void Begin(
+        string file,
+        int index,
+        JsonElement input,
+        JsonElement expected,
+        string? title)
     {
         Cases[(file, index)] = new CaseResult(
             file,
             index,
+            title,
             input.Clone(),
             expected.Clone(),
             null,
@@ -66,6 +72,7 @@ internal static class ParityArtifact
                     {
                         ruleId = x.File.Split('_', 2)[0],
                         goldenFile = $"parity/golden/{x.File}",
+                        title = x.Title,
                         recordIndex = x.Index,
                         input = x.Input,
                         expected = x.Expected,
@@ -131,6 +138,7 @@ internal static class ParityArtifact
     private sealed record CaseResult(
         string File,
         int Index,
+        string? Title,
         JsonElement Input,
         JsonElement Expected,
         JsonElement? Actual,

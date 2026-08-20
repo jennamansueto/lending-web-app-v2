@@ -15,6 +15,7 @@
 # L3 writes parity/artifacts/l3-report.json from migrator verify --report.
 # L4 writes parity/artifacts/l4-scenarios.json from the demo runner itself.
 # PARITY_LEVELS is a comma-separated subset of L2,L3,L4; default: all three.
+# PARITY_USE_EXISTING_ARTIFACTS=1 skips execution and validates existing artifacts.
 # This script only reads those artifacts; it never scrapes tool logs.
 # The command exits non-zero when any selected level fails.
 set -euo pipefail
@@ -26,6 +27,7 @@ snapshot="$repo_root/parity/parity-dashboard.md"
 mkdir -p "$artifact_dir"
 
 levels="${PARITY_LEVELS:-L2,L3,L4}"
+use_existing="${PARITY_USE_EXISTING_ARTIFACTS:-0}"
 IFS=',' read -r -a requested <<< "$levels"
 declare -A selected
 for level in "${requested[@]}"; do
@@ -81,7 +83,12 @@ run_level() {
 
 for id in L2 L3 L4; do
   if [ "${selected[$id]:-0}" = 1 ]; then
-    run_level "$id"
+    if [ "$use_existing" = 1 ]; then
+      status_codes["$id"]=0
+      durations["$id"]=0
+    else
+      run_level "$id"
+    fi
   fi
 done
 
@@ -190,7 +197,12 @@ def l2():
         passed = len(cases) - len(failures)
         output.append({
             "ruleId": rule_id,
-            "title": rule_id,
+            "title": next(
+                (case["title"] for case in cases if case.get("title")),
+                Path(golden_file).stem.split("_", 1)[-1]
+                .replace("_", " ")
+                .replace("-", " "),
+            ),
             "goldenFile": golden_file,
             "cases": len(cases),
             "passed": passed,
@@ -200,14 +212,56 @@ def l2():
         })
     if not output:
         return l2_error("L2 artifact contains no cases")
+    golden_counts = {}
+    golden_total = 0
+    for golden_path in sorted((repo / "parity" / "golden").glob("*.json")):
+        try:
+            golden_data = json.loads(golden_path.read_text())
+        except (OSError, json.JSONDecodeError) as exc:
+            return l2_error(f"golden file unreadable: {golden_path}: {exc}")
+        if not isinstance(golden_data, list):
+            return l2_error(f"golden file is not an array: {golden_path}")
+        relative = f"parity/golden/{golden_path.name}"
+        golden_counts[relative] = len(golden_data)
+        golden_total += len(golden_data)
+    recorded_files = {case["goldenFile"] for case in data}
     cases = sum(x["cases"] for x in output)
+    missing_files = sorted(set(golden_counts) - recorded_files)
+    if cases != golden_total or missing_files:
+        details = (
+            f"L2 collection incomplete: expected {golden_total} golden records, "
+            f"recorded {cases}"
+        )
+        if missing_files:
+            details += f"; missing golden files: {', '.join(missing_files)}"
+        return l2_error(details)
     passed = sum(x["passed"] for x in output)
+    failed = sum(x["failed"] for x in output)
+    if not process_ok("L2") and failed == 0:
+        output.append({
+            "ruleId": "L2-ERROR",
+            "title": "test process diagnostic",
+            "goldenFile": "",
+            "cases": 0,
+            "passed": 0,
+            "failed": 1,
+            "status": "fail",
+            "failures": [{
+                "recordIndex": -1,
+                "input": {},
+                "expected": "dotnet test exit 0",
+                "actual": f"dotnet test exit {status_codes.get('L2')}",
+            }],
+        })
+        failed += 1
     return {
         "id": "L2",
         "name": "Service — golden corpus parity",
-        "status": "pass" if all(x["status"] == "pass" for x in output) else "fail",
+        "status": "pass"
+        if process_ok("L2") and all(x["status"] == "pass" for x in output)
+        else "fail",
         "durationMs": durations.get("L2", 0),
-        "summary": {"cases": cases, "passed": passed, "failed": cases - passed},
+        "summary": {"cases": cases, "passed": passed, "failed": failed},
         "groups": output,
     }
 
@@ -246,6 +300,16 @@ def l3():
         if row["status"] not in ("pass", "fail"):
             return l3_error(f"L3 row {index} has invalid status: {row['status']!r}")
     passed = sum(row.get("status") == "pass" for row in rows)
+    failed = len(rows) - passed
+    if not process_ok("L3") and failed == 0:
+        rows.append({
+            "table": "diagnostic",
+            "metric": "verify_process",
+            "oracle": "exit 0",
+            "postgres": f"exit {status_codes.get('L3')}",
+            "status": "fail",
+        })
+        failed += 1
     return {
         "id": "L3",
         "name": "Data — Oracle→Postgres verification",
@@ -254,7 +318,7 @@ def l3():
         "summary": {
             "rows": len(rows),
             "passed": passed,
-            "failed": len(rows) - passed,
+            "failed": failed,
         },
         "rows": rows,
     }
@@ -313,6 +377,18 @@ def l4():
             "assertions": assertions,
         })
     passed = sum(x["status"] == "pass" for x in scenarios)
+    failed = len(scenarios) - passed
+    if not process_ok("L4") and failed == 0:
+        scenarios.append({
+            "name": "diagnostic",
+            "workflowId": "",
+            "status": "fail",
+            "assertions": [diagnostic(
+                "demo_process",
+                f"run-demo.sh exit {status_codes.get('L4')}",
+            )],
+        })
+        failed += 1
     return {
         "id": "L4",
         "name": "End-to-end workflow scenarios",
@@ -321,7 +397,7 @@ def l4():
         "summary": {
             "scenarios": len(scenarios),
             "passed": passed,
-            "failed": len(scenarios) - passed,
+            "failed": failed,
         },
         "scenarios": scenarios,
     }
