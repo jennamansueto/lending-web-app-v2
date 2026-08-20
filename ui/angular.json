@@ -33,15 +33,15 @@
         "serve": {
           "builder": "@angular-architects/native-federation:build",
           "options": {
-            "target": "shell:serve-original:development",
+            "target": "shell:serve-original:production",
             "tsConfig": "shell/tsconfig.federation.json",
             "rebuildDelay": 500,
             "cacheExternalArtifacts": true,
-            "dev": true,
+            "dev": false,
             "devServer": true,
             "port": 0
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "production",
           "configurations": {
             "production": {
               "target": "shell:serve-original:production"
@@ -108,7 +108,8 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "port": 4200
+            "port": 4200,
+            "proxyConfig": "shell/proxy.conf.json"
           }
         },
         "lint": {
@@ -150,15 +151,15 @@
         "serve": {
           "builder": "@angular-architects/native-federation:build",
           "options": {
-            "target": "loan-application:serve-original:development",
+            "target": "loan-application:serve-original:production",
             "tsConfig": "remotes/loan-application/tsconfig.federation.json",
             "rebuildDelay": 500,
             "cacheExternalArtifacts": true,
-            "dev": true,
+            "dev": false,
             "devServer": true,
             "port": 0
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "production",
           "configurations": {
             "production": {
               "target": "loan-application:serve-original:production"
@@ -273,15 +274,15 @@
         "serve": {
           "builder": "@angular-architects/native-federation:build",
           "options": {
-            "target": "pricing:serve-original:development",
+            "target": "pricing:serve-original:production",
             "tsConfig": "remotes/pricing/tsconfig.federation.json",
             "rebuildDelay": 500,
             "cacheExternalArtifacts": true,
-            "dev": true,
+            "dev": false,
             "devServer": true,
             "port": 0
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "production",
           "configurations": {
             "production": {
               "target": "pricing:serve-original:production"
@@ -396,15 +397,15 @@
         "serve": {
           "builder": "@angular-architects/native-federation:build",
           "options": {
-            "target": "borrower-lookup:serve-original:development",
+            "target": "borrower-lookup:serve-original:production",
             "tsConfig": "remotes/borrower-lookup/tsconfig.federation.json",
             "rebuildDelay": 500,
             "cacheExternalArtifacts": true,
-            "dev": true,
+            "dev": false,
             "devServer": true,
             "port": 0
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "production",
           "configurations": {
             "production": {
               "target": "borrower-lookup:serve-original:production"
@@ -519,15 +520,15 @@
         "serve": {
           "builder": "@angular-architects/native-federation:build",
           "options": {
-            "target": "statements:serve-original:development",
+            "target": "statements:serve-original:production",
             "tsConfig": "remotes/statements/tsconfig.federation.json",
             "rebuildDelay": 500,
             "cacheExternalArtifacts": true,
-            "dev": true,
+            "dev": false,
             "devServer": true,
             "port": 0
           },
-          "defaultConfiguration": "development",
+          "defaultConfiguration": "production",
           "configurations": {
             "production": {
               "target": "statements:serve-original:production"

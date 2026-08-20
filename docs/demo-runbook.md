@@ -17,6 +17,8 @@ was derived from it, the migrated slice, and the parity red/green moment.
 
 Node 24 is required by the Angular workspace. Database credentials here are local
 demo credentials committed on purpose; there are no real secrets in this repo.
+The Angular shell and remotes use the production/AOT serve configuration; the shell's `/api`
+proxy forwards the federated screens' local API calls to `http://localhost:5080`.
 
 ## Act 1 — the legacy application (5 min)
 

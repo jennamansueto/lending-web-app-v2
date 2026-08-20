@@ -64,8 +64,10 @@ API allows the local Angular development origins through its CORS policy.
 
 ## Running locally
 
-From `ui/`, `npm start` serves the shell in development mode, and `ng serve <project>`
-does the same for each remote. Build commands still default to production.
+From `ui/`, `npm start` serves the shell and `ng serve <project>` serves each remote using the
+production/AOT configuration. The shell's `/api` proxy forwards local requests to the real API
+at `http://localhost:5080`; open the shell at `http://localhost:4200` so federated screens use
+that proxy. Build commands also default to production.
 
 ```bash
 cd ui
