@@ -1,7 +1,7 @@
 [
   {
     "name": "approved",
-    "workflowId": "demo-approved-7484de819a5a430e888b4c531b048fec",
+    "workflowId": "demo-approved-193a8d6e65634f4bbcbe714f40853cfa",
     "status": "pass",
     "assertions": [
       {
@@ -32,7 +32,7 @@
   },
   {
     "name": "declined",
-    "workflowId": "demo-declined-40f60049498440498a348285a258575a",
+    "workflowId": "demo-declined-f35e924bbcd544d487b80d09b19d50af",
     "status": "pass",
     "assertions": [
       {

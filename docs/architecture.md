@@ -71,3 +71,6 @@ docs/                         Architecture, API contract, migrated legacy docume
 | L4 E2E | The whole stack, orchestrated, reaches legacy outcomes | Temporal workflow runs (approved + declined) asserted against legacy expectations |
 
 All four are runnable in one command (`parity/run-all.sh`) and from the parity dashboard UI.
+
+Dashboard entrypoint: `dotnet run --project tools/parity-dashboard` from the repo root; it reads
+the structured `parity/parity-dashboard.json` snapshot written by `parity/run-all.sh`.

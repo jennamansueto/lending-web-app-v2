@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Migration parity verification — Contoso Commercial Lending</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <h1>Migration parity verification</h1>
+      <p class="subtitle">Contoso Commercial Lending Desk &mdash; legacy WinForms/Oracle to four-layer web application</p>
+    </div>
+    <div class="masthead-actions">
+      <span id="run-meta" class="run-meta"></span>
+      <button id="run" type="button" class="primary">Run parity checks</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="overview" aria-label="Parity levels">
+    <table class="levels">
+      <thead>
+        <tr><th scope="col">Level</th><th scope="col">Scope</th><th scope="col">Cases</th><th scope="col">Result</th></tr>
+      </thead>
+      <tbody id="level-summary"></tbody>
+    </table>
+  </section>
+
+  <section id="detail-L2" class="detail">
+    <h2>L2 &mdash; Service layer: golden corpus parity</h2>
+    <p class="note">Every record of every golden file is asserted for exact equality against the legacy implementation. No tolerances.</p>
+    <div id="l2-groups" class="groups"><p class="placeholder">Not run yet.</p></div>
+  </section>
+
+  <section id="detail-L3" class="detail">
+    <h2>L3 &mdash; Data layer: Oracle to Postgres verification</h2>
+    <p class="note">Row counts, numeric aggregates and row-hash chains, per table and per column.</p>
+    <div id="l3-rows"><p class="placeholder">Not run yet.</p></div>
+  </section>
+
+  <section id="detail-L4" class="detail">
+    <h2>L4 &mdash; End to end: workflow scenarios</h2>
+    <p class="note">Temporal workflows driven through the service API; every asserted field compared verbatim with the legacy expectation.</p>
+    <div id="l4-scenarios"><p class="placeholder">Not run yet.</p></div>
+  </section>
+
+  <section class="detail">
+    <h2>Run log</h2>
+    <pre id="log" class="log" aria-live="polite"></pre>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

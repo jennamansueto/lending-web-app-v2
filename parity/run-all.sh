@@ -42,10 +42,13 @@ done
 started_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 declare -A status_codes durations
 
+# Progress markers consumed by tools/parity-dashboard; they carry no verdict of
+# their own, the authoritative statuses are the ones in parity-dashboard.json.
 run_level() {
   local id="$1"
   local start_ns end_ns status
   start_ns="$(date +%s%N)"
+  echo "##parity $id start"
   case "$id" in
     L2)
       rm -f "$artifact_dir/l2-cases.json"
@@ -79,6 +82,11 @@ run_level() {
   end_ns="$(date +%s%N)"
   status_codes["$id"]="$status"
   durations["$id"]="$(( (end_ns - start_ns) / 1000000 ))"
+  if [ "$status" -eq 0 ]; then
+    echo "##parity $id exit-ok"
+  else
+    echo "##parity $id exit-fail"
+  fi
 }
 
 for id in L2 L3 L4; do
@@ -197,12 +205,9 @@ def l2():
         passed = len(cases) - len(failures)
         output.append({
             "ruleId": rule_id,
-            "title": next(
-                (case["title"] for case in cases if case.get("title")),
-                Path(golden_file).stem.split("_", 1)[-1]
-                .replace("_", " ")
-                .replace("-", " "),
-            ),
+            # The rule name comes from the golden file name; per-case descriptions
+            # describe a single record, not the rule the group stands for.
+            "title": Path(golden_file).stem.split("_", 1)[-1].replace("_", " "),
             "goldenFile": golden_file,
             "cases": len(cases),
             "passed": passed,
