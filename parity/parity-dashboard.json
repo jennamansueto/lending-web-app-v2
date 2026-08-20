@@ -1,14 +1,14 @@
 {
   "specVersion": "1.0",
-  "startedAt": "2026-08-20T00:30:26Z",
-  "finishedAt": "2026-08-20T00:30:42Z",
+  "startedAt": "2026-08-20T01:46:17Z",
+  "finishedAt": "2026-08-20T01:46:33Z",
   "ok": true,
   "levels": [
     {
       "id": "L2",
       "name": "Service \u2014 golden corpus parity",
       "status": "pass",
-      "durationMs": 6813,
+      "durationMs": 7068,
       "summary": {
         "cases": 688,
         "passed": 688,
@@ -261,7 +261,7 @@
       "id": "L3",
       "name": "Data \u2014 Oracle\u2192Postgres verification",
       "status": "pass",
-      "durationMs": 3255,
+      "durationMs": 3223,
       "summary": {
         "rows": 118,
         "passed": 118,
@@ -1218,7 +1218,7 @@
       "id": "L4",
       "name": "End-to-end workflow scenarios",
       "status": "pass",
-      "durationMs": 5881,
+      "durationMs": 5771,
       "summary": {
         "scenarios": 2,
         "passed": 2,
@@ -1227,7 +1227,7 @@
       "scenarios": [
         {
           "name": "approved",
-          "workflowId": "demo-approved-193a8d6e65634f4bbcbe714f40853cfa",
+          "workflowId": "demo-approved-9d5e55939c684869b4f103c11277974f",
           "status": "pass",
           "assertions": [
             {
@@ -1258,7 +1258,7 @@
         },
         {
           "name": "declined",
-          "workflowId": "demo-declined-f35e924bbcd544d487b80d09b19d50af",
+          "workflowId": "demo-declined-326ac55db19e4c04b0b5ef7d2e640a42",
           "status": "pass",
           "assertions": [
             {
