@@ -69,7 +69,7 @@ export class App {
       const res = await fetch(`${environment.apiBaseUrl}/api/eligibility/evaluate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...body, borrowerId: null }),
+        body: JSON.stringify(body),
       });
       const payload = await res.json();
       if (!res.ok) {

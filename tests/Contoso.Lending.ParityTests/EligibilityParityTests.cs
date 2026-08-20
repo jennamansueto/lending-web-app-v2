@@ -3,6 +3,7 @@ using Contoso.Lending.Domain;
 
 namespace Contoso.Lending.ParityTests;
 
+[Collection(ParityArtifactCollection.Name)]
 public class EligibilityParityTests
 {
     private const string Elg001 = "BR-ELG-001_amount_minimum.json";
@@ -80,6 +81,21 @@ public class EligibilityParityTests
         var expected = record.GetProperty("expected");
 
         var result = EligibilityEngine.Evaluate(ReadInput(record.GetProperty("input")));
+
+        ParityArtifact.Complete(file, index, new
+        {
+            decision = result.Decision,
+            resultText = result.ResultText,
+            declineReason = result.DeclineReason,
+            firedRuleId = result.FiredRuleId,
+            dti = result.Dti,
+            dtiDisplay = result.DtiDisplay,
+            ltv = result.Ltv,
+            ltvDisplay = result.LtvDisplay,
+            estPayment = result.EstPayment,
+            estPaymentDisplay = result.EstPaymentDisplay,
+            resultLabelColor = result.ResultLabelColor,
+        });
 
         Assert.Equal(GoldenCorpus.GetString(expected, "decision"), result.Decision);
         Assert.Equal(GoldenCorpus.GetString(expected, "resultText"), result.ResultText);

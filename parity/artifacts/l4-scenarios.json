@@ -1,0 +1,64 @@
+[
+  {
+    "name": "approved",
+    "workflowId": "demo-approved-3cadf3a460c64f0b86cf5eb6ed5279ce",
+    "status": "pass",
+    "assertions": [
+      {
+        "field": "decision",
+        "expected": "APPROVED",
+        "actual": "APPROVED",
+        "status": "pass"
+      },
+      {
+        "field": "resultText",
+        "expected": "APPROVED FOR UNDERWRITING\nDTI: 0.139   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+        "actual": "APPROVED FOR UNDERWRITING\nDTI: 0.139   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+        "status": "pass"
+      },
+      {
+        "field": "declineReason",
+        "expected": null,
+        "actual": null,
+        "status": "pass"
+      },
+      {
+        "field": "firedRuleId",
+        "expected": "BR-ELG-009",
+        "actual": "BR-ELG-009",
+        "status": "pass"
+      }
+    ]
+  },
+  {
+    "name": "declined",
+    "workflowId": "demo-declined-068a0ecb5e724c728445bbb45c544374",
+    "status": "pass",
+    "assertions": [
+      {
+        "field": "decision",
+        "expected": "DECLINED",
+        "actual": "DECLINED",
+        "status": "pass"
+      },
+      {
+        "field": "resultText",
+        "expected": "DECLINED\nCredit score 500 below product minimum of 660.",
+        "actual": "DECLINED\nCredit score 500 below product minimum of 660.",
+        "status": "pass"
+      },
+      {
+        "field": "declineReason",
+        "expected": "Credit score 500 below product minimum of 660.",
+        "actual": "Credit score 500 below product minimum of 660.",
+        "status": "pass"
+      },
+      {
+        "field": "firedRuleId",
+        "expected": "BR-ELG-004",
+        "actual": "BR-ELG-004",
+        "status": "pass"
+      }
+    ]
+  }
+]

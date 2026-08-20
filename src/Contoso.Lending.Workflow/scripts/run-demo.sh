@@ -47,7 +47,8 @@ sleep 2
 
 log "scenarios"
 set +e
-dotnet run --project "$repo_root/src/Contoso.Lending.Workflow" -- demo
+artifact_path="${PARITY_L4_ARTIFACT:-$repo_root/parity/artifacts/l4-scenarios.json}"
+dotnet run --project "$repo_root/src/Contoso.Lending.Workflow" -- demo --artifact "$artifact_path"
 status=$?
 set -e
 

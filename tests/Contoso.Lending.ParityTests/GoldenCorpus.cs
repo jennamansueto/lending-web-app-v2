@@ -38,7 +38,29 @@ public static class GoldenCorpus
         return doc.RootElement.EnumerateArray().Select(e => e.Clone()).ToArray();
     });
 
-    public static JsonElement Record(string fileName, int index) => Load(fileName)[index];
+    public static JsonElement Record(string fileName, int index)
+    {
+        var record = Load(fileName)[index];
+        var expectedName = record.TryGetProperty("expected", out _)
+            ? "expected"
+            : "expectedError";
+        var expected = record.GetProperty(expectedName);
+        if (record.TryGetProperty("roundingContrast", out var contrast))
+        {
+            var expectedJson = expected.GetRawText();
+            var combinedJson =
+                expectedJson[..^1]
+                + $$""","roundingContrast":{{contrast.GetRawText()}}}""";
+            using var combined = JsonDocument.Parse(combinedJson);
+            expected = combined.RootElement.Clone();
+        }
+        ParityArtifact.Begin(
+            fileName,
+            index,
+            record.GetProperty("input"),
+            expected);
+        return record;
+    }
 
     public static TheoryData<int, string> Cases(string fileName)
     {

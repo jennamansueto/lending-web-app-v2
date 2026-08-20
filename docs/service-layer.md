@@ -57,7 +57,7 @@ web service, justified below.
 | BR-ELG-001..008 | Domain | `EligibilityEngine.Evaluate` — exact boundaries, product tables, `DivideByZeroException`, evaluation order. |
 | BR-ELG-009 | Domain | `EligibilityEngine` — decision + byte-exact `resultText` (approval block incl. newlines/format specifiers, `"DECLINED\n" + reason`). |
 | BR-ELG-010 | Domain | `ApplicationPersistence.Build` — status `SUBMITTED`, DTI/LTV `Math.Round(x, 4)` ToEven; id/timestamp come from `seq_loan_application`/DB clock in `ApplicationRepository`. |
-| BR-ELG-011 | Domain/API | Legacy `decimal.Parse`/`int.Parse` failures ⇒ `"One or more fields contain invalid numbers."`; the API maps malformed request bodies to HTTP 400 with that exact text (`Program.cs` middleware). Borrower id is consumed only after rules pass (`/api/applications` evaluates, then persists). |
+| BR-ELG-011 | Domain/API | Legacy `decimal.Parse`/`int.Parse` failures ⇒ `"One or more fields contain invalid numbers."`; the UI maps malformed or missing field input to the legacy validation dialog before calling the API. The application request requires `borrowerId` only after eligibility passes. |
 | BR-PQL-001 | Domain | `PrequalificationEngine` — independent threshold copy (LEND-3987), exact `"None — refer to special assets"` fallback. |
 | BR-PQL-002 | Domain/Data | Semantics in `BorrowerSearchSemantics` (bound term, wildcards, case rules); `BorrowerRepository` executes the equivalent SQL with no added logic. |
 | BR-PRC-001..006 | Domain | `LoanCalculator` — base rate, spread, LTV adjustment, discount, floor/cap + AwayFromZero, fee minimums and TERM cap. |

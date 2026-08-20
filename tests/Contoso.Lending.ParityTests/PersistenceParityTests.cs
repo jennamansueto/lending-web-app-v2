@@ -2,6 +2,7 @@ using Contoso.Lending.Domain;
 
 namespace Contoso.Lending.ParityTests;
 
+[Collection(ParityArtifactCollection.Name)]
 public class PersistenceParityTests
 {
     private const string Elg010 = "BR-ELG-010_approved_application_persistence.json";
@@ -29,6 +30,30 @@ public class PersistenceParityTests
             result.Dti!.Value,
             result.Ltv!.Value);
 
+        var contrast = record.GetProperty("roundingContrast");
+        ParityArtifact.Complete(Elg010, index, new
+        {
+            borrowerId = persisted.BorrowerId,
+            productType = persisted.ProductType,
+            amount = persisted.Amount,
+            termMonths = persisted.TermMonths,
+            creditScore = persisted.CreditScore,
+            dti = persisted.Dti,
+            ltv = persisted.Ltv,
+            status = persisted.Status,
+            appIdSource = ApplicationPersistence.AppIdSource,
+            createdAtSource = ApplicationPersistence.CreatedAtSource,
+            roundingContrast = new
+            {
+                unroundedDti = result.Dti,
+                unroundedLtv = result.Ltv,
+                dtiAwayFromZero = Math.Round(result.Dti!.Value, 4, MidpointRounding.AwayFromZero),
+                ltvAwayFromZero = Math.Round(result.Ltv!.Value, 4, MidpointRounding.AwayFromZero),
+                dtiRoundingDiffers = persisted.Dti != Math.Round(result.Dti.Value, 4, MidpointRounding.AwayFromZero),
+                ltvRoundingDiffers = persisted.Ltv != Math.Round(result.Ltv.Value, 4, MidpointRounding.AwayFromZero),
+            },
+        });
+
         Assert.Equal(GoldenCorpus.GetInt(expected, "borrowerId"), persisted.BorrowerId);
         Assert.Equal(GoldenCorpus.GetString(expected, "productType"), persisted.ProductType);
         Assert.Equal(GoldenCorpus.GetDecimal(expected, "amount"), persisted.Amount);
@@ -42,7 +67,6 @@ public class PersistenceParityTests
 
         // The corpus records the ToEven-vs-AwayFromZero contrast (BR-ELG-010):
         // verify the persisted values used legacy banker's rounding.
-        var contrast = record.GetProperty("roundingContrast");
         Assert.Equal(GoldenCorpus.GetDecimal(contrast, "unroundedDti"), result.Dti);
         Assert.Equal(GoldenCorpus.GetDecimal(contrast, "unroundedLtv"), result.Ltv);
         Assert.Equal(GoldenCorpus.GetDecimal(contrast, "dtiAwayFromZero"), Math.Round(result.Dti!.Value, 4, MidpointRounding.AwayFromZero));

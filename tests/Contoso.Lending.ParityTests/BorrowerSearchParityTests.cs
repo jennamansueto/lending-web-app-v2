@@ -2,6 +2,7 @@ using Contoso.Lending.Domain;
 
 namespace Contoso.Lending.ParityTests;
 
+[Collection(ParityArtifactCollection.Name)]
 public class BorrowerSearchParityTests
 {
     private const string Pql002 = "BR-PQL-002_borrower_search.json";
@@ -40,6 +41,22 @@ public class BorrowerSearchParityTests
             .Where(b => BorrowerSearchSemantics.Matches(boundTerm, b.LegalName, b.TaxId))
             .OrderBy(b => b.LegalName, StringComparer.Ordinal)
             .ToList();
+
+        ParityArtifact.Complete(Pql002, index, new
+        {
+            boundTerm,
+            rowCount = matched.Count,
+            rows = matched.Select(b => new
+            {
+                borrowerId = b.Id,
+                legalName = b.LegalName,
+                taxId = b.TaxId,
+                creditScore = b.CreditScore,
+                depositBalance = b.DepositBalance,
+                yearsInBusiness = b.YearsInBusiness,
+                activeLoans = b.ActiveLoans,
+            }).ToArray(),
+        });
 
         Assert.Equal(GoldenCorpus.GetInt(expected, "rowCount"), matched.Count);
 

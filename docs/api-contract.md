@@ -1,77 +1,207 @@
-# Service API contract (layer 2)
+# Service API contract
 
-Authoritative contract for the service layer. The workflow layer (3) and every UI remote (4) may
-only reach business behavior through these endpoints. Base URL in development:
-`http://localhost:5080`.
+Authoritative contract for the .NET 8 service at `http://localhost:5080`.
+Business logic is owned by the service/domain layer; the UI only parses input,
+calls these endpoints, and renders returned values.
 
 Conventions:
-- All money and rate values are JSON numbers serialized from .NET `decimal` (never `double`).
-- `resultText` fields carry the **exact** legacy user-visible string, `\n` included; they are part
-  of the behavioral contract and are parity-tested verbatim.
-- Every endpoint response includes `ruleIds`: the business-rule IDs that fired, for traceability.
-- Validation failures that the legacy UI surfaced as a message box (`One or more fields contain
-  invalid numbers.`) map to HTTP 400 with `{ "message": "<legacy text>" }`.
 
-## Eligibility (BR-ELG-001..009)
+- Money and rate values are JSON numbers serialized from .NET `decimal`.
+- `resultText` fields carry exact legacy strings, including embedded `\n`.
+- Responses that expose business rules include `ruleIds`.
+- Malformed numeric request bodies return HTTP 400 with
+  `{ "message": "One or more fields contain invalid numbers." }`.
+- A missing `borrowerId` on the persistence request is request-model validation,
+  not a business-rule response; the loan-application UI validates it after an
+  approved evaluation, matching the legacy dialog ordering.
 
-`POST /api/eligibility/evaluate`
+## Eligibility and applications
 
-```jsonc
-// request
-{ "borrowerId": 1, "productType": "TERM", "amount": 450000, "termMonths": 60,
-  "annualIncome": 900000, "monthlyDebt": 3000, "creditScore": 700,
-  "collateralValue": 700000, "yearsInBusiness": 12 }
-// response
-{ "decision": "APPROVED" | "DECLINED",
-  "declineReason": null,                       // exact legacy reason string when DECLINED
-  "dti": 0.4123, "ltv": 0.6429,                // unrounded decimals
-  "estimatedPayment": 8802.13,                 // payment at base rate (BR-ELG-005 input)
-  "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.412   LTV: 0.643\nEst. payment at base rate: $8,802.13",
-  "firedRuleId": "BR-ELG-009", "ruleIds": ["BR-ELG-001", "..."] }
+### `POST /api/eligibility/evaluate`
+
+Evaluation does not require a borrower ID.
+
+```json
+{
+  "productType": "TERM",
+  "amount": 100000,
+  "termMonths": 60,
+  "annualIncome": 600000,
+  "monthlyDebt": 5000,
+  "creditScore": 700,
+  "collateralValue": 200000,
+  "yearsInBusiness": 5
+}
 ```
 
-Rule evaluation order is observable behavior (first failing rule wins) and must match the legacy
-order: amount min -> amount max -> term -> credit score -> DTI -> collateral present -> LTV ->
-LOC years-in-business.
+```json
+{
+  "decision": "APPROVED",
+  "declineReason": null,
+  "dti": 0.1391322,
+  "ltv": 0.5,
+  "estimatedPayment": 1956.61,
+  "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.139   LTV: 0.500\nEst. payment at base rate: $1,956.61",
+  "firedRuleId": "BR-ELG-009",
+  "ruleIds": [
+    "BR-ELG-001", "BR-ELG-002", "BR-ELG-003", "BR-ELG-004",
+    "BR-ELG-005", "BR-ELG-006", "BR-ELG-007", "BR-ELG-008",
+    "BR-ELG-009"
+  ]
+}
+```
 
-`POST /api/applications` — persists an approved application (legacy `SaveApplication`, DTI/LTV
-rounded to 4 dp, status `SUBMITTED`). Returns `{ "appId": 1000 }`. Evaluation is **not** implied:
-callers evaluate first, then persist, exactly as the legacy screen did.
+### `POST /api/applications`
 
-## Pre-qualification (BR-PQL-001)
+Persists an approved application. The request requires `borrowerId`; callers
+evaluate first and persist only on approval.
 
-`GET /api/borrowers/{id}/prequalification` ->
-`{ "creditScore": 742, "prequalifiedProducts": "TERM, LOC, EQUIP", "resultText": "Pre-qualified products: TERM, LOC, EQUIP" }`
+```json
+{
+  "borrowerId": 1,
+  "productType": "TERM",
+  "amount": 100000,
+  "termMonths": 60,
+  "annualIncome": 600000,
+  "monthlyDebt": 5000,
+  "creditScore": 700,
+  "collateralValue": 200000,
+  "yearsInBusiness": 5
+}
+```
 
-## Pricing and amortization (BR-PRC-001..006, BR-AMT-001..002)
+```json
+{ "appId": 1000, "ruleIds": ["BR-ELG-010"] }
+```
 
-- `POST /api/pricing/rate` `{ productType, creditScore, ltv, depositBalance }` ->
-  `{ "baseRate": 6.50, "riskSpread": 0.35, "ltvAdjustment": 0.00, "relationshipDiscount": 0.25, "rate": 6.60, "floored": false, "capped": false }`
-- `POST /api/pricing/origination-fee` `{ amount, productType }` -> `{ "fee": 4500.00, "minApplied": false, "capApplied": false }`
-- `POST /api/amortization/payment` `{ principal, annualRatePct, termMonths }` -> `{ "payment": 8802.13 }`
-- `POST /api/amortization/schedule` `{ principal, annualRatePct, termMonths }` ->
-  `{ "payment": 8802.13, "rows": [ { "period": 1, "payment": 8802.13, "interest": 2437.50, "principal": 6364.63, "balance": 443635.37 } ] }`
-- `POST /api/pricing/quote` — the composite the pricing screen uses: rate + fee + payment + schedule in one call.
+The service recomputes eligibility and persists DTI/LTV using the legacy
+four-decimal banker's rounding. A declined evaluation returns HTTP 400 with
+the exact decline reason.
 
-## Servicing (BR-SVC-001..002)
+## Prequalification
 
-- `POST /api/servicing/late-fee` `{ "paymentAmount": 1000, "daysLate": 15 }` -> `{ "fee": 50.00 }`
-  (10-day grace, 5%, min $25, cap $150 — Oracle `ROUND` half-away-from-zero semantics.)
-- `GET /api/loans/{id}/payoff?asOf=2026-08-19` ->
-  `{ "loanId": 5001, "asOf": "2026-08-19", "balance": 383142.11, "accruedInterest": 1512.44, "unpaidLateFees": 75.00, "payoff": 384729.55 }`
+### `GET /api/borrowers/{id}/prequalification`
 
-## Data reads (layer 1 through layer 2 — the UI never touches the database)
+```json
+{
+  "creditScore": 742,
+  "prequalifiedProducts": "TERM, LOC, EQUIP",
+  "resultText": "Pre-qualified products: TERM, LOC, EQUIP",
+  "ruleIds": ["BR-PQL-001"]
+}
+```
 
-- `GET /api/borrowers?search=<term>` — case-insensitive substring match on legal name **or** tax
-  id, ordered by legal name; returns the legacy grid columns including `activeLoans`.
-- `GET /api/loans/{id}/schedule` — `PAYMENT_SCHEDULE` rows, ordered by period, legacy column set.
-- `GET /api/loans/{id}/schedule.csv` — CSV with the legacy header and CRLF line endings.
+## Pricing and amortization
 
-## Workflow-facing endpoints
+### `POST /api/pricing/quote`
 
-The workflow layer uses only: `POST /api/eligibility/evaluate`, `POST /api/pricing/quote`,
-`POST /api/applications`, and `POST /api/loans` (booking). It performs no arithmetic and applies no
-thresholds of its own; it stores decisions returned by the service and sequences the steps.
+The pricing screen uses this composite endpoint.
 
-`POST /api/loans` `{ appId, borrowerId, productType, principal, annualRate, termMonths, origFee, fundedDate }`
--> `{ "loanId": 5010 }`, and writes the amortization schedule returned by the service.
+Request:
+
+```json
+{
+  "productType": "TERM",
+  "amount": 100000,
+  "termMonths": 60,
+  "creditScore": 680,
+  "ltv": 0.5,
+  "depositBalance": 0
+}
+```
+
+Response:
+
+```json
+{
+  "rate": 7.2,
+  "originationFee": 1000.0,
+  "monthlyPayment": 1989.57,
+  "rateLabel": "Rate: 7.20 %",
+  "feeLabel": "Origination fee: $1,000.00",
+  "paymentLabel": "Monthly payment: $1,989.57",
+  "rows": [
+    {
+      "period": 1,
+      "payment": 1989.57,
+      "interest": 600.0,
+      "principal": 1389.57,
+      "balance": 98610.43
+    }
+  ],
+  "ruleIds": [
+    "BR-PRC-001", "BR-PRC-002", "BR-PRC-003", "BR-PRC-004",
+    "BR-PRC-005", "BR-PRC-006", "BR-AMT-001", "BR-AMT-002"
+  ]
+}
+```
+
+`depositBalance` is optional and defaults to `0`.
+
+The service also exposes the component endpoints:
+
+- `POST /api/pricing/rate` with `{ productType, creditScore, ltv, depositBalance }`
+  returns the rate breakdown and `rate`.
+- `POST /api/pricing/origination-fee` with `{ amount, productType }` returns
+  `{ fee, minApplied, capApplied, ruleIds }`.
+- `POST /api/amortization/payment` with
+  `{ principal, annualRatePct, termMonths }` returns `{ payment, ruleIds }`.
+- `POST /api/amortization/schedule` with the same request returns
+  `{ payment, rows, ruleIds }`, where each row has
+  `{ period, payment, interest, principal, balance }`.
+
+## Servicing
+
+- `POST /api/servicing/late-fee` with `{ paymentAmount, daysLate }` returns
+  `{ fee, ruleIds }`. The ten-day grace period, five-percent fee, `$25` minimum,
+  and `$150` cap are legacy behavior. The pricing screen deliberately passes its
+  loan amount for `paymentAmount` (LEND-5102).
+- `GET /api/loans/{id}/payoff?asOf=2026-08-19` returns:
+
+```json
+{
+  "loanId": 1,
+  "asOf": "2026-08-19",
+  "balance": 134655.19,
+  "accruedInterest": 508.18,
+  "unpaidLateFees": 0.0,
+  "payoff": 135163.37,
+  "ruleIds": ["BR-SVC-002"]
+}
+```
+
+## Data reads
+
+- `GET /api/borrowers?search=<term>` returns
+  `{ boundTerm, rows: [...], ruleIds }`. Each row has
+  `borrowerId`, `legalName`, `taxId`, `creditScore`, `depositBalance`,
+  `yearsInBusiness`, and `activeLoans`.
+- `GET /api/loans/{id}/schedule` returns
+  `{ rows: [...], ruleIds }`. Each row has
+  `periodNo`, `dueDate`, `paymentAmt`, `interestAmt`, `principalAmt`, and
+  `balanceAfter`.
+- `GET /api/loans/{id}/schedule.csv` returns the legacy CSV header and CRLF
+  line endings as `text/csv`.
+
+## Workflow-facing booking
+
+The workflow uses evaluation, pricing quote, application persistence, and booking
+endpoints. It performs no arithmetic or threshold evaluation.
+
+### `POST /api/loans`
+
+```json
+{
+  "appId": 1000,
+  "borrowerId": 1,
+  "productType": "TERM",
+  "principal": 100000,
+  "annualRate": 7.2,
+  "termMonths": 60,
+  "origFee": 1000,
+  "fundedDate": "2026-08-20"
+}
+```
+
+Returns `{ "loanId": 5010, "ruleIds": ["BR-AMT-001", "BR-AMT-002"] }`
+and writes the service-computed amortization schedule.

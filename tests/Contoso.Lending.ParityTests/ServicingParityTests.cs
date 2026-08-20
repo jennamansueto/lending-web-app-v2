@@ -3,6 +3,7 @@ using Contoso.Lending.Domain;
 
 namespace Contoso.Lending.ParityTests;
 
+[Collection(ParityArtifactCollection.Name)]
 public class ServicingParityTests
 {
     private const string Svc001 = "BR-SVC-001_late_fee.json";
@@ -23,6 +24,12 @@ public class ServicingParityTests
         decimal fee = ServicingCalculator.CalcLateFee(
             input.GetProperty("paymentAmount").GetDecimal(),
             GoldenCorpus.GetInt(input, "daysLate"));
+
+        ParityArtifact.Complete(Svc001, index, new
+        {
+            lateFee = fee,
+            labelText = ServicingCalculator.LateFeeLabel(fee),
+        });
 
         Assert.Equal(expected.GetProperty("lateFee").GetDecimal(), fee);
         Assert.Equal(GoldenCorpus.GetString(expected, "labelText"), ServicingCalculator.LateFeeLabel(fee));
@@ -57,6 +64,7 @@ public class ServicingParityTests
             };
 
         decimal payoff = ServicingCalculator.GetPayoffAmount(annualRate, principal, fundedDate, schedule, lateFees, asOf);
+        ParityArtifact.Complete(Svc002, index, new { payoffAmount = payoff });
         Assert.Equal(expected.GetProperty("payoffAmount").GetDecimal(), payoff);
     }
 }

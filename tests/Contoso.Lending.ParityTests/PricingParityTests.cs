@@ -2,6 +2,7 @@ using Contoso.Lending.Domain;
 
 namespace Contoso.Lending.ParityTests;
 
+[Collection(ParityArtifactCollection.Name)]
 public class PricingParityTests
 {
     private const string Prc001 = "BR-PRC-001_base_rate.json";
@@ -27,8 +28,9 @@ public class PricingParityTests
         _ = description;
         var record = GoldenCorpus.Record(Prc001, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.GetBaseRate(input.GetProperty("productType").GetString()!));
+        decimal actual = LoanCalculator.GetBaseRate(input.GetProperty("productType").GetString()!);
+        ParityArtifact.Complete(Prc001, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -38,8 +40,9 @@ public class PricingParityTests
         _ = description;
         var record = GoldenCorpus.Record(Prc002, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.GetRiskSpread(GoldenCorpus.GetInt(input, "creditScore")));
+        decimal actual = LoanCalculator.GetRiskSpread(GoldenCorpus.GetInt(input, "creditScore"));
+        ParityArtifact.Complete(Prc002, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -49,8 +52,9 @@ public class PricingParityTests
         _ = description;
         var record = GoldenCorpus.Record(Prc003, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.GetLtvAdjustment(input.GetProperty("ltv").GetDecimal()));
+        decimal actual = LoanCalculator.GetLtvAdjustment(input.GetProperty("ltv").GetDecimal());
+        ParityArtifact.Complete(Prc003, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -60,8 +64,9 @@ public class PricingParityTests
         _ = description;
         var record = GoldenCorpus.Record(Prc004, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.GetRelationshipDiscount(input.GetProperty("depositBalance").GetDecimal()));
+        decimal actual = LoanCalculator.GetRelationshipDiscount(input.GetProperty("depositBalance").GetDecimal());
+        ParityArtifact.Complete(Prc004, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -71,12 +76,13 @@ public class PricingParityTests
         _ = description;
         var record = GoldenCorpus.Record(Prc005, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.PriceRate(
+        decimal actual = LoanCalculator.PriceRate(
                 input.GetProperty("productType").GetString()!,
                 GoldenCorpus.GetInt(input, "creditScore"),
                 input.GetProperty("ltv").GetDecimal(),
-                input.GetProperty("depositBalance").GetDecimal()));
+                input.GetProperty("depositBalance").GetDecimal());
+        ParityArtifact.Complete(Prc005, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -86,10 +92,11 @@ public class PricingParityTests
         _ = description;
         var record = GoldenCorpus.Record(Prc006, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.CalcOriginationFee(
+        decimal actual = LoanCalculator.CalcOriginationFee(
                 input.GetProperty("amount").GetDecimal(),
-                input.GetProperty("productType").GetString()!));
+                input.GetProperty("productType").GetString()!);
+        ParityArtifact.Complete(Prc006, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -112,6 +119,12 @@ public class PricingParityTests
                     input.GetProperty("amount").GetDecimal(), productType))!,
             _ => throw new InvalidOperationException("Unknown entryPoint: " + entryPoint),
         };
+
+        ParityArtifact.Complete(Prc007, index, new
+        {
+            type = ex?.GetType().FullName,
+            message = ex?.Message,
+        });
 
         Assert.NotNull(ex);
         Assert.Equal(GoldenCorpus.GetString(expectedError, "type"), ex.GetType().FullName);

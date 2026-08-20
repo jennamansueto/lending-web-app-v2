@@ -30,6 +30,7 @@ internal static class Program
         }
 
         var command = args[0].ToLowerInvariant();
+        string? reportPath = ReadOption(args, "--report");
         var oracleConnectionString =
             Environment.GetEnvironmentVariable("MIGRATOR_ORACLE") ?? DefaultOracle;
         var postgresConnectionString =
@@ -49,7 +50,7 @@ internal static class Program
             {
                 "migrate" => await MigrateAsync(oracleConnectionString, postgresConnectionString, cts.Token),
                 "verify" => await VerifyAsync(
-                    oracleConnectionString, postgresConnectionString, repoRoot, cts.Token),
+                    oracleConnectionString, postgresConnectionString, repoRoot, reportPath, cts.Token),
                 _ => Unknown(command),
             };
         }
@@ -58,6 +59,24 @@ internal static class Program
             Console.Error.WriteLine($"FAILED: {ex.Message}");
             return 3;
         }
+    }
+
+    private static string? ReadOption(string[] args, string option)
+    {
+        for (int i = 1; i < args.Length; i++)
+        {
+            if (args[i] == option)
+            {
+                if (i + 1 >= args.Length)
+                {
+                    throw new ArgumentException($"{option} requires a path");
+                }
+
+                return args[i + 1];
+            }
+        }
+
+        return null;
     }
 
     private static int Unknown(string command)
@@ -105,7 +124,7 @@ internal static class Program
     }
 
     private static async Task<int> VerifyAsync(
-        string oracle, string postgres, string repoRoot, CancellationToken ct)
+        string oracle, string postgres, string repoRoot, string? reportPath, CancellationToken ct)
     {
         var harness = Path.Combine(repoRoot, "database", "checks", "checksum_postgres.sql");
         var baselinePath = Path.Combine(repoRoot, "database", "checks", "baseline-oracle.json");
@@ -129,6 +148,7 @@ internal static class Program
         var baseline = Baseline.Load(baselinePath);
         var postgresChecksums = await target.ChecksumsAsync(harness, ct);
         var mismatches = new List<string>();
+        var reportRows = new List<VerifyRow>();
 
         foreach (var table in LendingSchema.Tables)
         {
@@ -143,27 +163,40 @@ internal static class Program
             var baselineTable = baseline.Tables[table.OracleName];
             var tableMismatches = new List<string>();
 
-            void Check(string what, string expected, string actual)
+            void Check(string what, string oracleValue, string postgresValue, string? baselineValue = null)
             {
-                if (!string.Equals(expected, actual, StringComparison.Ordinal))
+                bool equal = string.Equals(oracleValue, postgresValue, StringComparison.Ordinal)
+                    && (baselineValue is null
+                        || string.Equals(baselineValue, postgresValue, StringComparison.Ordinal));
+                reportRows.Add(new VerifyRow(
+                    table.PostgresName,
+                    what,
+                    oracleValue,
+                    postgresValue,
+                    equal ? "pass" : "fail",
+                    baselineValue));
+                if (!equal)
                 {
-                    tableMismatches.Add($"{table.OracleName}.{what}: oracle/baseline={expected} postgres={actual}");
+                    tableMismatches.Add(
+                        $"{table.OracleName}.{what}: oracle={oracleValue} baseline={baselineValue ?? "(not checked)"} postgres={postgresValue}");
                 }
             }
 
-            Check("row_count", oracleChecksum.RowCount.ToString(), postgresChecksum.RowCount.ToString());
-            Check("row_count[baseline]", baselineTable.RowCount.ToString(), postgresChecksum.RowCount.ToString());
+            Check(
+                "row_count",
+                oracleChecksum.RowCount.ToString(),
+                postgresChecksum.RowCount.ToString(),
+                baselineTable.RowCount.ToString());
 
             foreach (var column in table.NumericColumns)
             {
-                Check($"SUM({column.Name})",
-                    oracleChecksum.NumericSums[column.Name], postgresChecksum.NumericSums[column.Name]);
-                Check($"SUM({column.Name})[baseline]",
-                    baselineTable.NumericSums[column.Name], postgresChecksum.NumericSums[column.Name]);
-                Check($"MIN({column.Name})",
-                    oracleChecksum.NumericMin[column.Name], postgresChecksum.NumericMin[column.Name]);
-                Check($"MAX({column.Name})",
-                    oracleChecksum.NumericMax[column.Name], postgresChecksum.NumericMax[column.Name]);
+                Check(
+                    $"SUM({column.Name})",
+                    oracleChecksum.NumericSums[column.Name],
+                    postgresChecksum.NumericSums[column.Name],
+                    baselineTable.NumericSums[column.Name]);
+                Check($"MIN({column.Name})", oracleChecksum.NumericMin[column.Name], postgresChecksum.NumericMin[column.Name]);
+                Check($"MAX({column.Name})", oracleChecksum.NumericMax[column.Name], postgresChecksum.NumericMax[column.Name]);
             }
 
             foreach (var column in table.DateColumns)
@@ -172,11 +205,11 @@ internal static class Program
                 Check($"MAX({column.Name})", oracleChecksum.DateMax[column.Name], postgresChecksum.DateMax[column.Name]);
             }
 
-            Check("row_hash_chain", oracleChecksum.RowHashChain, postgresChecksum.RowHashChain);
-            Check("row_hash_chain[baseline]", baselineTable.RowHashChain, postgresChecksum.RowHashChain);
+            Check("row_hash_chain", oracleChecksum.RowHashChain, postgresChecksum.RowHashChain, baselineTable.RowHashChain);
             Check("delimiter_collisions",
-                baselineTable.DelimiterCollisions.ToString(),
-                target.Collisions[table.OracleName].ToString());
+                oracleChecksum.DelimiterCollisions.ToString(),
+                target.Collisions[table.OracleName].ToString(),
+                baselineTable.DelimiterCollisions.ToString());
 
             mismatches.AddRange(tableMismatches);
             Console.WriteLine(
@@ -208,6 +241,13 @@ internal static class Program
             var baselinePosition = baseline.Sequences[sequence];
             var postgresPosition = postgresSequences[sequence];
             var ok = oraclePosition == postgresPosition && baselinePosition == postgresPosition;
+            reportRows.Add(new VerifyRow(
+                "sequence",
+                sequence.ToLowerInvariant(),
+                oraclePosition.ToString(),
+                postgresPosition.ToString(),
+                ok ? "pass" : "fail",
+                baselinePosition.ToString()));
             if (!ok)
             {
                 mismatches.Add(
@@ -217,6 +257,11 @@ internal static class Program
             Console.WriteLine(
                 $"{(ok ? "OK  " : "FAIL")} {sequence.ToLowerInvariant(),-21} " +
                 $"position={postgresPosition} (oracle={oraclePosition}, baseline={baselinePosition})");
+        }
+
+        if (reportPath is not null)
+        {
+            new VerifyReport(reportRows).Write(reportPath);
         }
 
         Console.WriteLine();

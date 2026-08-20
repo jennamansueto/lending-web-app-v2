@@ -2,6 +2,7 @@ using Contoso.Lending.Domain;
 
 namespace Contoso.Lending.ParityTests;
 
+[Collection(ParityArtifactCollection.Name)]
 public class AmortizationParityTests
 {
     private const string Amt001 = "BR-AMT-001_monthly_payment.json";
@@ -19,11 +20,12 @@ public class AmortizationParityTests
         _ = description;
         var record = GoldenCorpus.Record(Amt001, index);
         var input = record.GetProperty("input");
-        Assert.Equal(record.GetProperty("expected").GetDecimal(),
-            LoanCalculator.MonthlyPayment(
+        decimal actual = LoanCalculator.MonthlyPayment(
                 input.GetProperty("principal").GetDecimal(),
                 input.GetProperty("annualRatePct").GetDecimal(),
-                GoldenCorpus.GetInt(input, "termMonths")));
+                GoldenCorpus.GetInt(input, "termMonths"));
+        ParityArtifact.Complete(Amt001, index, actual);
+        Assert.Equal(record.GetProperty("expected").GetDecimal(), actual);
     }
 
     [Theory]
@@ -39,6 +41,15 @@ public class AmortizationParityTests
             input.GetProperty("principal").GetDecimal(),
             input.GetProperty("annualRatePct").GetDecimal(),
             GoldenCorpus.GetInt(input, "termMonths"));
+
+        ParityArtifact.Complete(Amt002, index, rows.Select(row => new
+        {
+            row.Period,
+            row.Payment,
+            row.Interest,
+            row.Principal,
+            row.Balance,
+        }).ToArray());
 
         Assert.Equal(expectedRows.Length, rows.Count);
         for (int r = 0; r < expectedRows.Length; r++)
@@ -66,6 +77,12 @@ public class AmortizationParityTests
         Exception? ex = description.StartsWith("BuildSchedule", StringComparison.Ordinal)
             ? Record.Exception(() => LoanCalculator.BuildSchedule(principal, annualRatePct, termMonths))
             : Record.Exception(() => LoanCalculator.MonthlyPayment(principal, annualRatePct, termMonths));
+
+        ParityArtifact.Complete(Amt003, index, new
+        {
+            type = ex?.GetType().FullName,
+            message = ex?.Message,
+        });
 
         Assert.NotNull(ex);
         Assert.Equal(GoldenCorpus.GetString(expectedError, "type"), ex!.GetType().FullName);

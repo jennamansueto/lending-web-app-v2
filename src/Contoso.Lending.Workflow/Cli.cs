@@ -20,7 +20,8 @@ public static class Cli
                     """
                     usage:
                       worker                          host the Temporal worker (default)
-                      demo [--scenarios <path>]       run the approved + declined scenarios end to end
+                      demo [--scenarios <path>] [--artifact <path>]
+                                                        run scenarios and write structured results
                       payoff --loan-id <id> [--as-of <yyyy-MM-dd>]
                     """);
                 return 2;

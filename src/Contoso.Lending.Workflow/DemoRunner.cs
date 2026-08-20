@@ -27,6 +27,7 @@ public static class DemoRunner
 
         var client = await ConnectAsync().ConfigureAwait(false);
         var failures = 0;
+        var artifact = new List<object>();
         foreach (var scenario in file.Scenarios)
         {
             Console.WriteLine($"=== scenario '{scenario.Name}' — {scenario.Description}");
@@ -55,12 +56,30 @@ public static class DemoRunner
             Console.WriteLine($"resultText (esc) : {Escape(result.ResultText)}");
             Console.WriteLine($"expected   (esc) : {Escape(scenario.Expected.ResultText)}");
 
-            failures += Check("decision", scenario.Expected.Decision, result.Decision);
-            failures += Check("resultText", scenario.Expected.ResultText, result.ResultText);
-            failures += Check("declineReason", scenario.Expected.DeclineReason, result.DeclineReason);
-            failures += Check("firedRuleId", scenario.Expected.FiredRuleId, result.FiredRuleId);
+            var assertions = new[]
+            {
+                Assertion("decision", scenario.Expected.Decision, result.Decision),
+                Assertion("resultText", scenario.Expected.ResultText, result.ResultText),
+                Assertion("declineReason", scenario.Expected.DeclineReason, result.DeclineReason),
+                Assertion("firedRuleId", scenario.Expected.FiredRuleId, result.FiredRuleId),
+            };
+            failures += assertions.Count(x => x.Status == "fail");
+            artifact.Add(new
+            {
+                name = scenario.Name,
+                workflowId = id,
+                status = assertions.All(x => x.Status == "pass") ? "pass" : "fail",
+                assertions,
+            });
             Console.WriteLine();
         }
+
+        string artifactPath = Cli.Option(args, "--artifact")
+            ?? Path.Combine(RepositoryRoot(), "parity", "artifacts", "l4-scenarios.json");
+        Directory.CreateDirectory(Path.GetDirectoryName(artifactPath)!);
+        File.WriteAllText(
+            artifactPath,
+            JsonSerializer.Serialize(artifact, new JsonSerializerOptions(Json) { WriteIndented = true }) + Environment.NewLine);
 
         Console.WriteLine(failures == 0
             ? "PARITY OK — every asserted field matched the legacy expectation byte-for-byte."
@@ -96,7 +115,7 @@ public static class DemoRunner
         });
     }
 
-    private static int Check(string field, string? expected, string? actual)
+    private static AssertionResult Assertion(string field, string? expected, string? actual)
     {
         var ok = string.Equals(expected, actual, StringComparison.Ordinal);
         Console.WriteLine($"  [{(ok ? "OK  " : "FAIL")}] {field}");
@@ -105,11 +124,33 @@ public static class DemoRunner
             Console.WriteLine($"         expected {Escape(expected)} actual {Escape(actual)}");
         }
 
-        return ok ? 0 : 1;
+        return new AssertionResult(field, expected, actual, ok ? "pass" : "fail");
     }
 
     private static string Escape(string? value) =>
         value is null ? "(null)" : JsonSerializer.Serialize(value);
+
+    private static string RepositoryRoot()
+    {
+        var directory = new DirectoryInfo(AppContext.BaseDirectory);
+        while (directory is not null)
+        {
+            if (Directory.Exists(Path.Combine(directory.FullName, "parity", "golden")))
+            {
+                return directory.FullName;
+            }
+
+            directory = directory.Parent;
+        }
+
+        throw new DirectoryNotFoundException("could not locate repository root");
+    }
+
+    private sealed record AssertionResult(
+        string Field,
+        string? Expected,
+        string? Actual,
+        string Status);
 
     private sealed record ScenarioFile(List<Scenario> Scenarios);
 

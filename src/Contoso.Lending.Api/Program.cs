@@ -35,9 +35,8 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 app.UseCors("ui-development");
 
-// docs/api-contract.md: legacy message-box validation failures map to HTTP 400
-// with { "message": "<legacy text>" }. BR-ELG-011 / BR-UI-007
-// LoanApplicationForm.cs:149-158, PricingForm.cs:97-101.
+// docs/api-contract.md: malformed JSON numbers map to HTTP 400 with the legacy
+// validation text. BR-ELG-011 / BR-UI-007.
 app.Use(async (context, next) =>
 {
     try
@@ -86,7 +85,7 @@ app.MapPost("/api/eligibility/evaluate", (EligibilityRequest req) =>
 // BR-ELG-010: persistence of an approved application. Evaluation is NOT implied;
 // callers evaluate first, then persist, exactly as the legacy screen did
 // (SaveApplication called only on the approval path, LoanApplicationForm.cs:143).
-app.MapPost("/api/applications", async (EligibilityRequest req, ApplicationRepository applications) =>
+app.MapPost("/api/applications", async (ApplicationRequest req, ApplicationRepository applications) =>
 {
     var result = EligibilityEngine.Evaluate(new EligibilityInput
     {
@@ -103,12 +102,8 @@ app.MapPost("/api/applications", async (EligibilityRequest req, ApplicationRepos
     {
         return Results.BadRequest(new { message = result.DeclineReason, ruleIds = result.RuleIds });
     }
-    if (req.BorrowerId is null)
-    {
-        return Results.BadRequest(new { message = "Borrower ID is required.", ruleIds = result.RuleIds });
-    }
     var persisted = ApplicationPersistence.Build(
-        req.BorrowerId.Value, req.ProductType, req.Amount, req.TermMonths, req.CreditScore,
+        req.BorrowerId, req.ProductType, req.Amount, req.TermMonths, req.CreditScore,
         result.Dti!.Value, result.Ltv!.Value);
     int appId = await applications.InsertAsync(persisted);
     return Results.Ok(new { appId, ruleIds = new[] { "BR-ELG-010" } });
