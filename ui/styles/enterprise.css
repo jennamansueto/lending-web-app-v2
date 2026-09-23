@@ -241,6 +241,9 @@ table.grid tbody tr.selectable {
   border-radius: 3px;
   min-width: 380px;
   max-width: 520px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
 }
 
@@ -254,6 +257,8 @@ table.grid tbody tr.selectable {
 .msgbox-text {
   padding: 18px 14px;
   margin: 0;
+  overflow: auto;
+  overflow-wrap: anywhere;
 }
 
 .msgbox-actions {

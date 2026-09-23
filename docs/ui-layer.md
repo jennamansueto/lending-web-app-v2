@@ -90,3 +90,14 @@ exactly as received.
 
 - No business state is shared between remotes; they communicate only through the service API.
 - No direct database access and no mock or stub data — the committed app talks to the real API.
+
+## Known limitation (service side)
+
+`GET /api/loans/{id}/schedule`, `…/schedule.csv` and `GET /api/loans/{id}/payoff` currently return
+HTTP 500 (`Reading as 'System.DateOnly' is not supported for fields having DataTypeName
+'timestamp without time zone'`, `LendingRepository.cs:68` and `:92`). The Statements screen renders
+and issues the correct requests, but its grid, CSV download and payoff value cannot be exercised
+until that layer-2 defect is fixed. The fix belongs in `src/**`, which this layer does not touch.
+
+The legacy Statements form had no as-of date control, so the historical payoff dates in
+`parity/golden/BR-SVC-002_payoff_quote.json` are not drivable from the UI by design.
