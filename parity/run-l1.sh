@@ -63,6 +63,10 @@ fi
 if curl -fsS "$ui_url" >/dev/null 2>&1; then
     echo "L1: reusing the Angular dev server already listening on $ui_url"
 else
+    if [ ! -d "$repo_root/ui/node_modules" ]; then
+        echo "L1: installing the Angular workspace dependencies"
+        (cd "$repo_root/ui" && npm install --no-audit --no-fund) || exit 1
+    fi
     echo "L1: starting the Angular shell and remotes"
     (cd "$repo_root/ui" && npx nx serve shell) >"$reports_dir/l1-ui-server.log" 2>&1 &
     ui_pid=$!

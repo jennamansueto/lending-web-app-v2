@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T08:25:30Z",
+  "generatedAt": "2026-09-23T08:44:53Z",
   "tolerance": "zero",
   "status": "pass",
   "levels": [
@@ -16,7 +16,7 @@
         "passed": 42,
         "failed": 0
       },
-      "durationSeconds": 30,
+      "durationSeconds": 40,
       "log": "parity/reports/run-all-l1.log"
     },
     {
@@ -64,7 +64,7 @@
         "passed": 3,
         "failed": 0
       },
-      "durationSeconds": 4,
+      "durationSeconds": 8,
       "log": "parity/reports/run-all-l4.log"
     }
   ],
