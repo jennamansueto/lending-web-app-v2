@@ -42,11 +42,11 @@ Layers 1 and 2 first (see `docs/data-layer.md`): Postgres up, migrator run, API 
 ```bash
 cd ui
 npm install
-npx nx run-many -t serve -p shell loanApplication pricing borrowerLookup statements
-# shell: http://localhost:4200
+npx nx serve shell   # http://localhost:4200
 ```
 
-`npx nx serve shell` alone also starts the remotes it depends on. A remote can be run on its own
+`nx serve shell` starts the four remotes on 4201-4204 itself. Do not also start them with
+`nx run-many -t serve` — the ports collide (`EADDRINUSE`). A remote can be run on its own
 (`npx nx serve pricing` → http://localhost:4202) — that is how each screen is exercised standalone.
 
 Standalone production builds:
