@@ -1,0 +1,58 @@
+[
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 0.0
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 50000.0
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 99999.99
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 100000.0
+    },
+    "expected": 0.10
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 100000.01
+    },
+    "expected": 0.10
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 249999.99
+    },
+    "expected": 0.10
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 250000.0
+    },
+    "expected": 0.25
+  },
+  {
+    "ruleId": "BR-PRC-004",
+    "input": {
+      "depositBalance": 1000000.0
+    },
+    "expected": 0.25
+  }
+]
