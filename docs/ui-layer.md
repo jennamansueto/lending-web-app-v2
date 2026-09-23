@@ -45,7 +45,9 @@ npm install
 npx nx serve shell   # http://localhost:4200
 ```
 
-`nx serve shell` starts the four remotes on 4201-4204 itself. Do not also start them with
+`nx serve shell` starts the four remotes on 4201-4204 itself as dev-servers (`devRemotes` in
+`ui/shell/project.json`; without it the remotes are served statically from `dist/` and their
+`mf-manifest.json` 404s). Do not also start them with
 `nx run-many -t serve` — the ports collide (`EADDRINUSE`). A remote can be run on its own
 (`npx nx serve pricing` → http://localhost:4202) — that is how each screen is exercised standalone.
 
