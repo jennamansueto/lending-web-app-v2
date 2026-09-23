@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lending-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      # Local demo credentials only.
+      POSTGRES_DB: lending
+      POSTGRES_USER: lending
+      POSTGRES_PASSWORD: lending_pw_2014
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    volumes:
+      - ./database/postgres:/database/postgres:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lending -d lending"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
