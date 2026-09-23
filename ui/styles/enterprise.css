@@ -151,7 +151,7 @@ input.invalid {
   border: 1px solid var(--line-strong);
   background: var(--surface-sunken);
   padding: 14px 16px;
-  white-space: pre-line;
+  white-space: pre-wrap;
   font-variant-numeric: tabular-nums;
   min-height: 74px;
 }
