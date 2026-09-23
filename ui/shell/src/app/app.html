@@ -1,0 +1,24 @@
+<div class="app-frame">
+  <header class="app-header">
+    <div class="app-header-text">
+      <h1>Contoso Bank — Commercial Lending Desk</h1>
+      <p>Internal use only. Direct issues to the Lending Systems team (x4471).</p>
+    </div>
+  </header>
+
+  <nav class="app-nav" aria-label="Screens">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    @for (screen of screens; track screen.path) {
+      <a [routerLink]="screen.path" routerLinkActive="active">{{ screen.text }}</a>
+    }
+  </nav>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="app-status">
+    <span>{{ connection() }}</span>
+    <span>User: LENDING DESK</span>
+  </footer>
+</div>

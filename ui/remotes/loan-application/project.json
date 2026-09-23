@@ -1,0 +1,124 @@
+{
+  "name": "loanApplication",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "remotes/loan-application/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/remotes/loan-application",
+        "index": "remotes/loan-application/src/index.html",
+        "main": "remotes/loan-application/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "remotes/loan-application/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "remotes/loan-application/public"
+          }
+        ],
+        "styles": [
+          "remotes/loan-application/src/styles.css"
+        ],
+        "customWebpackConfig": {
+          "path": "remotes/loan-application/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "remotes/loan-application/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4201,
+        "publicHost": "http://localhost:4201",
+        "proxyConfig": "proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "loanApplication:build:production"
+        },
+        "development": {
+          "buildTarget": "loanApplication:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "shell:serve"
+      ]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "loanApplication:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "remotes/loan-application/jest.config.ts",
+        "tsConfig": "remotes/loan-application/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "loanApplication:build",
+        "port": 4201,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "loanApplication:build:development"
+        },
+        "production": {
+          "buildTarget": "loanApplication:build:production"
+        }
+      }
+    }
+  }
+}

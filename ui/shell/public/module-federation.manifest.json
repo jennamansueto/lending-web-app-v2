@@ -1,0 +1,6 @@
+{
+  "pricing": "http://localhost:4202/mf-manifest.json",
+  "statements": "http://localhost:4204/mf-manifest.json",
+  "loanApplication": "http://localhost:4201/mf-manifest.json",
+  "borrowerLookup": "http://localhost:4203/mf-manifest.json"
+}
