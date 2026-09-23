@@ -73,16 +73,21 @@ public sealed class LendingRepository(string connectionString)
         return rows;
     }
 
-    /// <summary>Loan state the payoff rule reads: loan terms, due schedule rows and all late fees.</summary>
+    /// <summary>
+    /// Loan state the payoff rule reads: loan terms, due schedule rows and all late fees.
+    /// The three reads share one repeatable-read transaction so a quote can never mix a schedule
+    /// from before a servicing update with fees from after it.
+    /// </summary>
     public async Task<PayoffLoanState?> GetPayoffStateAsync(int loanId, CancellationToken ct)
     {
         await using var connection = await OpenAsync(ct);
+        await using var transaction = await connection.BeginTransactionAsync(System.Data.IsolationLevel.RepeatableRead, ct);
 
         decimal principal;
         decimal annualRate;
         DateOnly fundedDate;
         await using (var loanCommand = new NpgsqlCommand(
-            "SELECT principal, annual_rate, funded_date FROM loan WHERE loan_id = @id", connection))
+            "SELECT principal, annual_rate, funded_date FROM loan WHERE loan_id = @id", connection, transaction))
         {
             loanCommand.Parameters.AddWithValue("id", loanId);
             await using var loanReader = await loanCommand.ExecuteReaderAsync(ct);
@@ -94,7 +99,7 @@ public sealed class LendingRepository(string connectionString)
 
         var schedule = new List<PayoffScheduleRow>();
         await using (var scheduleCommand = new NpgsqlCommand(
-            "SELECT period_no, due_date, balance_after FROM payment_schedule WHERE loan_id = @id ORDER BY period_no", connection))
+            "SELECT period_no, due_date, balance_after FROM payment_schedule WHERE loan_id = @id ORDER BY period_no", connection, transaction))
         {
             scheduleCommand.Parameters.AddWithValue("id", loanId);
             await using var scheduleReader = await scheduleCommand.ExecuteReaderAsync(ct);
@@ -107,7 +112,7 @@ public sealed class LendingRepository(string connectionString)
 
         decimal lateFees;
         await using (var feeCommand = new NpgsqlCommand(
-            "SELECT COALESCE(SUM(late_fee), 0) FROM payment WHERE loan_id = @id", connection))
+            "SELECT COALESCE(SUM(late_fee), 0) FROM payment WHERE loan_id = @id", connection, transaction))
         {
             feeCommand.Parameters.AddWithValue("id", loanId);
             lateFees = Convert.ToDecimal(await feeCommand.ExecuteScalarAsync(ct));
@@ -116,8 +121,9 @@ public sealed class LendingRepository(string connectionString)
         return new PayoffLoanState(loanId, principal, annualRate, fundedDate, schedule, lateFees);
     }
 
-    // Legacy `LoanApplicationForm.SaveApplication`: DTI/LTV persisted rounded to 4 dp,
-    // status SUBMITTED.
+    // Legacy `LoanApplicationForm.SaveApplication`: DTI/LTV persisted rounded to 4 dp with the
+    // .NET default (to-even) rounding — unlike the money rules, which round away from zero —
+    // and status SUBMITTED.
     public async Task<int> InsertApplicationAsync(CreateApplicationRequestDto request, CancellationToken ct)
     {
         const string sql = """
