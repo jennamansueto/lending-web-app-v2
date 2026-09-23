@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-09-23T08:54:43Z",
+  "tolerance": "zero",
+  "status": "pass",
+  "levels": [
+    {
+      "id": "l1",
+      "name": "Layer 1 \u2014 UI",
+      "description": "Angular shell and remotes driven in a browser, every rendered value compared to the golden corpus, the service and the system of record",
+      "script": "parity/run-l1.sh",
+      "report": "parity/reports/l1-ui.json",
+      "unit": "checks",
+      "status": "pass",
+      "totals": {
+        "total": 42,
+        "passed": 42,
+        "failed": 0
+      },
+      "durationSeconds": 33,
+      "log": "parity/reports/run-all-l1.log"
+    },
+    {
+      "id": "l2",
+      "name": "Layer 2 \u2014 Service",
+      "description": "Golden corpus replayed against the domain, grouped by business rule",
+      "script": "parity/run-l2.sh",
+      "report": "parity/reports/l2-service.json",
+      "unit": "tests",
+      "status": "pass",
+      "totals": {
+        "total": 780,
+        "passed": 780,
+        "failed": 0
+      },
+      "durationSeconds": 2,
+      "log": "parity/reports/run-all-l2.log"
+    },
+    {
+      "id": "l3",
+      "name": "Layer 3 \u2014 Data",
+      "description": "Fresh Oracle to Postgres migration, then row counts, numeric sums and table checksums",
+      "script": "parity/run-l3.sh",
+      "report": "parity/reports/data-parity.json",
+      "unit": "checksums",
+      "status": "pass",
+      "totals": {
+        "total": 45,
+        "passed": 45,
+        "failed": 0
+      },
+      "durationSeconds": 2,
+      "log": "parity/reports/run-all-l3.log"
+    },
+    {
+      "id": "l4",
+      "name": "Layer 4 \u2014 Workflow",
+      "description": "Temporal origination workflow scenarios run end to end against the live stack",
+      "script": "parity/run-l4.sh",
+      "report": "parity/reports/l4-e2e.json",
+      "unit": "scenarios",
+      "status": "pass",
+      "totals": {
+        "total": 3,
+        "passed": 3,
+        "failed": 0
+      },
+      "durationSeconds": 6,
+      "log": "parity/reports/run-all-l4.log"
+    }
+  ],
+  "totals": {
+    "total": 870,
+    "passed": 870,
+    "failed": 0
+  }
+}

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Contoso.Lending.Workflow</RootNamespace>
+  </PropertyGroup>
+
+  <!-- Layer 3 holds no business logic, so it references no domain and no database package.
+       tests/Contoso.Lending.ArchTests asserts that, and fails the build gate if it changes. -->
+  <ItemGroup>
+    <PackageReference Include="Temporalio" Version="1.19.0" />
+  </ItemGroup>
+
+</Project>

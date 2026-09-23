@@ -1,0 +1,33 @@
+{
+  "name": "declined-credit-score",
+  "description": "DECLINED on the minimum credit score rule: the workflow records the service decision and completes without persisting, pricing or booking.",
+  "input": {
+    "borrowerId": 9003,
+    "productType": "TERM",
+    "amount": 100000.0,
+    "termMonths": 60,
+    "annualIncome": 1200000.0,
+    "monthlyDebt": 0.0,
+    "creditScore": 619,
+    "collateralValue": 1000000.0,
+    "yearsInBusiness": 10,
+    "depositBalance": 0.0,
+    "fundedDate": "2024-01-15"
+  },
+  "expected": {
+    "decision": "DECLINED",
+    "declineReason": "Credit score 619 below product minimum of 640.",
+    "firedRuleId": "BR-ELG-004",
+    "dti": null,
+    "ltv": null,
+    "estimatedPayment": null,
+    "resultText": "DECLINED\nCredit score 619 below product minimum of 640.",
+    "rate": null,
+    "originationFee": null,
+    "payment": null,
+    "booked": false
+  },
+  "provenance": {
+    "everything": "BR-ELG-004_minimum_credit_score.json (TERM, score 619)"
+  }
+}

@@ -1,0 +1,51 @@
+.pricing-columns {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 880px) {
+  .pricing-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field-column {
+  display: grid;
+  gap: 12px;
+}
+
+.rate-breakdown {
+  display: grid;
+  gap: 4px;
+  margin: 14px 0 0;
+  font-size: 12px;
+}
+
+.rate-breakdown div {
+  display: grid;
+  grid-template-columns: 170px auto;
+}
+
+.rate-breakdown dt,
+.rate-breakdown dd {
+  margin: 0;
+}
+
+.late-fee {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 10px;
+}
+
+.late-fee .actions {
+  margin-top: 0;
+}
+
+.quirk-note {
+  font-size: 12px;
+  margin: 0;
+}

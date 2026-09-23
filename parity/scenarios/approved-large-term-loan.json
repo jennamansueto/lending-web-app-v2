@@ -1,0 +1,37 @@
+{
+  "name": "approved-large-term-loan",
+  "description": "APPROVED term loan whose eligibility result, including the formatted result text, is a verbatim golden record.",
+  "input": {
+    "borrowerId": 9002,
+    "productType": "TERM",
+    "amount": 1234567.89,
+    "termMonths": 60,
+    "annualIncome": 3000000.0,
+    "monthlyDebt": 0.0,
+    "creditScore": 800,
+    "collateralValue": 2000000.0,
+    "yearsInBusiness": 10,
+    "depositBalance": 0.0,
+    "fundedDate": "2024-01-15"
+  },
+  "expected": {
+    "decision": "APPROVED",
+    "declineReason": null,
+    "firedRuleId": "BR-ELG-009",
+    "dti": 0.09662296,
+    "ltv": 0.617283945,
+    "estimatedPayment": 24155.74,
+    "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.097   LTV: 0.617\nEst. payment at base rate: $24,155.74",
+    "rate": 6.5,
+    "originationFee": 12345.68,
+    "payment": 24155.74,
+    "scheduleRows": 60,
+    "booked": true
+  },
+  "provenance": {
+    "decision, firedRuleId, dti, ltv, estimatedPayment, resultText": "BR-ELG-009_approval_result.json (TERM, 1234567.89, 60m, income 3000000, collateral 2000000, score 800)",
+    "rate": "BR-PRC-005_priced_rate.json (TERM, score 760, ltv 0.7, deposit 0); ltv 0.617283945 shares the 0.61-0.75 adjustment band (BR-PRC-003)",
+    "payment": "BR-AMT-001_monthly_payment.json (principal 1234567.89, 6.5%, 60m)",
+    "originationFee": "derived from BR-PRC-006 (1% of amount, between the golden 500 floor and 25000 cap)"
+  }
+}

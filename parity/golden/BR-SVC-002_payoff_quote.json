@@ -1,0 +1,387 @@
+[
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2021-04-01"
+    },
+    "expected": {
+      "payoffAmount": 450000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2021-04-30"
+    },
+    "expected": {
+      "payoffAmount": 450000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2021-05-15"
+    },
+    "expected": {
+      "payoffAmount": 451340.75
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2021-05-31"
+    },
+    "expected": {
+      "payoffAmount": 445871.92
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2024-06-15"
+    },
+    "expected": {
+      "payoffAmount": 280249.82
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2028-04-30"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 1,
+      "asOf": "2029-01-01"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2022-01-15"
+    },
+    "expected": {
+      "payoffAmount": 175150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2022-02-01"
+    },
+    "expected": {
+      "payoffAmount": 175150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2022-02-15"
+    },
+    "expected": {
+      "payoffAmount": 175697.05
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2022-03-01"
+    },
+    "expected": {
+      "payoffAmount": 172777.59
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2024-08-20"
+    },
+    "expected": {
+      "payoffAmount": 96912.16
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2027-02-01"
+    },
+    "expected": {
+      "payoffAmount": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 2,
+      "asOf": "2028-03-05"
+    },
+    "expected": {
+      "payoffAmount": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2020-08-01"
+    },
+    "expected": {
+      "payoffAmount": 820000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2020-08-20"
+    },
+    "expected": {
+      "payoffAmount": 820000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2020-09-01"
+    },
+    "expected": {
+      "payoffAmount": 821711.89
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2020-09-20"
+    },
+    "expected": {
+      "payoffAmount": 815090.7
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2025-07-04"
+    },
+    "expected": {
+      "payoffAmount": 488937.18
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2030-08-20"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 3,
+      "asOf": "2031-02-28"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2023-03-01"
+    },
+    "expected": {
+      "payoffAmount": 250000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2023-03-10"
+    },
+    "expected": {
+      "payoffAmount": 250000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2023-04-01"
+    },
+    "expected": {
+      "payoffAmount": 251054.79
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2023-04-10"
+    },
+    "expected": {
+      "payoffAmount": 243739.06
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2024-10-31"
+    },
+    "expected": {
+      "payoffAmount": 125087.33
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2026-03-10"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 4,
+      "asOf": "2027-06-15"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2021-11-15"
+    },
+    "expected": {
+      "payoffAmount": 310000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2021-12-01"
+    },
+    "expected": {
+      "payoffAmount": 310000.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2021-12-20"
+    },
+    "expected": {
+      "payoffAmount": 311339.37
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2022-01-01"
+    },
+    "expected": {
+      "payoffAmount": 306663.34
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2024-02-29"
+    },
+    "expected": {
+      "payoffAmount": 216685.11
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2027-12-01"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-002",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "loanId": 5,
+      "asOf": "2028-12-31"
+    },
+    "expected": {
+      "payoffAmount": 0.0
+    }
+  }
+]

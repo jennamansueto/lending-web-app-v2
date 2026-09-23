@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3634879C-A647-4CF3-A633-0210187D1F90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.Domain", "src\Contoso.Lending.Domain\Contoso.Lending.Domain.csproj", "{9316D491-D0FE-42AA-B813-4DD38632202B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.Api", "src\Contoso.Lending.Api\Contoso.Lending.Api.csproj", "{8914856A-8F37-4EFE-B8FA-169A16D9CC95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C6260356-5E86-4508-9466-D1DDB719AE6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.ParityTests", "tests\Contoso.Lending.ParityTests\Contoso.Lending.ParityTests.csproj", "{A61AE8D7-EB53-4893-ABB8-C9693D43AC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.Workflow", "src\Contoso.Lending.Workflow\Contoso.Lending.Workflow.csproj", "{81DFC3F5-135A-48EC-A625-3EA730B2806E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.ArchTests", "tests\Contoso.Lending.ArchTests\Contoso.Lending.ArchTests.csproj", "{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.ApiTests", "tests\Contoso.Lending.ApiTests\Contoso.Lending.ApiTests.csproj", "{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9316D491-D0FE-42AA-B813-4DD38632202B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9316D491-D0FE-42AA-B813-4DD38632202B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9316D491-D0FE-42AA-B813-4DD38632202B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9316D491-D0FE-42AA-B813-4DD38632202B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8914856A-8F37-4EFE-B8FA-169A16D9CC95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8914856A-8F37-4EFE-B8FA-169A16D9CC95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8914856A-8F37-4EFE-B8FA-169A16D9CC95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8914856A-8F37-4EFE-B8FA-169A16D9CC95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A61AE8D7-EB53-4893-ABB8-C9693D43AC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A61AE8D7-EB53-4893-ABB8-C9693D43AC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A61AE8D7-EB53-4893-ABB8-C9693D43AC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A61AE8D7-EB53-4893-ABB8-C9693D43AC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81DFC3F5-135A-48EC-A625-3EA730B2806E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81DFC3F5-135A-48EC-A625-3EA730B2806E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81DFC3F5-135A-48EC-A625-3EA730B2806E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81DFC3F5-135A-48EC-A625-3EA730B2806E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9316D491-D0FE-42AA-B813-4DD38632202B} = {3634879C-A647-4CF3-A633-0210187D1F90}
+		{8914856A-8F37-4EFE-B8FA-169A16D9CC95} = {3634879C-A647-4CF3-A633-0210187D1F90}
+		{A61AE8D7-EB53-4893-ABB8-C9693D43AC07} = {C6260356-5E86-4508-9466-D1DDB719AE6C}
+		{81DFC3F5-135A-48EC-A625-3EA730B2806E} = {3634879C-A647-4CF3-A633-0210187D1F90}
+		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E} = {C6260356-5E86-4508-9466-D1DDB719AE6C}
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B} = {C6260356-5E86-4508-9466-D1DDB719AE6C}
+	EndGlobalSection
+EndGlobal

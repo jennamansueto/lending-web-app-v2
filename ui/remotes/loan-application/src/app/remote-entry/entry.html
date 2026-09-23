@@ -1,0 +1,59 @@
+<section class="screen">
+  <h2 class="screen-title">New Loan Application</h2>
+  <p class="screen-subtitle">
+    Eligibility is decided by the lending service (BR-ELG-001..009); this screen submits the inputs
+    and renders the decision it returns.
+  </p>
+
+  <div class="panel">
+    <div class="panel-title">Application</div>
+    <div class="field-grid">
+      <div class="field">
+        <label for="product">Product</label>
+        <select id="product" name="product" [(ngModel)]="product">
+          @for (option of products; track option) {
+            <option [value]="option">{{ option }}</option>
+          }
+        </select>
+      </div>
+      @for (field of fields; track field.key) {
+        <div class="field">
+          <label [attr.for]="field.key">{{ field.label }}</label>
+          <input
+            [id]="field.key"
+            [name]="field.key"
+            type="text"
+            autocomplete="off"
+            [class.invalid]="isInvalid(field.key)"
+            [(ngModel)]="values[field.key]"
+          />
+        </div>
+      }
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn" [disabled]="busy()" (click)="submit()">
+        Check Eligibility &amp; Submit
+      </button>
+      @if (submittedAppId(); as appId) {
+        <span class="muted">Application {{ appId }} recorded.</span>
+      }
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Result</div>
+    @if (result(); as response) {
+      <div
+        class="result-panel"
+        [class.approved]="response.decision === 'APPROVED'"
+        [class.declined]="response.decision === 'DECLINED'"
+      >{{ response.resultText }}</div>
+      <p class="muted rule-trace">Rule: {{ response.firedRuleId }}</p>
+    } @else {
+      <div class="result-panel muted">Enter application details and press Submit.</div>
+    }
+  </div>
+
+  <lending-message-box [text]="dialog()" (dismissed)="dialog.set(null)"></lending-message-box>
+</section>

@@ -1,0 +1,124 @@
+{
+  "name": "pricing",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "remotes/pricing/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/remotes/pricing",
+        "index": "remotes/pricing/src/index.html",
+        "main": "remotes/pricing/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "remotes/pricing/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "remotes/pricing/public"
+          }
+        ],
+        "styles": [
+          "remotes/pricing/src/styles.css"
+        ],
+        "customWebpackConfig": {
+          "path": "remotes/pricing/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "remotes/pricing/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4202,
+        "publicHost": "http://localhost:4202",
+        "proxyConfig": "proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "pricing:build:production"
+        },
+        "development": {
+          "buildTarget": "pricing:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "shell:serve"
+      ]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "pricing:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "remotes/pricing/jest.config.ts",
+        "tsConfig": "remotes/pricing/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "pricing:build",
+        "port": 4202,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "pricing:build:development"
+        },
+        "production": {
+          "buildTarget": "pricing:build:production"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "pricing/Routes": [
+        "remotes/pricing/src/app/remote-entry/entry.routes.ts"
+      ],
+      "statements/Routes": [
+        "remotes/statements/src/app/remote-entry/entry.routes.ts"
+      ],
+      "loanApplication/Routes": [
+        "remotes/loan-application/src/app/remote-entry/entry.routes.ts"
+      ],
+      "borrowerLookup/Routes": [
+        "remotes/borrower-lookup/src/app/remote-entry/entry.routes.ts"
+      ],
+      "@lending/api": [
+        "libs/api/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}

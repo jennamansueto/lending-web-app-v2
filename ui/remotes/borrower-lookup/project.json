@@ -1,0 +1,124 @@
+{
+  "name": "borrowerLookup",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "remotes/borrower-lookup/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/remotes/borrower-lookup",
+        "index": "remotes/borrower-lookup/src/index.html",
+        "main": "remotes/borrower-lookup/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "remotes/borrower-lookup/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "remotes/borrower-lookup/public"
+          }
+        ],
+        "styles": [
+          "remotes/borrower-lookup/src/styles.css"
+        ],
+        "customWebpackConfig": {
+          "path": "remotes/borrower-lookup/webpack.config.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "remotes/borrower-lookup/webpack.prod.config.ts"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@nx/angular:dev-server",
+      "options": {
+        "port": 4203,
+        "publicHost": "http://localhost:4203",
+        "proxyConfig": "proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "borrowerLookup:build:production"
+        },
+        "development": {
+          "buildTarget": "borrowerLookup:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "shell:serve"
+      ]
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "borrowerLookup:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "remotes/borrower-lookup/jest.config.ts",
+        "tsConfig": "remotes/borrower-lookup/tsconfig.spec.json"
+      }
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "production",
+      "options": {
+        "buildTarget": "borrowerLookup:build",
+        "port": 4203,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "borrowerLookup:build:development"
+        },
+        "production": {
+          "buildTarget": "borrowerLookup:build:production"
+        }
+      }
+    }
+  }
+}

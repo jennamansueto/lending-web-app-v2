@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lending-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      # Local demo credentials only.
+      POSTGRES_DB: lending
+      POSTGRES_USER: lending
+      POSTGRES_PASSWORD: lending_pw_2014
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    volumes:
+      - ./database/postgres:/database/postgres:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lending -d lending"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  # Temporal dev server for the layer-3 workflow (gRPC 7233, web UI 8233).
+  # In-memory state only: it is a local orchestration engine, never a system of record.
+  # `temporal server start-dev` outside Docker is equivalent.
+  temporal:
+    image: temporalio/temporal:1.9.1
+    container_name: lending-temporal
+    command: ["server", "start-dev", "--ip", "0.0.0.0", "--ui-ip", "0.0.0.0", "--log-level", "warn"]
+    ports:
+      - "7233:7233"
+      - "8233:8233"
+    healthcheck:
+      test: ["CMD", "temporal", "workflow", "list", "--address", "127.0.0.1:7233"]
+      interval: 5s
+      timeout: 5s
+      retries: 30

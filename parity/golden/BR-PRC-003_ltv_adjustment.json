@@ -1,0 +1,86 @@
+[
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.10
+    },
+    "expected": -0.15
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.59
+    },
+    "expected": -0.15
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.60
+    },
+    "expected": -0.15
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.61
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.74
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.75
+    },
+    "expected": 0.00
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.76
+    },
+    "expected": 0.40
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.84
+    },
+    "expected": 0.40
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.85
+    },
+    "expected": 0.40
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.86
+    },
+    "expected": 0.90
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 0.95
+    },
+    "expected": 0.90
+  },
+  {
+    "ruleId": "BR-PRC-003",
+    "input": {
+      "ltv": 1.00
+    },
+    "expected": 0.90
+  }
+]

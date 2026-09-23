@@ -1,0 +1,11 @@
+.statements-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statements-row .field {
+  grid-template-columns: 80px minmax(140px, 200px);
+  margin-right: 8px;
+}

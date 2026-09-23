@@ -1,0 +1,2236 @@
+[
+  {
+    "ruleId": "BR-AMT-002",
+    "input": {
+      "principal": 100000.0,
+      "annualRatePct": 6.50,
+      "termMonths": 60
+    },
+    "expected": [
+      {
+        "Period": 1,
+        "Payment": 1956.61,
+        "Interest": 541.67,
+        "Principal": 1414.94,
+        "Balance": 98585.06
+      },
+      {
+        "Period": 2,
+        "Payment": 1956.61,
+        "Interest": 534.00,
+        "Principal": 1422.61,
+        "Balance": 97162.45
+      },
+      {
+        "Period": 3,
+        "Payment": 1956.61,
+        "Interest": 526.30,
+        "Principal": 1430.31,
+        "Balance": 95732.14
+      },
+      {
+        "Period": 4,
+        "Payment": 1956.61,
+        "Interest": 518.55,
+        "Principal": 1438.06,
+        "Balance": 94294.08
+      },
+      {
+        "Period": 5,
+        "Payment": 1956.61,
+        "Interest": 510.76,
+        "Principal": 1445.85,
+        "Balance": 92848.23
+      },
+      {
+        "Period": 6,
+        "Payment": 1956.61,
+        "Interest": 502.93,
+        "Principal": 1453.68,
+        "Balance": 91394.55
+      },
+      {
+        "Period": 7,
+        "Payment": 1956.61,
+        "Interest": 495.05,
+        "Principal": 1461.56,
+        "Balance": 89932.99
+      },
+      {
+        "Period": 8,
+        "Payment": 1956.61,
+        "Interest": 487.14,
+        "Principal": 1469.47,
+        "Balance": 88463.52
+      },
+      {
+        "Period": 9,
+        "Payment": 1956.61,
+        "Interest": 479.18,
+        "Principal": 1477.43,
+        "Balance": 86986.09
+      },
+      {
+        "Period": 10,
+        "Payment": 1956.61,
+        "Interest": 471.17,
+        "Principal": 1485.44,
+        "Balance": 85500.65
+      },
+      {
+        "Period": 11,
+        "Payment": 1956.61,
+        "Interest": 463.13,
+        "Principal": 1493.48,
+        "Balance": 84007.17
+      },
+      {
+        "Period": 12,
+        "Payment": 1956.61,
+        "Interest": 455.04,
+        "Principal": 1501.57,
+        "Balance": 82505.60
+      },
+      {
+        "Period": 13,
+        "Payment": 1956.61,
+        "Interest": 446.91,
+        "Principal": 1509.70,
+        "Balance": 80995.90
+      },
+      {
+        "Period": 14,
+        "Payment": 1956.61,
+        "Interest": 438.73,
+        "Principal": 1517.88,
+        "Balance": 79478.02
+      },
+      {
+        "Period": 15,
+        "Payment": 1956.61,
+        "Interest": 430.51,
+        "Principal": 1526.10,
+        "Balance": 77951.92
+      },
+      {
+        "Period": 16,
+        "Payment": 1956.61,
+        "Interest": 422.24,
+        "Principal": 1534.37,
+        "Balance": 76417.55
+      },
+      {
+        "Period": 17,
+        "Payment": 1956.61,
+        "Interest": 413.93,
+        "Principal": 1542.68,
+        "Balance": 74874.87
+      },
+      {
+        "Period": 18,
+        "Payment": 1956.61,
+        "Interest": 405.57,
+        "Principal": 1551.04,
+        "Balance": 73323.83
+      },
+      {
+        "Period": 19,
+        "Payment": 1956.61,
+        "Interest": 397.17,
+        "Principal": 1559.44,
+        "Balance": 71764.39
+      },
+      {
+        "Period": 20,
+        "Payment": 1956.61,
+        "Interest": 388.72,
+        "Principal": 1567.89,
+        "Balance": 70196.50
+      },
+      {
+        "Period": 21,
+        "Payment": 1956.61,
+        "Interest": 380.23,
+        "Principal": 1576.38,
+        "Balance": 68620.12
+      },
+      {
+        "Period": 22,
+        "Payment": 1956.61,
+        "Interest": 371.69,
+        "Principal": 1584.92,
+        "Balance": 67035.20
+      },
+      {
+        "Period": 23,
+        "Payment": 1956.61,
+        "Interest": 363.11,
+        "Principal": 1593.50,
+        "Balance": 65441.70
+      },
+      {
+        "Period": 24,
+        "Payment": 1956.61,
+        "Interest": 354.48,
+        "Principal": 1602.13,
+        "Balance": 63839.57
+      },
+      {
+        "Period": 25,
+        "Payment": 1956.61,
+        "Interest": 345.80,
+        "Principal": 1610.81,
+        "Balance": 62228.76
+      },
+      {
+        "Period": 26,
+        "Payment": 1956.61,
+        "Interest": 337.07,
+        "Principal": 1619.54,
+        "Balance": 60609.22
+      },
+      {
+        "Period": 27,
+        "Payment": 1956.61,
+        "Interest": 328.30,
+        "Principal": 1628.31,
+        "Balance": 58980.91
+      },
+      {
+        "Period": 28,
+        "Payment": 1956.61,
+        "Interest": 319.48,
+        "Principal": 1637.13,
+        "Balance": 57343.78
+      },
+      {
+        "Period": 29,
+        "Payment": 1956.61,
+        "Interest": 310.61,
+        "Principal": 1646.00,
+        "Balance": 55697.78
+      },
+      {
+        "Period": 30,
+        "Payment": 1956.61,
+        "Interest": 301.70,
+        "Principal": 1654.91,
+        "Balance": 54042.87
+      },
+      {
+        "Period": 31,
+        "Payment": 1956.61,
+        "Interest": 292.73,
+        "Principal": 1663.88,
+        "Balance": 52378.99
+      },
+      {
+        "Period": 32,
+        "Payment": 1956.61,
+        "Interest": 283.72,
+        "Principal": 1672.89,
+        "Balance": 50706.10
+      },
+      {
+        "Period": 33,
+        "Payment": 1956.61,
+        "Interest": 274.66,
+        "Principal": 1681.95,
+        "Balance": 49024.15
+      },
+      {
+        "Period": 34,
+        "Payment": 1956.61,
+        "Interest": 265.55,
+        "Principal": 1691.06,
+        "Balance": 47333.09
+      },
+      {
+        "Period": 35,
+        "Payment": 1956.61,
+        "Interest": 256.39,
+        "Principal": 1700.22,
+        "Balance": 45632.87
+      },
+      {
+        "Period": 36,
+        "Payment": 1956.61,
+        "Interest": 247.18,
+        "Principal": 1709.43,
+        "Balance": 43923.44
+      },
+      {
+        "Period": 37,
+        "Payment": 1956.61,
+        "Interest": 237.92,
+        "Principal": 1718.69,
+        "Balance": 42204.75
+      },
+      {
+        "Period": 38,
+        "Payment": 1956.61,
+        "Interest": 228.61,
+        "Principal": 1728.00,
+        "Balance": 40476.75
+      },
+      {
+        "Period": 39,
+        "Payment": 1956.61,
+        "Interest": 219.25,
+        "Principal": 1737.36,
+        "Balance": 38739.39
+      },
+      {
+        "Period": 40,
+        "Payment": 1956.61,
+        "Interest": 209.84,
+        "Principal": 1746.77,
+        "Balance": 36992.62
+      },
+      {
+        "Period": 41,
+        "Payment": 1956.61,
+        "Interest": 200.38,
+        "Principal": 1756.23,
+        "Balance": 35236.39
+      },
+      {
+        "Period": 42,
+        "Payment": 1956.61,
+        "Interest": 190.86,
+        "Principal": 1765.75,
+        "Balance": 33470.64
+      },
+      {
+        "Period": 43,
+        "Payment": 1956.61,
+        "Interest": 181.30,
+        "Principal": 1775.31,
+        "Balance": 31695.33
+      },
+      {
+        "Period": 44,
+        "Payment": 1956.61,
+        "Interest": 171.68,
+        "Principal": 1784.93,
+        "Balance": 29910.40
+      },
+      {
+        "Period": 45,
+        "Payment": 1956.61,
+        "Interest": 162.01,
+        "Principal": 1794.60,
+        "Balance": 28115.80
+      },
+      {
+        "Period": 46,
+        "Payment": 1956.61,
+        "Interest": 152.29,
+        "Principal": 1804.32,
+        "Balance": 26311.48
+      },
+      {
+        "Period": 47,
+        "Payment": 1956.61,
+        "Interest": 142.52,
+        "Principal": 1814.09,
+        "Balance": 24497.39
+      },
+      {
+        "Period": 48,
+        "Payment": 1956.61,
+        "Interest": 132.69,
+        "Principal": 1823.92,
+        "Balance": 22673.47
+      },
+      {
+        "Period": 49,
+        "Payment": 1956.61,
+        "Interest": 122.81,
+        "Principal": 1833.80,
+        "Balance": 20839.67
+      },
+      {
+        "Period": 50,
+        "Payment": 1956.61,
+        "Interest": 112.88,
+        "Principal": 1843.73,
+        "Balance": 18995.94
+      },
+      {
+        "Period": 51,
+        "Payment": 1956.61,
+        "Interest": 102.89,
+        "Principal": 1853.72,
+        "Balance": 17142.22
+      },
+      {
+        "Period": 52,
+        "Payment": 1956.61,
+        "Interest": 92.85,
+        "Principal": 1863.76,
+        "Balance": 15278.46
+      },
+      {
+        "Period": 53,
+        "Payment": 1956.61,
+        "Interest": 82.76,
+        "Principal": 1873.85,
+        "Balance": 13404.61
+      },
+      {
+        "Period": 54,
+        "Payment": 1956.61,
+        "Interest": 72.61,
+        "Principal": 1884.00,
+        "Balance": 11520.61
+      },
+      {
+        "Period": 55,
+        "Payment": 1956.61,
+        "Interest": 62.40,
+        "Principal": 1894.21,
+        "Balance": 9626.40
+      },
+      {
+        "Period": 56,
+        "Payment": 1956.61,
+        "Interest": 52.14,
+        "Principal": 1904.47,
+        "Balance": 7721.93
+      },
+      {
+        "Period": 57,
+        "Payment": 1956.61,
+        "Interest": 41.83,
+        "Principal": 1914.78,
+        "Balance": 5807.15
+      },
+      {
+        "Period": 58,
+        "Payment": 1956.61,
+        "Interest": 31.46,
+        "Principal": 1925.15,
+        "Balance": 3882.00
+      },
+      {
+        "Period": 59,
+        "Payment": 1956.61,
+        "Interest": 21.03,
+        "Principal": 1935.58,
+        "Balance": 1946.42
+      },
+      {
+        "Period": 60,
+        "Payment": 1956.96,
+        "Interest": 10.54,
+        "Principal": 1946.42,
+        "Balance": 0.00
+      }
+    ]
+  },
+  {
+    "ruleId": "BR-AMT-002",
+    "input": {
+      "principal": 450000.0,
+      "annualRatePct": 7.25,
+      "termMonths": 84
+    },
+    "expected": [
+      {
+        "Period": 1,
+        "Payment": 6846.83,
+        "Interest": 2718.75,
+        "Principal": 4128.08,
+        "Balance": 445871.92
+      },
+      {
+        "Period": 2,
+        "Payment": 6846.83,
+        "Interest": 2693.81,
+        "Principal": 4153.02,
+        "Balance": 441718.90
+      },
+      {
+        "Period": 3,
+        "Payment": 6846.83,
+        "Interest": 2668.72,
+        "Principal": 4178.11,
+        "Balance": 437540.79
+      },
+      {
+        "Period": 4,
+        "Payment": 6846.83,
+        "Interest": 2643.48,
+        "Principal": 4203.35,
+        "Balance": 433337.44
+      },
+      {
+        "Period": 5,
+        "Payment": 6846.83,
+        "Interest": 2618.08,
+        "Principal": 4228.75,
+        "Balance": 429108.69
+      },
+      {
+        "Period": 6,
+        "Payment": 6846.83,
+        "Interest": 2592.53,
+        "Principal": 4254.30,
+        "Balance": 424854.39
+      },
+      {
+        "Period": 7,
+        "Payment": 6846.83,
+        "Interest": 2566.83,
+        "Principal": 4280.00,
+        "Balance": 420574.39
+      },
+      {
+        "Period": 8,
+        "Payment": 6846.83,
+        "Interest": 2540.97,
+        "Principal": 4305.86,
+        "Balance": 416268.53
+      },
+      {
+        "Period": 9,
+        "Payment": 6846.83,
+        "Interest": 2514.96,
+        "Principal": 4331.87,
+        "Balance": 411936.66
+      },
+      {
+        "Period": 10,
+        "Payment": 6846.83,
+        "Interest": 2488.78,
+        "Principal": 4358.05,
+        "Balance": 407578.61
+      },
+      {
+        "Period": 11,
+        "Payment": 6846.83,
+        "Interest": 2462.45,
+        "Principal": 4384.38,
+        "Balance": 403194.23
+      },
+      {
+        "Period": 12,
+        "Payment": 6846.83,
+        "Interest": 2435.97,
+        "Principal": 4410.86,
+        "Balance": 398783.37
+      },
+      {
+        "Period": 13,
+        "Payment": 6846.83,
+        "Interest": 2409.32,
+        "Principal": 4437.51,
+        "Balance": 394345.86
+      },
+      {
+        "Period": 14,
+        "Payment": 6846.83,
+        "Interest": 2382.51,
+        "Principal": 4464.32,
+        "Balance": 389881.54
+      },
+      {
+        "Period": 15,
+        "Payment": 6846.83,
+        "Interest": 2355.53,
+        "Principal": 4491.30,
+        "Balance": 385390.24
+      },
+      {
+        "Period": 16,
+        "Payment": 6846.83,
+        "Interest": 2328.40,
+        "Principal": 4518.43,
+        "Balance": 380871.81
+      },
+      {
+        "Period": 17,
+        "Payment": 6846.83,
+        "Interest": 2301.10,
+        "Principal": 4545.73,
+        "Balance": 376326.08
+      },
+      {
+        "Period": 18,
+        "Payment": 6846.83,
+        "Interest": 2273.64,
+        "Principal": 4573.19,
+        "Balance": 371752.89
+      },
+      {
+        "Period": 19,
+        "Payment": 6846.83,
+        "Interest": 2246.01,
+        "Principal": 4600.82,
+        "Balance": 367152.07
+      },
+      {
+        "Period": 20,
+        "Payment": 6846.83,
+        "Interest": 2218.21,
+        "Principal": 4628.62,
+        "Balance": 362523.45
+      },
+      {
+        "Period": 21,
+        "Payment": 6846.83,
+        "Interest": 2190.25,
+        "Principal": 4656.58,
+        "Balance": 357866.87
+      },
+      {
+        "Period": 22,
+        "Payment": 6846.83,
+        "Interest": 2162.11,
+        "Principal": 4684.72,
+        "Balance": 353182.15
+      },
+      {
+        "Period": 23,
+        "Payment": 6846.83,
+        "Interest": 2133.81,
+        "Principal": 4713.02,
+        "Balance": 348469.13
+      },
+      {
+        "Period": 24,
+        "Payment": 6846.83,
+        "Interest": 2105.33,
+        "Principal": 4741.50,
+        "Balance": 343727.63
+      },
+      {
+        "Period": 25,
+        "Payment": 6846.83,
+        "Interest": 2076.69,
+        "Principal": 4770.14,
+        "Balance": 338957.49
+      },
+      {
+        "Period": 26,
+        "Payment": 6846.83,
+        "Interest": 2047.87,
+        "Principal": 4798.96,
+        "Balance": 334158.53
+      },
+      {
+        "Period": 27,
+        "Payment": 6846.83,
+        "Interest": 2018.87,
+        "Principal": 4827.96,
+        "Balance": 329330.57
+      },
+      {
+        "Period": 28,
+        "Payment": 6846.83,
+        "Interest": 1989.71,
+        "Principal": 4857.12,
+        "Balance": 324473.45
+      },
+      {
+        "Period": 29,
+        "Payment": 6846.83,
+        "Interest": 1960.36,
+        "Principal": 4886.47,
+        "Balance": 319586.98
+      },
+      {
+        "Period": 30,
+        "Payment": 6846.83,
+        "Interest": 1930.84,
+        "Principal": 4915.99,
+        "Balance": 314670.99
+      },
+      {
+        "Period": 31,
+        "Payment": 6846.83,
+        "Interest": 1901.14,
+        "Principal": 4945.69,
+        "Balance": 309725.30
+      },
+      {
+        "Period": 32,
+        "Payment": 6846.83,
+        "Interest": 1871.26,
+        "Principal": 4975.57,
+        "Balance": 304749.73
+      },
+      {
+        "Period": 33,
+        "Payment": 6846.83,
+        "Interest": 1841.20,
+        "Principal": 5005.63,
+        "Balance": 299744.10
+      },
+      {
+        "Period": 34,
+        "Payment": 6846.83,
+        "Interest": 1810.95,
+        "Principal": 5035.88,
+        "Balance": 294708.22
+      },
+      {
+        "Period": 35,
+        "Payment": 6846.83,
+        "Interest": 1780.53,
+        "Principal": 5066.30,
+        "Balance": 289641.92
+      },
+      {
+        "Period": 36,
+        "Payment": 6846.83,
+        "Interest": 1749.92,
+        "Principal": 5096.91,
+        "Balance": 284545.01
+      },
+      {
+        "Period": 37,
+        "Payment": 6846.83,
+        "Interest": 1719.13,
+        "Principal": 5127.70,
+        "Balance": 279417.31
+      },
+      {
+        "Period": 38,
+        "Payment": 6846.83,
+        "Interest": 1688.15,
+        "Principal": 5158.68,
+        "Balance": 274258.63
+      },
+      {
+        "Period": 39,
+        "Payment": 6846.83,
+        "Interest": 1656.98,
+        "Principal": 5189.85,
+        "Balance": 269068.78
+      },
+      {
+        "Period": 40,
+        "Payment": 6846.83,
+        "Interest": 1625.62,
+        "Principal": 5221.21,
+        "Balance": 263847.57
+      },
+      {
+        "Period": 41,
+        "Payment": 6846.83,
+        "Interest": 1594.08,
+        "Principal": 5252.75,
+        "Balance": 258594.82
+      },
+      {
+        "Period": 42,
+        "Payment": 6846.83,
+        "Interest": 1562.34,
+        "Principal": 5284.49,
+        "Balance": 253310.33
+      },
+      {
+        "Period": 43,
+        "Payment": 6846.83,
+        "Interest": 1530.42,
+        "Principal": 5316.41,
+        "Balance": 247993.92
+      },
+      {
+        "Period": 44,
+        "Payment": 6846.83,
+        "Interest": 1498.30,
+        "Principal": 5348.53,
+        "Balance": 242645.39
+      },
+      {
+        "Period": 45,
+        "Payment": 6846.83,
+        "Interest": 1465.98,
+        "Principal": 5380.85,
+        "Balance": 237264.54
+      },
+      {
+        "Period": 46,
+        "Payment": 6846.83,
+        "Interest": 1433.47,
+        "Principal": 5413.36,
+        "Balance": 231851.18
+      },
+      {
+        "Period": 47,
+        "Payment": 6846.83,
+        "Interest": 1400.77,
+        "Principal": 5446.06,
+        "Balance": 226405.12
+      },
+      {
+        "Period": 48,
+        "Payment": 6846.83,
+        "Interest": 1367.86,
+        "Principal": 5478.97,
+        "Balance": 220926.15
+      },
+      {
+        "Period": 49,
+        "Payment": 6846.83,
+        "Interest": 1334.76,
+        "Principal": 5512.07,
+        "Balance": 215414.08
+      },
+      {
+        "Period": 50,
+        "Payment": 6846.83,
+        "Interest": 1301.46,
+        "Principal": 5545.37,
+        "Balance": 209868.71
+      },
+      {
+        "Period": 51,
+        "Payment": 6846.83,
+        "Interest": 1267.96,
+        "Principal": 5578.87,
+        "Balance": 204289.84
+      },
+      {
+        "Period": 52,
+        "Payment": 6846.83,
+        "Interest": 1234.25,
+        "Principal": 5612.58,
+        "Balance": 198677.26
+      },
+      {
+        "Period": 53,
+        "Payment": 6846.83,
+        "Interest": 1200.34,
+        "Principal": 5646.49,
+        "Balance": 193030.77
+      },
+      {
+        "Period": 54,
+        "Payment": 6846.83,
+        "Interest": 1166.23,
+        "Principal": 5680.60,
+        "Balance": 187350.17
+      },
+      {
+        "Period": 55,
+        "Payment": 6846.83,
+        "Interest": 1131.91,
+        "Principal": 5714.92,
+        "Balance": 181635.25
+      },
+      {
+        "Period": 56,
+        "Payment": 6846.83,
+        "Interest": 1097.38,
+        "Principal": 5749.45,
+        "Balance": 175885.80
+      },
+      {
+        "Period": 57,
+        "Payment": 6846.83,
+        "Interest": 1062.64,
+        "Principal": 5784.19,
+        "Balance": 170101.61
+      },
+      {
+        "Period": 58,
+        "Payment": 6846.83,
+        "Interest": 1027.70,
+        "Principal": 5819.13,
+        "Balance": 164282.48
+      },
+      {
+        "Period": 59,
+        "Payment": 6846.83,
+        "Interest": 992.54,
+        "Principal": 5854.29,
+        "Balance": 158428.19
+      },
+      {
+        "Period": 60,
+        "Payment": 6846.83,
+        "Interest": 957.17,
+        "Principal": 5889.66,
+        "Balance": 152538.53
+      },
+      {
+        "Period": 61,
+        "Payment": 6846.83,
+        "Interest": 921.59,
+        "Principal": 5925.24,
+        "Balance": 146613.29
+      },
+      {
+        "Period": 62,
+        "Payment": 6846.83,
+        "Interest": 885.79,
+        "Principal": 5961.04,
+        "Balance": 140652.25
+      },
+      {
+        "Period": 63,
+        "Payment": 6846.83,
+        "Interest": 849.77,
+        "Principal": 5997.06,
+        "Balance": 134655.19
+      },
+      {
+        "Period": 64,
+        "Payment": 6846.83,
+        "Interest": 813.54,
+        "Principal": 6033.29,
+        "Balance": 128621.90
+      },
+      {
+        "Period": 65,
+        "Payment": 6846.83,
+        "Interest": 777.09,
+        "Principal": 6069.74,
+        "Balance": 122552.16
+      },
+      {
+        "Period": 66,
+        "Payment": 6846.83,
+        "Interest": 740.42,
+        "Principal": 6106.41,
+        "Balance": 116445.75
+      },
+      {
+        "Period": 67,
+        "Payment": 6846.83,
+        "Interest": 703.53,
+        "Principal": 6143.30,
+        "Balance": 110302.45
+      },
+      {
+        "Period": 68,
+        "Payment": 6846.83,
+        "Interest": 666.41,
+        "Principal": 6180.42,
+        "Balance": 104122.03
+      },
+      {
+        "Period": 69,
+        "Payment": 6846.83,
+        "Interest": 629.07,
+        "Principal": 6217.76,
+        "Balance": 97904.27
+      },
+      {
+        "Period": 70,
+        "Payment": 6846.83,
+        "Interest": 591.50,
+        "Principal": 6255.33,
+        "Balance": 91648.94
+      },
+      {
+        "Period": 71,
+        "Payment": 6846.83,
+        "Interest": 553.71,
+        "Principal": 6293.12,
+        "Balance": 85355.82
+      },
+      {
+        "Period": 72,
+        "Payment": 6846.83,
+        "Interest": 515.69,
+        "Principal": 6331.14,
+        "Balance": 79024.68
+      },
+      {
+        "Period": 73,
+        "Payment": 6846.83,
+        "Interest": 477.44,
+        "Principal": 6369.39,
+        "Balance": 72655.29
+      },
+      {
+        "Period": 74,
+        "Payment": 6846.83,
+        "Interest": 438.96,
+        "Principal": 6407.87,
+        "Balance": 66247.42
+      },
+      {
+        "Period": 75,
+        "Payment": 6846.83,
+        "Interest": 400.24,
+        "Principal": 6446.59,
+        "Balance": 59800.83
+      },
+      {
+        "Period": 76,
+        "Payment": 6846.83,
+        "Interest": 361.30,
+        "Principal": 6485.53,
+        "Balance": 53315.30
+      },
+      {
+        "Period": 77,
+        "Payment": 6846.83,
+        "Interest": 322.11,
+        "Principal": 6524.72,
+        "Balance": 46790.58
+      },
+      {
+        "Period": 78,
+        "Payment": 6846.83,
+        "Interest": 282.69,
+        "Principal": 6564.14,
+        "Balance": 40226.44
+      },
+      {
+        "Period": 79,
+        "Payment": 6846.83,
+        "Interest": 243.03,
+        "Principal": 6603.80,
+        "Balance": 33622.64
+      },
+      {
+        "Period": 80,
+        "Payment": 6846.83,
+        "Interest": 203.14,
+        "Principal": 6643.69,
+        "Balance": 26978.95
+      },
+      {
+        "Period": 81,
+        "Payment": 6846.83,
+        "Interest": 163.00,
+        "Principal": 6683.83,
+        "Balance": 20295.12
+      },
+      {
+        "Period": 82,
+        "Payment": 6846.83,
+        "Interest": 122.62,
+        "Principal": 6724.21,
+        "Balance": 13570.91
+      },
+      {
+        "Period": 83,
+        "Payment": 6846.83,
+        "Interest": 81.99,
+        "Principal": 6764.84,
+        "Balance": 6806.07
+      },
+      {
+        "Period": 84,
+        "Payment": 6847.19,
+        "Interest": 41.12,
+        "Principal": 6806.07,
+        "Balance": 0.00
+      }
+    ]
+  },
+  {
+    "ruleId": "BR-AMT-002",
+    "input": {
+      "principal": 25000.0,
+      "annualRatePct": 12.50,
+      "termMonths": 12
+    },
+    "expected": [
+      {
+        "Period": 1,
+        "Payment": 2227.07,
+        "Interest": 260.42,
+        "Principal": 1966.65,
+        "Balance": 23033.35
+      },
+      {
+        "Period": 2,
+        "Payment": 2227.07,
+        "Interest": 239.93,
+        "Principal": 1987.14,
+        "Balance": 21046.21
+      },
+      {
+        "Period": 3,
+        "Payment": 2227.07,
+        "Interest": 219.23,
+        "Principal": 2007.84,
+        "Balance": 19038.37
+      },
+      {
+        "Period": 4,
+        "Payment": 2227.07,
+        "Interest": 198.32,
+        "Principal": 2028.75,
+        "Balance": 17009.62
+      },
+      {
+        "Period": 5,
+        "Payment": 2227.07,
+        "Interest": 177.18,
+        "Principal": 2049.89,
+        "Balance": 14959.73
+      },
+      {
+        "Period": 6,
+        "Payment": 2227.07,
+        "Interest": 155.83,
+        "Principal": 2071.24,
+        "Balance": 12888.49
+      },
+      {
+        "Period": 7,
+        "Payment": 2227.07,
+        "Interest": 134.26,
+        "Principal": 2092.81,
+        "Balance": 10795.68
+      },
+      {
+        "Period": 8,
+        "Payment": 2227.07,
+        "Interest": 112.46,
+        "Principal": 2114.61,
+        "Balance": 8681.07
+      },
+      {
+        "Period": 9,
+        "Payment": 2227.07,
+        "Interest": 90.43,
+        "Principal": 2136.64,
+        "Balance": 6544.43
+      },
+      {
+        "Period": 10,
+        "Payment": 2227.07,
+        "Interest": 68.17,
+        "Principal": 2158.90,
+        "Balance": 4385.53
+      },
+      {
+        "Period": 11,
+        "Payment": 2227.07,
+        "Interest": 45.68,
+        "Principal": 2181.39,
+        "Balance": 2204.14
+      },
+      {
+        "Period": 12,
+        "Payment": 2227.10,
+        "Interest": 22.96,
+        "Principal": 2204.14,
+        "Balance": 0.00
+      }
+    ]
+  },
+  {
+    "ruleId": "BR-AMT-002",
+    "input": {
+      "principal": 820000.0,
+      "annualRatePct": 6.35,
+      "termMonths": 120
+    },
+    "expected": [
+      {
+        "Period": 1,
+        "Payment": 9248.47,
+        "Interest": 4339.17,
+        "Principal": 4909.30,
+        "Balance": 815090.70
+      },
+      {
+        "Period": 2,
+        "Payment": 9248.47,
+        "Interest": 4313.19,
+        "Principal": 4935.28,
+        "Balance": 810155.42
+      },
+      {
+        "Period": 3,
+        "Payment": 9248.47,
+        "Interest": 4287.07,
+        "Principal": 4961.40,
+        "Balance": 805194.02
+      },
+      {
+        "Period": 4,
+        "Payment": 9248.47,
+        "Interest": 4260.82,
+        "Principal": 4987.65,
+        "Balance": 800206.37
+      },
+      {
+        "Period": 5,
+        "Payment": 9248.47,
+        "Interest": 4234.43,
+        "Principal": 5014.04,
+        "Balance": 795192.33
+      },
+      {
+        "Period": 6,
+        "Payment": 9248.47,
+        "Interest": 4207.89,
+        "Principal": 5040.58,
+        "Balance": 790151.75
+      },
+      {
+        "Period": 7,
+        "Payment": 9248.47,
+        "Interest": 4181.22,
+        "Principal": 5067.25,
+        "Balance": 785084.50
+      },
+      {
+        "Period": 8,
+        "Payment": 9248.47,
+        "Interest": 4154.41,
+        "Principal": 5094.06,
+        "Balance": 779990.44
+      },
+      {
+        "Period": 9,
+        "Payment": 9248.47,
+        "Interest": 4127.45,
+        "Principal": 5121.02,
+        "Balance": 774869.42
+      },
+      {
+        "Period": 10,
+        "Payment": 9248.47,
+        "Interest": 4100.35,
+        "Principal": 5148.12,
+        "Balance": 769721.30
+      },
+      {
+        "Period": 11,
+        "Payment": 9248.47,
+        "Interest": 4073.11,
+        "Principal": 5175.36,
+        "Balance": 764545.94
+      },
+      {
+        "Period": 12,
+        "Payment": 9248.47,
+        "Interest": 4045.72,
+        "Principal": 5202.75,
+        "Balance": 759343.19
+      },
+      {
+        "Period": 13,
+        "Payment": 9248.47,
+        "Interest": 4018.19,
+        "Principal": 5230.28,
+        "Balance": 754112.91
+      },
+      {
+        "Period": 14,
+        "Payment": 9248.47,
+        "Interest": 3990.51,
+        "Principal": 5257.96,
+        "Balance": 748854.95
+      },
+      {
+        "Period": 15,
+        "Payment": 9248.47,
+        "Interest": 3962.69,
+        "Principal": 5285.78,
+        "Balance": 743569.17
+      },
+      {
+        "Period": 16,
+        "Payment": 9248.47,
+        "Interest": 3934.72,
+        "Principal": 5313.75,
+        "Balance": 738255.42
+      },
+      {
+        "Period": 17,
+        "Payment": 9248.47,
+        "Interest": 3906.60,
+        "Principal": 5341.87,
+        "Balance": 732913.55
+      },
+      {
+        "Period": 18,
+        "Payment": 9248.47,
+        "Interest": 3878.33,
+        "Principal": 5370.14,
+        "Balance": 727543.41
+      },
+      {
+        "Period": 19,
+        "Payment": 9248.47,
+        "Interest": 3849.92,
+        "Principal": 5398.55,
+        "Balance": 722144.86
+      },
+      {
+        "Period": 20,
+        "Payment": 9248.47,
+        "Interest": 3821.35,
+        "Principal": 5427.12,
+        "Balance": 716717.74
+      },
+      {
+        "Period": 21,
+        "Payment": 9248.47,
+        "Interest": 3792.63,
+        "Principal": 5455.84,
+        "Balance": 711261.90
+      },
+      {
+        "Period": 22,
+        "Payment": 9248.47,
+        "Interest": 3763.76,
+        "Principal": 5484.71,
+        "Balance": 705777.19
+      },
+      {
+        "Period": 23,
+        "Payment": 9248.47,
+        "Interest": 3734.74,
+        "Principal": 5513.73,
+        "Balance": 700263.46
+      },
+      {
+        "Period": 24,
+        "Payment": 9248.47,
+        "Interest": 3705.56,
+        "Principal": 5542.91,
+        "Balance": 694720.55
+      },
+      {
+        "Period": 25,
+        "Payment": 9248.47,
+        "Interest": 3676.23,
+        "Principal": 5572.24,
+        "Balance": 689148.31
+      },
+      {
+        "Period": 26,
+        "Payment": 9248.47,
+        "Interest": 3646.74,
+        "Principal": 5601.73,
+        "Balance": 683546.58
+      },
+      {
+        "Period": 27,
+        "Payment": 9248.47,
+        "Interest": 3617.10,
+        "Principal": 5631.37,
+        "Balance": 677915.21
+      },
+      {
+        "Period": 28,
+        "Payment": 9248.47,
+        "Interest": 3587.30,
+        "Principal": 5661.17,
+        "Balance": 672254.04
+      },
+      {
+        "Period": 29,
+        "Payment": 9248.47,
+        "Interest": 3557.34,
+        "Principal": 5691.13,
+        "Balance": 666562.91
+      },
+      {
+        "Period": 30,
+        "Payment": 9248.47,
+        "Interest": 3527.23,
+        "Principal": 5721.24,
+        "Balance": 660841.67
+      },
+      {
+        "Period": 31,
+        "Payment": 9248.47,
+        "Interest": 3496.95,
+        "Principal": 5751.52,
+        "Balance": 655090.15
+      },
+      {
+        "Period": 32,
+        "Payment": 9248.47,
+        "Interest": 3466.52,
+        "Principal": 5781.95,
+        "Balance": 649308.20
+      },
+      {
+        "Period": 33,
+        "Payment": 9248.47,
+        "Interest": 3435.92,
+        "Principal": 5812.55,
+        "Balance": 643495.65
+      },
+      {
+        "Period": 34,
+        "Payment": 9248.47,
+        "Interest": 3405.16,
+        "Principal": 5843.31,
+        "Balance": 637652.34
+      },
+      {
+        "Period": 35,
+        "Payment": 9248.47,
+        "Interest": 3374.24,
+        "Principal": 5874.23,
+        "Balance": 631778.11
+      },
+      {
+        "Period": 36,
+        "Payment": 9248.47,
+        "Interest": 3343.16,
+        "Principal": 5905.31,
+        "Balance": 625872.80
+      },
+      {
+        "Period": 37,
+        "Payment": 9248.47,
+        "Interest": 3311.91,
+        "Principal": 5936.56,
+        "Balance": 619936.24
+      },
+      {
+        "Period": 38,
+        "Payment": 9248.47,
+        "Interest": 3280.50,
+        "Principal": 5967.97,
+        "Balance": 613968.27
+      },
+      {
+        "Period": 39,
+        "Payment": 9248.47,
+        "Interest": 3248.92,
+        "Principal": 5999.55,
+        "Balance": 607968.72
+      },
+      {
+        "Period": 40,
+        "Payment": 9248.47,
+        "Interest": 3217.17,
+        "Principal": 6031.30,
+        "Balance": 601937.42
+      },
+      {
+        "Period": 41,
+        "Payment": 9248.47,
+        "Interest": 3185.25,
+        "Principal": 6063.22,
+        "Balance": 595874.20
+      },
+      {
+        "Period": 42,
+        "Payment": 9248.47,
+        "Interest": 3153.17,
+        "Principal": 6095.30,
+        "Balance": 589778.90
+      },
+      {
+        "Period": 43,
+        "Payment": 9248.47,
+        "Interest": 3120.91,
+        "Principal": 6127.56,
+        "Balance": 583651.34
+      },
+      {
+        "Period": 44,
+        "Payment": 9248.47,
+        "Interest": 3088.49,
+        "Principal": 6159.98,
+        "Balance": 577491.36
+      },
+      {
+        "Period": 45,
+        "Payment": 9248.47,
+        "Interest": 3055.89,
+        "Principal": 6192.58,
+        "Balance": 571298.78
+      },
+      {
+        "Period": 46,
+        "Payment": 9248.47,
+        "Interest": 3023.12,
+        "Principal": 6225.35,
+        "Balance": 565073.43
+      },
+      {
+        "Period": 47,
+        "Payment": 9248.47,
+        "Interest": 2990.18,
+        "Principal": 6258.29,
+        "Balance": 558815.14
+      },
+      {
+        "Period": 48,
+        "Payment": 9248.47,
+        "Interest": 2957.06,
+        "Principal": 6291.41,
+        "Balance": 552523.73
+      },
+      {
+        "Period": 49,
+        "Payment": 9248.47,
+        "Interest": 2923.77,
+        "Principal": 6324.70,
+        "Balance": 546199.03
+      },
+      {
+        "Period": 50,
+        "Payment": 9248.47,
+        "Interest": 2890.30,
+        "Principal": 6358.17,
+        "Balance": 539840.86
+      },
+      {
+        "Period": 51,
+        "Payment": 9248.47,
+        "Interest": 2856.66,
+        "Principal": 6391.81,
+        "Balance": 533449.05
+      },
+      {
+        "Period": 52,
+        "Payment": 9248.47,
+        "Interest": 2822.83,
+        "Principal": 6425.64,
+        "Balance": 527023.41
+      },
+      {
+        "Period": 53,
+        "Payment": 9248.47,
+        "Interest": 2788.83,
+        "Principal": 6459.64,
+        "Balance": 520563.77
+      },
+      {
+        "Period": 54,
+        "Payment": 9248.47,
+        "Interest": 2754.65,
+        "Principal": 6493.82,
+        "Balance": 514069.95
+      },
+      {
+        "Period": 55,
+        "Payment": 9248.47,
+        "Interest": 2720.29,
+        "Principal": 6528.18,
+        "Balance": 507541.77
+      },
+      {
+        "Period": 56,
+        "Payment": 9248.47,
+        "Interest": 2685.74,
+        "Principal": 6562.73,
+        "Balance": 500979.04
+      },
+      {
+        "Period": 57,
+        "Payment": 9248.47,
+        "Interest": 2651.01,
+        "Principal": 6597.46,
+        "Balance": 494381.58
+      },
+      {
+        "Period": 58,
+        "Payment": 9248.47,
+        "Interest": 2616.10,
+        "Principal": 6632.37,
+        "Balance": 487749.21
+      },
+      {
+        "Period": 59,
+        "Payment": 9248.47,
+        "Interest": 2581.01,
+        "Principal": 6667.46,
+        "Balance": 481081.75
+      },
+      {
+        "Period": 60,
+        "Payment": 9248.47,
+        "Interest": 2545.72,
+        "Principal": 6702.75,
+        "Balance": 474379.00
+      },
+      {
+        "Period": 61,
+        "Payment": 9248.47,
+        "Interest": 2510.26,
+        "Principal": 6738.21,
+        "Balance": 467640.79
+      },
+      {
+        "Period": 62,
+        "Payment": 9248.47,
+        "Interest": 2474.60,
+        "Principal": 6773.87,
+        "Balance": 460866.92
+      },
+      {
+        "Period": 63,
+        "Payment": 9248.47,
+        "Interest": 2438.75,
+        "Principal": 6809.72,
+        "Balance": 454057.20
+      },
+      {
+        "Period": 64,
+        "Payment": 9248.47,
+        "Interest": 2402.72,
+        "Principal": 6845.75,
+        "Balance": 447211.45
+      },
+      {
+        "Period": 65,
+        "Payment": 9248.47,
+        "Interest": 2366.49,
+        "Principal": 6881.98,
+        "Balance": 440329.47
+      },
+      {
+        "Period": 66,
+        "Payment": 9248.47,
+        "Interest": 2330.08,
+        "Principal": 6918.39,
+        "Balance": 433411.08
+      },
+      {
+        "Period": 67,
+        "Payment": 9248.47,
+        "Interest": 2293.47,
+        "Principal": 6955.00,
+        "Balance": 426456.08
+      },
+      {
+        "Period": 68,
+        "Payment": 9248.47,
+        "Interest": 2256.66,
+        "Principal": 6991.81,
+        "Balance": 419464.27
+      },
+      {
+        "Period": 69,
+        "Payment": 9248.47,
+        "Interest": 2219.67,
+        "Principal": 7028.80,
+        "Balance": 412435.47
+      },
+      {
+        "Period": 70,
+        "Payment": 9248.47,
+        "Interest": 2182.47,
+        "Principal": 7066.00,
+        "Balance": 405369.47
+      },
+      {
+        "Period": 71,
+        "Payment": 9248.47,
+        "Interest": 2145.08,
+        "Principal": 7103.39,
+        "Balance": 398266.08
+      },
+      {
+        "Period": 72,
+        "Payment": 9248.47,
+        "Interest": 2107.49,
+        "Principal": 7140.98,
+        "Balance": 391125.10
+      },
+      {
+        "Period": 73,
+        "Payment": 9248.47,
+        "Interest": 2069.70,
+        "Principal": 7178.77,
+        "Balance": 383946.33
+      },
+      {
+        "Period": 74,
+        "Payment": 9248.47,
+        "Interest": 2031.72,
+        "Principal": 7216.75,
+        "Balance": 376729.58
+      },
+      {
+        "Period": 75,
+        "Payment": 9248.47,
+        "Interest": 1993.53,
+        "Principal": 7254.94,
+        "Balance": 369474.64
+      },
+      {
+        "Period": 76,
+        "Payment": 9248.47,
+        "Interest": 1955.14,
+        "Principal": 7293.33,
+        "Balance": 362181.31
+      },
+      {
+        "Period": 77,
+        "Payment": 9248.47,
+        "Interest": 1916.54,
+        "Principal": 7331.93,
+        "Balance": 354849.38
+      },
+      {
+        "Period": 78,
+        "Payment": 9248.47,
+        "Interest": 1877.74,
+        "Principal": 7370.73,
+        "Balance": 347478.65
+      },
+      {
+        "Period": 79,
+        "Payment": 9248.47,
+        "Interest": 1838.74,
+        "Principal": 7409.73,
+        "Balance": 340068.92
+      },
+      {
+        "Period": 80,
+        "Payment": 9248.47,
+        "Interest": 1799.53,
+        "Principal": 7448.94,
+        "Balance": 332619.98
+      },
+      {
+        "Period": 81,
+        "Payment": 9248.47,
+        "Interest": 1760.11,
+        "Principal": 7488.36,
+        "Balance": 325131.62
+      },
+      {
+        "Period": 82,
+        "Payment": 9248.47,
+        "Interest": 1720.49,
+        "Principal": 7527.98,
+        "Balance": 317603.64
+      },
+      {
+        "Period": 83,
+        "Payment": 9248.47,
+        "Interest": 1680.65,
+        "Principal": 7567.82,
+        "Balance": 310035.82
+      },
+      {
+        "Period": 84,
+        "Payment": 9248.47,
+        "Interest": 1640.61,
+        "Principal": 7607.86,
+        "Balance": 302427.96
+      },
+      {
+        "Period": 85,
+        "Payment": 9248.47,
+        "Interest": 1600.35,
+        "Principal": 7648.12,
+        "Balance": 294779.84
+      },
+      {
+        "Period": 86,
+        "Payment": 9248.47,
+        "Interest": 1559.88,
+        "Principal": 7688.59,
+        "Balance": 287091.25
+      },
+      {
+        "Period": 87,
+        "Payment": 9248.47,
+        "Interest": 1519.19,
+        "Principal": 7729.28,
+        "Balance": 279361.97
+      },
+      {
+        "Period": 88,
+        "Payment": 9248.47,
+        "Interest": 1478.29,
+        "Principal": 7770.18,
+        "Balance": 271591.79
+      },
+      {
+        "Period": 89,
+        "Payment": 9248.47,
+        "Interest": 1437.17,
+        "Principal": 7811.30,
+        "Balance": 263780.49
+      },
+      {
+        "Period": 90,
+        "Payment": 9248.47,
+        "Interest": 1395.84,
+        "Principal": 7852.63,
+        "Balance": 255927.86
+      },
+      {
+        "Period": 91,
+        "Payment": 9248.47,
+        "Interest": 1354.28,
+        "Principal": 7894.19,
+        "Balance": 248033.67
+      },
+      {
+        "Period": 92,
+        "Payment": 9248.47,
+        "Interest": 1312.51,
+        "Principal": 7935.96,
+        "Balance": 240097.71
+      },
+      {
+        "Period": 93,
+        "Payment": 9248.47,
+        "Interest": 1270.52,
+        "Principal": 7977.95,
+        "Balance": 232119.76
+      },
+      {
+        "Period": 94,
+        "Payment": 9248.47,
+        "Interest": 1228.30,
+        "Principal": 8020.17,
+        "Balance": 224099.59
+      },
+      {
+        "Period": 95,
+        "Payment": 9248.47,
+        "Interest": 1185.86,
+        "Principal": 8062.61,
+        "Balance": 216036.98
+      },
+      {
+        "Period": 96,
+        "Payment": 9248.47,
+        "Interest": 1143.20,
+        "Principal": 8105.27,
+        "Balance": 207931.71
+      },
+      {
+        "Period": 97,
+        "Payment": 9248.47,
+        "Interest": 1100.31,
+        "Principal": 8148.16,
+        "Balance": 199783.55
+      },
+      {
+        "Period": 98,
+        "Payment": 9248.47,
+        "Interest": 1057.19,
+        "Principal": 8191.28,
+        "Balance": 191592.27
+      },
+      {
+        "Period": 99,
+        "Payment": 9248.47,
+        "Interest": 1013.84,
+        "Principal": 8234.63,
+        "Balance": 183357.64
+      },
+      {
+        "Period": 100,
+        "Payment": 9248.47,
+        "Interest": 970.27,
+        "Principal": 8278.20,
+        "Balance": 175079.44
+      },
+      {
+        "Period": 101,
+        "Payment": 9248.47,
+        "Interest": 926.46,
+        "Principal": 8322.01,
+        "Balance": 166757.43
+      },
+      {
+        "Period": 102,
+        "Payment": 9248.47,
+        "Interest": 882.42,
+        "Principal": 8366.05,
+        "Balance": 158391.38
+      },
+      {
+        "Period": 103,
+        "Payment": 9248.47,
+        "Interest": 838.15,
+        "Principal": 8410.32,
+        "Balance": 149981.06
+      },
+      {
+        "Period": 104,
+        "Payment": 9248.47,
+        "Interest": 793.65,
+        "Principal": 8454.82,
+        "Balance": 141526.24
+      },
+      {
+        "Period": 105,
+        "Payment": 9248.47,
+        "Interest": 748.91,
+        "Principal": 8499.56,
+        "Balance": 133026.68
+      },
+      {
+        "Period": 106,
+        "Payment": 9248.47,
+        "Interest": 703.93,
+        "Principal": 8544.54,
+        "Balance": 124482.14
+      },
+      {
+        "Period": 107,
+        "Payment": 9248.47,
+        "Interest": 658.72,
+        "Principal": 8589.75,
+        "Balance": 115892.39
+      },
+      {
+        "Period": 108,
+        "Payment": 9248.47,
+        "Interest": 613.26,
+        "Principal": 8635.21,
+        "Balance": 107257.18
+      },
+      {
+        "Period": 109,
+        "Payment": 9248.47,
+        "Interest": 567.57,
+        "Principal": 8680.90,
+        "Balance": 98576.28
+      },
+      {
+        "Period": 110,
+        "Payment": 9248.47,
+        "Interest": 521.63,
+        "Principal": 8726.84,
+        "Balance": 89849.44
+      },
+      {
+        "Period": 111,
+        "Payment": 9248.47,
+        "Interest": 475.45,
+        "Principal": 8773.02,
+        "Balance": 81076.42
+      },
+      {
+        "Period": 112,
+        "Payment": 9248.47,
+        "Interest": 429.03,
+        "Principal": 8819.44,
+        "Balance": 72256.98
+      },
+      {
+        "Period": 113,
+        "Payment": 9248.47,
+        "Interest": 382.36,
+        "Principal": 8866.11,
+        "Balance": 63390.87
+      },
+      {
+        "Period": 114,
+        "Payment": 9248.47,
+        "Interest": 335.44,
+        "Principal": 8913.03,
+        "Balance": 54477.84
+      },
+      {
+        "Period": 115,
+        "Payment": 9248.47,
+        "Interest": 288.28,
+        "Principal": 8960.19,
+        "Balance": 45517.65
+      },
+      {
+        "Period": 116,
+        "Payment": 9248.47,
+        "Interest": 240.86,
+        "Principal": 9007.61,
+        "Balance": 36510.04
+      },
+      {
+        "Period": 117,
+        "Payment": 9248.47,
+        "Interest": 193.20,
+        "Principal": 9055.27,
+        "Balance": 27454.77
+      },
+      {
+        "Period": 118,
+        "Payment": 9248.47,
+        "Interest": 145.28,
+        "Principal": 9103.19,
+        "Balance": 18351.58
+      },
+      {
+        "Period": 119,
+        "Payment": 9248.47,
+        "Interest": 97.11,
+        "Principal": 9151.36,
+        "Balance": 9200.22
+      },
+      {
+        "Period": 120,
+        "Payment": 9248.90,
+        "Interest": 48.68,
+        "Principal": 9200.22,
+        "Balance": 0.00
+      }
+    ]
+  },
+  {
+    "ruleId": "BR-AMT-002",
+    "input": {
+      "principal": 50000.0,
+      "annualRatePct": 0.0,
+      "termMonths": 36
+    },
+    "expected": [
+      {
+        "Period": 1,
+        "Payment": 1388.89,
+        "Interest": 0.0,
+        "Principal": 1388.89,
+        "Balance": 48611.11
+      },
+      {
+        "Period": 2,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 47222.22
+      },
+      {
+        "Period": 3,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 45833.33
+      },
+      {
+        "Period": 4,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 44444.44
+      },
+      {
+        "Period": 5,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 43055.55
+      },
+      {
+        "Period": 6,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 41666.66
+      },
+      {
+        "Period": 7,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 40277.77
+      },
+      {
+        "Period": 8,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 38888.88
+      },
+      {
+        "Period": 9,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 37499.99
+      },
+      {
+        "Period": 10,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 36111.10
+      },
+      {
+        "Period": 11,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 34722.21
+      },
+      {
+        "Period": 12,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 33333.32
+      },
+      {
+        "Period": 13,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 31944.43
+      },
+      {
+        "Period": 14,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 30555.54
+      },
+      {
+        "Period": 15,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 29166.65
+      },
+      {
+        "Period": 16,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 27777.76
+      },
+      {
+        "Period": 17,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 26388.87
+      },
+      {
+        "Period": 18,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 24999.98
+      },
+      {
+        "Period": 19,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 23611.09
+      },
+      {
+        "Period": 20,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 22222.20
+      },
+      {
+        "Period": 21,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 20833.31
+      },
+      {
+        "Period": 22,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 19444.42
+      },
+      {
+        "Period": 23,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 18055.53
+      },
+      {
+        "Period": 24,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 16666.64
+      },
+      {
+        "Period": 25,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 15277.75
+      },
+      {
+        "Period": 26,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 13888.86
+      },
+      {
+        "Period": 27,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 12499.97
+      },
+      {
+        "Period": 28,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 11111.08
+      },
+      {
+        "Period": 29,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 9722.19
+      },
+      {
+        "Period": 30,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 8333.30
+      },
+      {
+        "Period": 31,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 6944.41
+      },
+      {
+        "Period": 32,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 5555.52
+      },
+      {
+        "Period": 33,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 4166.63
+      },
+      {
+        "Period": 34,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 2777.74
+      },
+      {
+        "Period": 35,
+        "Payment": 1388.89,
+        "Interest": 0.00,
+        "Principal": 1388.89,
+        "Balance": 1388.85
+      },
+      {
+        "Period": 36,
+        "Payment": 1388.85,
+        "Interest": 0.00,
+        "Principal": 1388.85,
+        "Balance": 0.00
+      }
+    ]
+  }
+]

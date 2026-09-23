@@ -15,4 +15,13 @@ The migration is behavior-preserving and machine-proven: see [`docs/architecture
 the service contract in [`docs/api-contract.md`](docs/api-contract.md), and the four parity levels
 (UI, service, data, end-to-end) verified by the parity harness and dashboard.
 
+```bash
+bash parity/run-all.sh                   # all four levels, exits non-zero on any red
+node tools/parity-dashboard/server.mjs   # the same run, live, on http://localhost:5090
+```
+
+How each level is verified: [`docs/parity.md`](docs/parity.md). Demo script:
+[`docs/demo-runbook.md`](docs/demo-runbook.md). Latest snapshot:
+[`parity/reports/parity-dashboard.md`](parity/reports/parity-dashboard.md).
+
 > Legacy quirks and known bugs are reproduced deliberately and documented — never "fixed".

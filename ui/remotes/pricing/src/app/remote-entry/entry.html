@@ -1,0 +1,113 @@
+<section class="screen">
+  <h2 class="screen-title">Pricing &amp; Amortization</h2>
+  <p class="screen-subtitle">
+    Rate, fee, payment and schedule are produced by the lending service (BR-PRC-001..006,
+    BR-AMT-001..002).
+  </p>
+
+  <div class="pricing-columns">
+    <div class="panel">
+      <div class="panel-title">Loan</div>
+      <div class="field-column">
+        <div class="field">
+          <label for="product">Product</label>
+          <select id="product" name="product" [(ngModel)]="product">
+            @for (option of products; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+        </div>
+        @for (field of fields; track field.key) {
+          <div class="field">
+            <label [attr.for]="field.key">{{ field.label }}</label>
+            <input
+              [id]="field.key"
+              [name]="field.key"
+              type="text"
+              autocomplete="off"
+              [class.invalid]="isInvalid(field.key)"
+              [(ngModel)]="values[field.key]"
+            />
+          </div>
+        }
+      </div>
+      <div class="actions">
+        <button type="button" class="btn" [disabled]="busy()" (click)="priceLoan()">Price Loan</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Quote</div>
+      @if (quote(); as result) {
+        <div class="result-list">
+          <div class="result-line">Rate: {{ percent(result.rate.rate) }}</div>
+          <div class="result-line">Origination fee: {{ money(result.originationFee) }}</div>
+          <div class="result-line">Monthly payment: {{ money(result.payment) }}</div>
+        </div>
+        <dl class="rate-breakdown muted">
+          <div><dt>Base rate</dt><dd>{{ percent(result.rate.baseRate) }}</dd></div>
+          <div><dt>Risk spread</dt><dd>{{ percent(result.rate.riskSpread) }}</dd></div>
+          <div><dt>LTV adjustment</dt><dd>{{ percent(result.rate.ltvAdjustment) }}</dd></div>
+          <div><dt>Relationship discount</dt><dd>{{ percent(result.rate.relationshipDiscount) }}</dd></div>
+        </dl>
+      } @else {
+        <p class="muted">Enter the loan details and press Price Loan.</p>
+      }
+
+      <div class="late-fee">
+        <div class="field">
+          <label for="daysLate">Days late</label>
+          <input id="daysLate" name="daysLate" type="text" autocomplete="off" [(ngModel)]="daysLate" />
+        </div>
+        <div class="actions">
+          <button type="button" class="btn secondary" (click)="requestLateFee()">Late Fee (DB)</button>
+        </div>
+        @if (lateFee(); as fee) {
+          <div class="result-line">Late fee: {{ money(fee) }}</div>
+        }
+        <p class="muted quirk-note">
+          LEND-5102: this button sends the Loan Amount field as the payment amount, as the legacy
+          screen did.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Amortization schedule</div>
+    <div class="grid-wrap">
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>Payment</th>
+            <th>Interest</th>
+            <th>Principal</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of quote()?.rows ?? []; track row.period) {
+            <tr>
+              <td class="num">{{ row.period }}</td>
+              <td class="num">{{ row.payment }}</td>
+              <td class="num">{{ row.interest }}</td>
+              <td class="num">{{ row.principal }}</td>
+              <td class="num">{{ row.balance }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="5" class="muted">No schedule loaded.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <lending-message-box
+    [text]="dialog()"
+    [title]="dialogTitle()"
+    (dismissed)="dialog.set(null)"
+  ></lending-message-box>
+</section>

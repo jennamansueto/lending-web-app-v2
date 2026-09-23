@@ -1,0 +1,40 @@
+{
+  "name": "approved-term-loan",
+  "description": "APPROVED term loan that runs the full workflow: eligibility -> application -> pricing -> booking. Every asserted number is a golden legacy value.",
+  "input": {
+    "borrowerId": 9001,
+    "productType": "TERM",
+    "amount": 100000.0,
+    "termMonths": 60,
+    "annualIncome": 1200000.0,
+    "monthlyDebt": 0.0,
+    "creditScore": 800,
+    "collateralValue": 160000.0,
+    "yearsInBusiness": 10,
+    "depositBalance": 0.0,
+    "fundedDate": "2024-01-15"
+  },
+  "expected": {
+    "decision": "APPROVED",
+    "declineReason": null,
+    "firedRuleId": "BR-ELG-009",
+    "dti": 0.0195661,
+    "ltv": 0.625,
+    "estimatedPayment": 1956.61,
+    "rate": 6.5,
+    "originationFee": 1000.0,
+    "payment": 1956.61,
+    "booked": true
+  },
+  "expectedSchedule": {
+    "golden": "BR-AMT-002_amortization_schedule.json",
+    "match": { "principal": 100000.0, "annualRatePct": 6.5, "termMonths": 60 }
+  },
+  "provenance": {
+    "decision, firedRuleId, dti, estimatedPayment": "BR-ELG-009_approval_result.json (TERM, 100000, 60m, income 1200000, debt 0, score 800)",
+    "rate": "BR-PRC-005_priced_rate.json (TERM, score 760, ltv 0.7, deposit 0) = 6.5; score 800 shares the >=760 spread band (BR-PRC-002) and ltv 0.625 shares the 0.61-0.75 adjustment band (BR-PRC-003)",
+    "originationFee": "BR-PRC-006_origination_fee.json (TERM, 100000)",
+    "payment, schedule": "BR-AMT-001/BR-AMT-002 (principal 100000, 6.5%, 60m)",
+    "ltv": "derived from the inputs (100000 / 160000); the band it lands in is golden"
+  }
+}

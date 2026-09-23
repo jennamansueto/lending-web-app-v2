@@ -1,0 +1,6 @@
+node_modules/
+
+# Generated parity artefacts. Only the aggregated dashboard snapshot is committed.
+parity/reports/*
+!parity/reports/parity-dashboard.json
+!parity/reports/parity-dashboard.md

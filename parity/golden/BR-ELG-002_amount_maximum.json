@@ -1,0 +1,347 @@
+[
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 4999999.99,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.09783074,
+      "ltv": 0.499999999,
+      "estimatedPayment": 97830.74,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.098   LTV: 0.500\nEst. payment at base rate: $97,830.74"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 5000000.0,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.09783074,
+      "ltv": 0.5,
+      "estimatedPayment": 97830.74,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.098   LTV: 0.500\nEst. payment at base rate: $97,830.74"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 5000000.01,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 9000000.0,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 4999999.99,
+      "termMonths": 36,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.15495765,
+      "ltv": 0.499999999,
+      "estimatedPayment": 154957.65,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.155   LTV: 0.500\nEst. payment at base rate: $154,957.65"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 5000000.0,
+      "termMonths": 36,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.15495765,
+      "ltv": 0.5,
+      "estimatedPayment": 154957.65,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.155   LTV: 0.500\nEst. payment at base rate: $154,957.65"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 5000000.01,
+      "termMonths": 36,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 9000000.0,
+      "termMonths": 36,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 4999999.99,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.09877026,
+      "ltv": 0.499999999,
+      "estimatedPayment": 98770.26,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.099   LTV: 0.500\nEst. payment at base rate: $98,770.26"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 5000000.0,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.09877026,
+      "ltv": 0.5,
+      "estimatedPayment": 98770.26,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.099   LTV: 0.500\nEst. payment at base rate: $98,770.26"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 5000000.01,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 9000000.0,
+      "termMonths": 60,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 10000000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 6000000.0,
+      "termMonths": 999,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 300,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 6000000.0,
+      "termMonths": 999,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 300,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-002",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 6000000.0,
+      "termMonths": 999,
+      "annualIncome": 12000000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 300,
+      "collateralValue": 0.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "Loan amount exceeds $5,000,000 desk limit; refer to Credit Committee.",
+      "firedRuleId": "BR-ELG-002",
+      "dti": null,
+      "ltv": null,
+      "estimatedPayment": null,
+      "resultText": "DECLINED\nLoan amount exceeds $5,000,000 desk limit; refer to Credit Committee."
+    }
+  }
+]
