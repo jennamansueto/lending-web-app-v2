@@ -1,0 +1,242 @@
+[
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 25000.0,
+      "productType": "TERM"
+    },
+    "expected": 500.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 46666.0,
+      "productType": "TERM"
+    },
+    "expected": 500.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 46667.0,
+      "productType": "TERM"
+    },
+    "expected": 500.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 50000.0,
+      "productType": "TERM"
+    },
+    "expected": 500.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 100000.0,
+      "productType": "TERM"
+    },
+    "expected": 1000.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 466666.0,
+      "productType": "TERM"
+    },
+    "expected": 4666.66
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2499999.0,
+      "productType": "TERM"
+    },
+    "expected": 24999.99
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2500000.0,
+      "productType": "TERM"
+    },
+    "expected": 25000.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2500001.0,
+      "productType": "TERM"
+    },
+    "expected": 25000.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 5000000.0,
+      "productType": "TERM"
+    },
+    "expected": 25000.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 25000.0,
+      "productType": "LOC"
+    },
+    "expected": 350.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 46666.0,
+      "productType": "LOC"
+    },
+    "expected": 350.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 46667.0,
+      "productType": "LOC"
+    },
+    "expected": 350.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 50000.0,
+      "productType": "LOC"
+    },
+    "expected": 375.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 100000.0,
+      "productType": "LOC"
+    },
+    "expected": 750.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 466666.0,
+      "productType": "LOC"
+    },
+    "expected": 3500.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2499999.0,
+      "productType": "LOC"
+    },
+    "expected": 18749.99
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2500000.0,
+      "productType": "LOC"
+    },
+    "expected": 18750.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2500001.0,
+      "productType": "LOC"
+    },
+    "expected": 18750.01
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 5000000.0,
+      "productType": "LOC"
+    },
+    "expected": 37500.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 25000.0,
+      "productType": "EQUIP"
+    },
+    "expected": 500.0
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 46666.0,
+      "productType": "EQUIP"
+    },
+    "expected": 583.33
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 46667.0,
+      "productType": "EQUIP"
+    },
+    "expected": 583.34
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 50000.0,
+      "productType": "EQUIP"
+    },
+    "expected": 625.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 100000.0,
+      "productType": "EQUIP"
+    },
+    "expected": 1250.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 466666.0,
+      "productType": "EQUIP"
+    },
+    "expected": 5833.33
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2499999.0,
+      "productType": "EQUIP"
+    },
+    "expected": 31249.99
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2500000.0,
+      "productType": "EQUIP"
+    },
+    "expected": 31250.00
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 2500001.0,
+      "productType": "EQUIP"
+    },
+    "expected": 31250.01
+  },
+  {
+    "ruleId": "BR-PRC-006",
+    "input": {
+      "amount": 5000000.0,
+      "productType": "EQUIP"
+    },
+    "expected": 62500.00
+  }
+]
