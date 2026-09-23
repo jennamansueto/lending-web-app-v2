@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.Workflow", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.ArchTests", "tests\Contoso.Lending.ArchTests\Contoso.Lending.ArchTests.csproj", "{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Lending.ApiTests", "tests\Contoso.Lending.ApiTests\Contoso.Lending.ApiTests.csproj", "{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9316D491-D0FE-42AA-B813-4DD38632202B} = {3634879C-A647-4CF3-A633-0210187D1F90}
@@ -53,5 +59,6 @@ Global
 		{A61AE8D7-EB53-4893-ABB8-C9693D43AC07} = {C6260356-5E86-4508-9466-D1DDB719AE6C}
 		{81DFC3F5-135A-48EC-A625-3EA730B2806E} = {3634879C-A647-4CF3-A633-0210187D1F90}
 		{E82F899F-34CA-4D52-9046-DA0EDB2DD15E} = {C6260356-5E86-4508-9466-D1DDB719AE6C}
+		{5B8382E5-9300-4CA5-BC51-40ADD3C0595B} = {C6260356-5E86-4508-9466-D1DDB719AE6C}
 	EndGlobalSection
 EndGlobal

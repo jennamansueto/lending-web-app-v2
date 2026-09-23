@@ -178,3 +178,6 @@ static RateResponseDto RateResponse(string productType, int creditScore, decimal
         priced.Rate, priced.Floored, priced.Capped,
         new[] { "BR-PRC-001", "BR-PRC-002", "BR-PRC-003", "BR-PRC-004", "BR-PRC-005" });
 }
+
+/// <summary>Entry point exposed so the API regression tests can boot the real app.</summary>
+public partial class Program;

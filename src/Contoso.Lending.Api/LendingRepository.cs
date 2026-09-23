@@ -67,7 +67,7 @@ public sealed class LendingRepository(string connectionString)
         {
             rows.Add(new LoanScheduleRowDto(
                 reader.GetInt32(0),
-                reader.GetFieldValue<DateOnly>(1).ToString("yyyy-MM-dd"),
+                ReadDate(reader, 1).ToString("yyyy-MM-dd"),
                 reader.GetDecimal(2), reader.GetDecimal(3), reader.GetDecimal(4), reader.GetDecimal(5)));
         }
         return rows;
@@ -89,7 +89,7 @@ public sealed class LendingRepository(string connectionString)
             if (!await loanReader.ReadAsync(ct)) return null;
             principal = loanReader.GetDecimal(0);
             annualRate = loanReader.GetDecimal(1);
-            fundedDate = loanReader.GetFieldValue<DateOnly>(2);
+            fundedDate = ReadDate(loanReader, 2);
         }
 
         var schedule = new List<PayoffScheduleRow>();
@@ -101,7 +101,7 @@ public sealed class LendingRepository(string connectionString)
             while (await scheduleReader.ReadAsync(ct))
             {
                 schedule.Add(new PayoffScheduleRow(
-                    scheduleReader.GetInt32(0), scheduleReader.GetFieldValue<DateOnly>(1), scheduleReader.GetDecimal(2)));
+                    scheduleReader.GetInt32(0), ReadDate(scheduleReader, 1), scheduleReader.GetDecimal(2)));
             }
         }
 
@@ -187,6 +187,15 @@ public sealed class LendingRepository(string connectionString)
         await transaction.CommitAsync(ct);
         return loanId;
     }
+
+    /// <summary>
+    /// Reads a legacy date column as a <see cref="DateOnly"/>. The layer-1 schema stores
+    /// `funded_date`, `due_date` and `paid_date` as `timestamp(0)` (Oracle `DATE` carries a time
+    /// component), which Npgsql surfaces as <see cref="DateTime"/>; the legacy data always has a
+    /// midnight time-of-day, so only the date part is meaningful to the rules.
+    /// </summary>
+    private static DateOnly ReadDate(NpgsqlDataReader reader, int ordinal) =>
+        DateOnly.FromDateTime(reader.GetDateTime(ordinal));
 
     /// <summary>Oracle `ADD_MONTHS` semantics: clamp to month length, keep end-of-month anchoring.</summary>
     internal static DateOnly AddMonths(DateOnly date, int months)
