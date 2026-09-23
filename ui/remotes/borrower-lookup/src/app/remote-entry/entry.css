@@ -1,0 +1,10 @@
+.search-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.search-row .field {
+  grid-template-columns: 130px minmax(220px, 320px);
+}

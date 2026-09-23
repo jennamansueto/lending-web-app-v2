@@ -1,0 +1,76 @@
+<section class="screen">
+  <h2 class="screen-title">Borrower Lookup</h2>
+  <p class="screen-subtitle">
+    Case-insensitive substring match on legal name or tax id, served by the lending service.
+  </p>
+
+  <div class="panel">
+    <div class="search-row">
+      <div class="field">
+        <label for="search">Name or Tax ID</label>
+        <input
+          id="search"
+          name="search"
+          type="text"
+          autocomplete="off"
+          [(ngModel)]="search"
+          (keyup.enter)="runSearch()"
+        />
+      </div>
+      <button type="button" class="btn" (click)="runSearch()">Search</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Borrowers</div>
+    <div class="grid-wrap">
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>BORROWER_ID</th>
+            <th>LEGAL_NAME</th>
+            <th>TAX_ID</th>
+            <th>CREDIT_SCORE</th>
+            <th>DEPOSIT_BALANCE</th>
+            <th>YEARS_IN_BUSINESS</th>
+            <th>ACTIVE_LOANS</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows(); track row.borrowerId) {
+            <tr
+              class="selectable"
+              [class.selected]="row.borrowerId === selectedId()"
+              (click)="select(row)"
+            >
+              <td class="num">{{ row.borrowerId }}</td>
+              <td>{{ row.legalName }}</td>
+              <td>{{ row.taxId }}</td>
+              <td class="num">{{ row.creditScore }}</td>
+              <td class="num">{{ row.depositBalance }}</td>
+              <td class="num">{{ row.yearsInBusiness }}</td>
+              <td class="num">{{ row.activeLoans }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="7" class="muted">
+                {{ searched() ? 'No borrowers matched.' : 'Enter a name or tax id and press Search.' }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Pre-qualification</div>
+    <div class="result-panel">{{ prequalification() || 'Select a borrower row.' }}</div>
+  </div>
+
+  <lending-message-box
+    [text]="dialog()"
+    title="Error"
+    (dismissed)="dialog.set(null)"
+  ></lending-message-box>
+</section>

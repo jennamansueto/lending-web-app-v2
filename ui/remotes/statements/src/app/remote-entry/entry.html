@@ -1,0 +1,70 @@
+<section class="screen">
+  <h2 class="screen-title">Statements Export</h2>
+  <p class="screen-subtitle">
+    Payment schedule, CSV export and payoff quote for a booked loan, served by the lending service.
+  </p>
+
+  <div class="panel">
+    <div class="statements-row">
+      <div class="field">
+        <label for="loanId">Loan ID</label>
+        <input
+          id="loanId"
+          name="loanId"
+          type="text"
+          autocomplete="off"
+          [(ngModel)]="loanId"
+          (keyup.enter)="loadSchedule()"
+        />
+      </div>
+      <button type="button" class="btn" (click)="loadSchedule()">Load Schedule</button>
+      <button type="button" class="btn secondary" (click)="exportCsv()">Export CSV</button>
+      <button type="button" class="btn secondary" (click)="payoffQuote()">Payoff Quote (DB)</button>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Payment schedule</div>
+    <div class="grid-wrap">
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>PERIOD_NO</th>
+            <th>DUE_DATE</th>
+            <th>PAYMENT_AMT</th>
+            <th>INTEREST_AMT</th>
+            <th>PRINCIPAL_AMT</th>
+            <th>BALANCE_AFTER</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of rows(); track row.periodNo) {
+            <tr>
+              <td class="num">{{ row.periodNo }}</td>
+              <td>{{ row.dueDate }}</td>
+              <td class="num">{{ row.paymentAmt }}</td>
+              <td class="num">{{ row.interestAmt }}</td>
+              <td class="num">{{ row.principalAmt }}</td>
+              <td class="num">{{ row.balanceAfter }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="6" class="muted">Enter a loan id and press Load Schedule.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Payoff</div>
+    <div class="result-line">{{ payoff() || '—' }}</div>
+  </div>
+
+  <lending-message-box
+    [text]="dialog()"
+    [title]="dialogTitle()"
+    (dismissed)="dialog.set(null)"
+  ></lending-message-box>
+</section>
