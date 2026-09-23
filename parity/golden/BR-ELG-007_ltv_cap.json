@@ -1,0 +1,485 @@
+[
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 90000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 50000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 1.800 exceeds maximum 0.90 for TERM.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0176095,
+      "ltv": 1.80,
+      "estimatedPayment": 1760.95,
+      "resultText": "DECLINED\nLTV 1.800 exceeds maximum 0.90 for TERM."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 90000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 99999.99,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 0.900 exceeds maximum 0.90 for TERM.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0176095,
+      "ltv": 0.9000000900000090000009000001,
+      "estimatedPayment": 1760.95,
+      "resultText": "DECLINED\nLTV 0.900 exceeds maximum 0.90 for TERM."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 90000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0176095,
+      "ltv": 0.90,
+      "estimatedPayment": 1760.95,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.018   LTV: 0.900\nEst. payment at base rate: $1,760.95"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 90000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.01,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0176095,
+      "ltv": 0.8999999100000089999991000001,
+      "estimatedPayment": 1760.95,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.018   LTV: 0.900\nEst. payment at base rate: $1,760.95"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 90000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0176095,
+      "ltv": 0.45,
+      "estimatedPayment": 1760.95,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.018   LTV: 0.450\nEst. payment at base rate: $1,760.95"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 111111.11111111111111111111111,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0195661,
+      "ltv": 0.9,
+      "estimatedPayment": 1956.61,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.020   LTV: 0.900\nEst. payment at base rate: $1,956.61"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "TERM",
+      "amount": 90000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 50000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 1.800 exceeds maximum 0.90 for TERM.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0176095,
+      "ltv": 1.80,
+      "estimatedPayment": 1760.95,
+      "resultText": "DECLINED\nLTV 1.800 exceeds maximum 0.90 for TERM."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 80000.00,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 50000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 1.600 exceeds maximum 0.80 for LOC.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0247932,
+      "ltv": 1.60,
+      "estimatedPayment": 2479.32,
+      "resultText": "DECLINED\nLTV 1.600 exceeds maximum 0.80 for LOC."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 80000.00,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 99999.99,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 0.800 exceeds maximum 0.80 for LOC.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0247932,
+      "ltv": 0.8000000800000080000008000001,
+      "estimatedPayment": 2479.32,
+      "resultText": "DECLINED\nLTV 0.800 exceeds maximum 0.80 for LOC."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 80000.00,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0247932,
+      "ltv": 0.80,
+      "estimatedPayment": 2479.32,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.025   LTV: 0.800\nEst. payment at base rate: $2,479.32"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 80000.00,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.01,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0247932,
+      "ltv": 0.7999999200000079999992000001,
+      "estimatedPayment": 2479.32,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.025   LTV: 0.800\nEst. payment at base rate: $2,479.32"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 80000.00,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0247932,
+      "ltv": 0.40,
+      "estimatedPayment": 2479.32,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.025   LTV: 0.400\nEst. payment at base rate: $2,479.32"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 100000.0,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 125000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0309915,
+      "ltv": 0.8,
+      "estimatedPayment": 3099.15,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.031   LTV: 0.800\nEst. payment at base rate: $3,099.15"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "LOC",
+      "amount": 80000.00,
+      "termMonths": 36,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 50000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 1.600 exceeds maximum 0.80 for LOC.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0247932,
+      "ltv": 1.60,
+      "estimatedPayment": 2479.32,
+      "resultText": "DECLINED\nLTV 1.600 exceeds maximum 0.80 for LOC."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 85000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 50000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 1.700 exceeds maximum 0.85 for EQUIP.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0167909,
+      "ltv": 1.70,
+      "estimatedPayment": 1679.09,
+      "resultText": "DECLINED\nLTV 1.700 exceeds maximum 0.85 for EQUIP."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 85000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 99999.99,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 0.850 exceeds maximum 0.85 for EQUIP.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0167909,
+      "ltv": 0.8500000850000085000008500001,
+      "estimatedPayment": 1679.09,
+      "resultText": "DECLINED\nLTV 0.850 exceeds maximum 0.85 for EQUIP."
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 85000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0167909,
+      "ltv": 0.85,
+      "estimatedPayment": 1679.09,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.017   LTV: 0.850\nEst. payment at base rate: $1,679.09"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 85000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 100000.01,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0167909,
+      "ltv": 0.8499999150000084999991500001,
+      "estimatedPayment": 1679.09,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.017   LTV: 0.850\nEst. payment at base rate: $1,679.09"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 85000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 200000.0,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0167909,
+      "ltv": 0.425,
+      "estimatedPayment": 1679.09,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.017   LTV: 0.425\nEst. payment at base rate: $1,679.09"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 100000.0,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 117647.05882352941176470588235,
+      "yearsInBusiness": 10
+    },
+    "expected": {
+      "decision": "APPROVED",
+      "declineReason": null,
+      "firedRuleId": "BR-ELG-009",
+      "dti": 0.0197541,
+      "ltv": 0.85,
+      "estimatedPayment": 1975.41,
+      "resultText": "APPROVED FOR UNDERWRITING\nDTI: 0.020   LTV: 0.850\nEst. payment at base rate: $1,975.41"
+    }
+  },
+  {
+    "ruleId": "BR-ELG-007",
+    "culture": "en-US",
+    "input": {
+      "productType": "EQUIP",
+      "amount": 85000.00,
+      "termMonths": 60,
+      "annualIncome": 1200000.0,
+      "monthlyDebt": 0.0,
+      "creditScore": 800,
+      "collateralValue": 50000.0,
+      "yearsInBusiness": 0
+    },
+    "expected": {
+      "decision": "DECLINED",
+      "declineReason": "LTV 1.700 exceeds maximum 0.85 for EQUIP.",
+      "firedRuleId": "BR-ELG-007",
+      "dti": 0.0167909,
+      "ltv": 1.70,
+      "estimatedPayment": 1679.09,
+      "resultText": "DECLINED\nLTV 1.700 exceeds maximum 0.85 for EQUIP."
+    }
+  }
+]

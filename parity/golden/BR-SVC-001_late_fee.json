@@ -1,0 +1,1410 @@
+[
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 0
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 1
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 9
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 10
+    },
+    "expected": {
+      "lateFee": 0.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 25.5
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 50.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 50.02
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 11
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 25.5
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 50.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 50.02
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 12
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 25.5
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 50.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 50.02
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 30
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 0.0,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 100.0,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 249.90,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 499.99,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.0,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 500.10,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 510.0,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 25.5
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.10,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 50.01
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 1000.30,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 50.02
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.90,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 2999.99,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.0,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3000.01,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 3563.79,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 6851.30,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  },
+  {
+    "ruleId": "BR-SVC-001",
+    "dbState": "seeded database from database/setup-db.sh (schema.sql + plsql/pkg_lending.sql + seed/seed_data.sql + seed/generate_schedules.sql), unmodified",
+    "input": {
+      "paymentAmount": 10000.0,
+      "daysLate": 90
+    },
+    "expected": {
+      "lateFee": 150.0
+    }
+  }
+]
