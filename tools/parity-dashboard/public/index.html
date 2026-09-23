@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parity dashboard — Contoso Commercial Lending</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <div>
+          <h1>Parity verification</h1>
+          <p class="subtitle">
+            Contoso Commercial Lending — legacy WinForms/Oracle desk versus the modernized stack.
+            Every comparison is exact; tolerance is zero at all four levels.
+          </p>
+        </div>
+        <div class="actions">
+          <button id="run" type="button">Run parity checks</button>
+          <p id="run-state" class="run-state">Idle</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary">
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th scope="col">Level</th>
+              <th scope="col">Verification</th>
+              <th scope="col" class="numeric">Passed</th>
+              <th scope="col" class="numeric">Failed</th>
+              <th scope="col" class="status-col">Status</th>
+            </tr>
+          </thead>
+          <tbody id="summary-body"></tbody>
+          <tfoot id="summary-foot"></tfoot>
+        </table>
+      </section>
+
+      <section id="levels"></section>
+
+      <section class="console">
+        <details>
+          <summary>Run output</summary>
+          <pre id="log"></pre>
+        </details>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

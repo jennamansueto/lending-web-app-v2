@@ -24,6 +24,17 @@ import xml.etree.ElementTree as ET
 
 trx_path = os.environ["TRX"]
 report_path = os.environ["REPORT"]
+golden_dir = os.path.join(os.path.dirname(os.path.dirname(report_path)), "golden")
+
+
+def golden_file(rule_id):
+    """The golden file backing a rule: parity/golden/<rule id>_<name>.json."""
+    for name in sorted(os.listdir(golden_dir)):
+        if name.startswith(rule_id + "_") and name.endswith(".json"):
+            return "parity/golden/" + name
+    return None
+
+
 if not os.path.exists(trx_path):
     print("PARITY: no test results produced at %s" % trx_path)
     sys.exit(1)
@@ -33,7 +44,29 @@ root = ET.parse(trx_path).getroot()
 
 record = re.compile(r'ruleId:\s*"(?P<rule>[^"]+)",\s*index:\s*(?P<index>\d+)')
 rules = {}
-other = {"total": 0, "passed": 0, "failed": 0, "failing": []}
+other = {"total": 0, "passed": 0, "failed": 0, "failing": [], "failures": []}
+
+
+def message_of(result):
+    """The assertion text xunit produced for a failing case (expected vs actual)."""
+    parts = []
+    for tag in ("Message", "StackTrace"):
+        node = result.find(".//t:Output/t:ErrorInfo/t:%s" % tag, ns)
+        if node is not None and node.text:
+            parts.append(node.text.strip())
+    return "\n".join(parts)
+
+
+assertion = re.compile(r"Expected:\s*(?P<expected>.*?)\s*\n\s*Actual:\s*(?P<actual>.*?)\s*(\n|$)", re.S)
+
+
+def detail_of(message):
+    """Splits the xunit assertion into the expected and actual values it reports."""
+    match = assertion.search(message)
+    if not match:
+        return None, None
+    return match.group("expected"), match.group("actual")
+
 
 for result in root.iterfind(".//t:UnitTestResult", ns):
     name = result.get("testName") or ""
@@ -42,17 +75,26 @@ for result in root.iterfind(".//t:UnitTestResult", ns):
     match = record.search(name)
     if match:
         rule = match.group("rule")
-        bucket = rules.setdefault(rule, {"total": 0, "passed": 0, "failed": 0, "failing": []})
+        bucket = rules.setdefault(
+            rule,
+            {"golden": golden_file(rule), "total": 0, "passed": 0, "failed": 0, "failing": [], "failures": []},
+        )
         identifier = "%s#%s" % (rule, match.group("index"))
+        failure = {"ruleId": rule, "index": int(match.group("index")), "golden": bucket["golden"]}
     else:
         bucket = other
         identifier = name
+        failure = {"test": name}
     bucket["total"] += 1
     if passed:
         bucket["passed"] += 1
     else:
         bucket["failed"] += 1
         bucket["failing"].append(identifier)
+        message = message_of(result)
+        failure["message"] = message
+        failure["expected"], failure["actual"] = detail_of(message)
+        bucket["failures"].append(failure)
 
 golden_total = sum(b["total"] for b in rules.values())
 golden_failed = sum(b["failed"] for b in rules.values())
