@@ -17,3 +17,19 @@ services:
       interval: 5s
       timeout: 5s
       retries: 30
+
+  # Temporal dev server for the layer-3 workflow (gRPC 7233, web UI 8233).
+  # In-memory state only: it is a local orchestration engine, never a system of record.
+  # `temporal server start-dev` outside Docker is equivalent.
+  temporal:
+    image: temporalio/temporal:1.9.1
+    container_name: lending-temporal
+    command: ["server", "start-dev", "--ip", "0.0.0.0", "--ui-ip", "0.0.0.0", "--log-level", "warn"]
+    ports:
+      - "7233:7233"
+      - "8233:8233"
+    healthcheck:
+      test: ["CMD", "temporal", "workflow", "list", "--address", "127.0.0.1:7233"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
