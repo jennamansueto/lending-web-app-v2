@@ -402,9 +402,26 @@ function renderLevels() {
   levelsRoot.replaceChildren(
     ...LEVEL_ORDER.map((id) => {
       const level = results?.levels?.[id];
+      const liveStatus = state?.levels?.[id]?.status;
+      const stale =
+        state?.status === 'running' && (liveStatus === 'pending' || liveStatus === 'running') && !!level?.report;
       const totals = state?.levels?.[id]?.totals ?? level?.totals;
-      const meta = totals ? `${totals.passed}/${totals.total} ${level?.unit ?? ''} passed` : '';
-      return levelCard(id, renderers[id](level?.report ?? null), meta);
+      const counts = totals ? `${totals.passed}/${totals.total} ${level?.unit ?? ''} passed` : '';
+      const meta = stale ? (counts ? `Previous run — ${counts}` : 'Previous run') : counts;
+      const body = renderers[id](level?.report ?? null);
+      return levelCard(
+        id,
+        stale
+          ? el('div', {}, [
+              el('p', {
+                class: 'empty',
+                text: 'This level has not finished in the current run — the results below are from the previous run.',
+              }),
+              body,
+            ])
+          : body,
+        meta
+      );
     })
   );
 }
